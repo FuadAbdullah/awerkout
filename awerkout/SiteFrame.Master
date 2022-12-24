@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteFrame.Master.cs" Inherits="awerkout.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h1>Awerkout - An awesome workout site</h1>
+            <div>
+                <table align="left" class="auto-style1">
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="homelnk" runat="server">Awerkout</asp:LinkButton>
+                        </td>
+                        <td>
+                            <asp:LinkButton ID="planslnk" runat="server">Workout Plans</asp:LinkButton>
+                        </td>
+                        <td>
+                            <asp:LinkButton ID="guideslnk" runat="server">Guides</asp:LinkButton>
+                        </td>
+                        <td>
+                            <asp:LinkButton ID="nutritionslnk" runat="server">Nutritions</asp:LinkButton>
+                        </td>
+                        <td>
+                            <asp:LinkButton ID="profilelnk" runat="server">Username</asp:LinkButton>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
