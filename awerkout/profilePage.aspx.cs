@@ -13,5 +13,10 @@ namespace awerkout
         {
 
         }
+
+        protected void profilelnk_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

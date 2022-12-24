@@ -67,8 +67,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\awerkoutDB.mdf" />
+    <Content Include="App_Data\awerkoutDB_log.ldf">
+      <DependentUpon>awerkoutDB.mdf</DependentUpon>
+    </Content>
     <Content Include="profilePage.aspx" />
+    <Content Include="registerAdminPage.aspx" />
+    <Content Include="registerUserPage.aspx" />
+    <Content Include="signInPage.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="profilePage.aspx.cs">
@@ -79,12 +87,40 @@
       <DependentUpon>profilePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="registerAdminPage.aspx.cs">
+      <DependentUpon>registerAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registerAdminPage.aspx.designer.cs">
+      <DependentUpon>registerAdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registerUserPage.aspx.cs">
+      <DependentUpon>registerUserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registerUserPage.aspx.designer.cs">
+      <DependentUpon>registerUserPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="signInPage.aspx.cs">
+      <DependentUpon>signInPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signInPage.aspx.designer.cs">
+      <DependentUpon>signInPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SiteFrame.Master.cs">
       <DependentUpon>SiteFrame.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SiteFrame.Master.designer.cs">
       <DependentUpon>SiteFrame.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

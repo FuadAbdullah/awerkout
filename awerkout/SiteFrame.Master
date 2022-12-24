@@ -33,7 +33,8 @@
                             <asp:LinkButton ID="nutritionslnk" runat="server">Nutritions</asp:LinkButton>
                         </td>
                         <td>
-                            <asp:LinkButton ID="profilelnk" runat="server">Username</asp:LinkButton>
+                            <asp:ContentPlaceHolder ID="AdditionalNavOption1" runat="server">
+                            </asp:ContentPlaceHolder>
                         </td>
                     </tr>
                 </table>
@@ -42,7 +43,7 @@
         <br />
         <br />
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <asp:ContentPlaceHolder ID="MainContentBlock" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
