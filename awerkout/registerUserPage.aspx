@@ -19,6 +19,13 @@
         .auto-style7 {
             height: 26px;
         }
+        .auto-style8 {
+            text-align: right;
+            height: 31px;
+        }
+        .auto-style9 {
+            height: 31px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentBlock" runat="server">
@@ -30,20 +37,20 @@
                 <asp:Label ID="userUsernameLbl" runat="server" Text="Username:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="userUsernameTxtBx" runat="server" AutoPostBack="True" OnTextChanged="userUsernameTxtBx_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="userUsernameTxtBx" runat="server"></asp:TextBox>
             </td>
             <td>
                 <asp:Label ID="userUsernameErrMsgLbl" runat="server" Text="[Username Err]" ForeColor="Red"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td class="auto-style3">
+            <td class="auto-style8">
                 <asp:Label ID="userFirstNameLbl" runat="server" Text="First Name:"></asp:Label>
             </td>
-            <td class="auto-style2">
+            <td class="auto-style9">
                 <asp:TextBox ID="userFirstNameTxtBx" runat="server"></asp:TextBox>
             </td>
-            <td class="auto-style2">
+            <td class="auto-style9">
                 <asp:Label ID="userFirstNameErrMsgLbl" runat="server" Text="[First Name Err]" ForeColor="Red"></asp:Label>
             </td>
         </tr>
@@ -100,10 +107,17 @@
         </tr>
         <tr>
             <td>
-                <asp:Button ID="userRegisterBtn" runat="server" Text="Create an Account" />
+                <asp:Button ID="userRegisterBtn" runat="server" Text="Create an Account" OnClick="userRegisterBtn_Click" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td colspan="2">
+                <asp:Label ID="generalErrorMsg" runat="server" ForeColor="Red" Text="General Error"></asp:Label>
+            </td>
         </tr>
     </table>
 
