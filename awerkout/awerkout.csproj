@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminProfile.aspx" />
     <Content Include="App_Data\awerkoutDB.mdf" />
     <Content Include="App_Data\awerkoutDB_log.ldf">
       <DependentUpon>awerkoutDB.mdf</DependentUpon>
@@ -75,10 +76,18 @@
     <Content Include="registerAdminPage.aspx" />
     <Content Include="registerUserPage.aspx" />
     <Content Include="signInPage.aspx" />
+    <Content Include="userProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminProfile.aspx.cs">
+      <DependentUpon>adminProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminProfile.aspx.designer.cs">
+      <DependentUpon>adminProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="profilePage.aspx.cs">
       <DependentUpon>profilePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -114,6 +123,13 @@
     </Compile>
     <Compile Include="SiteFrame.Master.designer.cs">
       <DependentUpon>SiteFrame.Master</DependentUpon>
+    </Compile>
+    <Compile Include="userProfile.aspx.cs">
+      <DependentUpon>userProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userProfile.aspx.designer.cs">
+      <DependentUpon>userProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
