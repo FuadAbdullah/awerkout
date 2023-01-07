@@ -21,26 +21,9 @@ namespace awerkout
             adminPasswordErrMsgLbl.Visible = false;
             adminRPasswordErrMsgLbl.Visible = false;
             generalErrorMsg.Visible = false;
-            debugMessage("Hello World!");
+            commonFunction.debugMessage("Hello World!");
 
         }
-        protected void debugMessage(string debugmsg)
-        {
-            System.Diagnostics.Debug.WriteLine(debugmsg);
-        }
-
-        protected void showErrorMessage(Label lbl, string message = "Ambiguous error")
-        {
-            lbl.Visible = true;
-            lbl.Text = message;
-        }
-
-        protected void hideErrorMessage(Label lbl)
-        {
-            lbl.Visible = false;
-            lbl.Text = "";
-        }
-
 
         protected void adminRegisterBtn_Click(object sender, EventArgs e)
         {

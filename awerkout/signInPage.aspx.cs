@@ -70,12 +70,12 @@ namespace awerkout
                     // Redirect admin to adminDashboard.aspx
                     if (type == "ADMIN")
                     {
-                        Response.Redirect("adminProfile.aspx");
+                        Response.Redirect("adminDashboard.aspx");
                     }
                     // Redirect member to memberDashboard.aspx
                     else if (type == "USER")
                     {
-                        Response.Redirect("userProfile.aspx");
+                        Response.Redirect("userDashboard.aspx");
                     }
 
                 }
@@ -95,6 +95,11 @@ namespace awerkout
                 generalErrorMsg.ForeColor = System.Drawing.Color.Red;
                 generalErrorMsg.Text = "Error: " + ex.ToString();
             }
+        }
+
+        protected void registerUserlnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("registerUserPage.aspx");
         }
     }
 }

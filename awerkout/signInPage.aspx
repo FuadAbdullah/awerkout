@@ -8,6 +8,17 @@
         .align-right {
             text-align: right;
         }
+        .auto-style3 {
+            text-align: right;
+            width: 255px;
+        }
+        .auto-style4 {
+            width: 255px;
+        }
+        .auto-style5 {
+            height: 26px;
+            width: 255px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentBlock" runat="server">
@@ -16,7 +27,7 @@
 
     <table class="auto-style1">
         <tr>
-            <td class="align-right">
+            <td class="auto-style3">
                 <asp:Label ID="usernameLbl" runat="server" Text="Username:"></asp:Label>
             </td>
             <td>
@@ -25,7 +36,7 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="align-right">
+            <td class="auto-style3">
                 <asp:Label ID="passwordLbl" runat="server" Text="Password:"></asp:Label>
             </td>
             <td>
@@ -34,7 +45,7 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td class="auto-style4">
                 <asp:Button ID="signInBtn" runat="server" OnClick="signInBtn_Click" Text="Sign In" />
             </td>
             <td>
@@ -43,7 +54,9 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style2"></td>
+            <td class="auto-style5">
+                <asp:LinkButton ID="registerUserlnk" runat="server" OnClick="registerUserlnk_Click">Create an account</asp:LinkButton>
+            </td>
             <td class="auto-style2"></td>
             <td class="auto-style2"></td>
         </tr>

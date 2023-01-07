@@ -67,33 +67,83 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="adminProfile.aspx" />
+    <Content Include="adminDashboard.aspx" />
+    <Content Include="content\advancedWorkoutPage.aspx" />
     <Content Include="App_Data\awerkoutDB.mdf" />
     <Content Include="App_Data\awerkoutDB_log.ldf">
       <DependentUpon>awerkoutDB.mdf</DependentUpon>
     </Content>
-    <Content Include="profilePage.aspx" />
+    <Content Include="content\beginnerWorkoutPage.aspx" />
+    <Content Include="content\guidePage.aspx" />
+    <Content Include="content\intermediateWorkoutPage.aspx" />
+    <Content Include="content\workoutPlanPage.aspx" />
+    <Content Include="landingPage.aspx" />
+    <Content Include="nutritionPage.aspx" />
+    <Content Include="ProfilePic\default.jpg" />
     <Content Include="registerAdminPage.aspx" />
     <Content Include="registerUserPage.aspx" />
     <Content Include="signInPage.aspx" />
+    <Content Include="userDashboard.aspx" />
     <Content Include="userProfile.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adminProfile.aspx.cs">
-      <DependentUpon>adminProfile.aspx</DependentUpon>
+    <Compile Include="adminDashboard.aspx.cs">
+      <DependentUpon>adminDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminProfile.aspx.designer.cs">
-      <DependentUpon>adminProfile.aspx</DependentUpon>
+    <Compile Include="adminDashboard.aspx.designer.cs">
+      <DependentUpon>adminDashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="profilePage.aspx.cs">
-      <DependentUpon>profilePage.aspx</DependentUpon>
+    <Compile Include="commonFunction.cs" />
+    <Compile Include="content\advancedWorkoutPage.aspx.cs">
+      <DependentUpon>advancedWorkoutPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="profilePage.aspx.designer.cs">
-      <DependentUpon>profilePage.aspx</DependentUpon>
+    <Compile Include="content\advancedWorkoutPage.aspx.designer.cs">
+      <DependentUpon>advancedWorkoutPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content\beginnerWorkoutPage.aspx.cs">
+      <DependentUpon>beginnerWorkoutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content\beginnerWorkoutPage.aspx.designer.cs">
+      <DependentUpon>beginnerWorkoutPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content\guidePage.aspx.cs">
+      <DependentUpon>guidePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content\guidePage.aspx.designer.cs">
+      <DependentUpon>guidePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content\intermediateWorkoutPage.aspx.cs">
+      <DependentUpon>intermediateWorkoutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content\intermediateWorkoutPage.aspx.designer.cs">
+      <DependentUpon>intermediateWorkoutPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content\workoutPlanPage.aspx.cs">
+      <DependentUpon>workoutPlanPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content\workoutPlanPage.aspx.designer.cs">
+      <DependentUpon>workoutPlanPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="landingPage.aspx.cs">
+      <DependentUpon>landingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="landingPage.aspx.designer.cs">
+      <DependentUpon>landingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nutritionPage.aspx.cs">
+      <DependentUpon>nutritionPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nutritionPage.aspx.designer.cs">
+      <DependentUpon>nutritionPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registerAdminPage.aspx.cs">
@@ -124,19 +174,19 @@
     <Compile Include="SiteFrame.Master.designer.cs">
       <DependentUpon>SiteFrame.Master</DependentUpon>
     </Compile>
+    <Compile Include="userDashboard.aspx.cs">
+      <DependentUpon>userDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userDashboard.aspx.designer.cs">
+      <DependentUpon>userDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="userProfile.aspx.cs">
       <DependentUpon>userProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="userProfile.aspx.designer.cs">
       <DependentUpon>userProfile.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +199,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
