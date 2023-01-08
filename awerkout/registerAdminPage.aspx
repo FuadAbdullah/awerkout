@@ -25,6 +25,11 @@
 
     <table class="auto-style1">
         <tr>
+            <td colspan="3">
+                <asp:Label ID="adminRegistrationStatusLbl" runat="server" Text="Registration Status"></asp:Label>
+            </td>
+        </tr>
+        <tr>
             <td class="align-right">
                 <asp:Label ID="adminUsernameLbl" runat="server" Text="Username:"></asp:Label>
             </td>
@@ -114,3 +119,16 @@
     </table>
 
 </asp:Content>
+<asp:Content ID="Content3" runat="server" contentplaceholderid="AdditionalNavOption1">
+                <table class="auto-style1">
+        <tr>
+            <td class="align-right">
+                <asp:LinkButton ID="myDashboardlnk" runat="server" OnClick="myDashboardlnk_Click">My Dashboard</asp:LinkButton>
+            </td>
+            <td class="align-right">
+                <asp:LinkButton ID="signOutlnk" runat="server" OnClick="signOutlnk_Click">Sign Out</asp:LinkButton>
+            </td>
+        </tr>
+    </table>
+</asp:Content>
+

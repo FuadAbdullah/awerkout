@@ -90,6 +90,8 @@ namespace awerkout
                 userWeightTxtBx.Text = profileDataTable.Rows[0][14].ToString();
                 userHeightTxtBx.Text = profileDataTable.Rows[0][15].ToString();
                 userDoBTxtBx.Text = DateTime.Parse(profileDataTable.Rows[0][16].ToString()).ToString("yyyy-MM-dd");
+                userCreationDateLbl.Text = "Account Creation Date: " + DateTime.Parse(profileDataTable.Rows[0][18].ToString()).ToString("dd-MM-yyyy hh:mm:ss");
+                userUpdatedOnLbl.Text = "Latest Changes Made On: " + DateTime.Parse(profileDataTable.Rows[0][19].ToString()).ToString("dd-MM-yyyy hh:mm:ss");
 
                 userGenderDropDown.ClearSelection();
                 // Trim is needed because apparently there is a whitespace somewhere

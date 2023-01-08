@@ -30,7 +30,7 @@ namespace awerkout
                     + usernameTxtBx.Text
                     + "' and password = '"
                     + passwordTxtBx.Text
-                    + "'";
+                    + "' and accstatus = 'A'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 int check = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
@@ -39,7 +39,7 @@ namespace awerkout
                 {
 
                     // Fetch the first name and the user type
-                    string fetchUser = "select firstname, usertype, username from userData where username = '"
+                    string fetchUser = "select firstname, usertype, username, userID from userData where username = '"
                     + usernameTxtBx.Text
                     + "' and password = '"
                     + passwordTxtBx.Text
@@ -52,6 +52,7 @@ namespace awerkout
                     string type = "";
                     string firstname = "";
                     string username = "";
+                    string userID = "";
 
                     // Will loop as long as Read is true, could indicate existence of multiple records
                     // Loop will override with the last record in case there indeed are multiple records
@@ -60,12 +61,14 @@ namespace awerkout
                         type = fetchResult["usertype"].ToString().Trim();
                         firstname = fetchResult["firstname"].ToString().Trim();
                         username = fetchResult["username"].ToString().Trim();
+                        userID = fetchResult["userID"].ToString().Trim();
                     }
 
                     // Storing the first name and usertype
                     Session["firstname"] = firstname;
                     Session["usertype"] = type;
                     Session["username"] = username;
+                    Session["userID"] = userID;
 
                     // Redirect admin to adminDashboard.aspx
                     if (type == "ADMIN")

@@ -15,6 +15,15 @@ namespace awerkout
     {
 
         /// <summary>
+        /// adminRegistrationStatusLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label adminRegistrationStatusLbl;
+
+        /// <summary>
         /// adminUsernameLbl control.
         /// </summary>
         /// <remarks>
@@ -202,5 +211,23 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label generalErrorMsg;
+
+        /// <summary>
+        /// myDashboardlnk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton myDashboardlnk;
+
+        /// <summary>
+        /// signOutlnk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton signOutlnk;
     }
 }

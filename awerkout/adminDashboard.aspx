@@ -23,8 +23,12 @@
     <asp:Label ID="greetLbl" runat="server" Text="Hello there!" Font-Bold="True"></asp:Label>
     <table class="auto-style1">
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>
+                <asp:LinkButton ID="manageUserlnk" runat="server" OnClick="manageUserlnk_Click">Manage Users</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="adminCreateAdminAcclnk" runat="server" OnClick="adminCreateAdminAcclnk_Click">Register Admin</asp:LinkButton>
+            </td>
         </tr>
         <tr>
             <td>&nbsp;</td>

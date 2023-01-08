@@ -11,7 +11,7 @@ namespace awerkout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] != null)
+            if (Session["username"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
             {
                 greetLbl.Text = "Hello there, Admin " + Session["username"] + "!";
             }
@@ -33,6 +33,16 @@ namespace awerkout
         protected void myProfilelnk_Click(object sender, EventArgs e)
         {
             Response.Redirect("userProfile.aspx");
+        }
+
+        protected void manageUserlnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("manageUsers.aspx");
+        }
+
+        protected void adminCreateAdminAcclnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("registerAdminPage.aspx");
         }
     }
 }

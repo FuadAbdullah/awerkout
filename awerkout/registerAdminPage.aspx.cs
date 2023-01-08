@@ -21,8 +21,24 @@ namespace awerkout
             adminPasswordErrMsgLbl.Visible = false;
             adminRPasswordErrMsgLbl.Visible = false;
             generalErrorMsg.Visible = false;
+            adminRegistrationStatusLbl.Visible = false;
             commonFunction.debugMessage("Hello World!");
 
+            if (Session["username"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
+            {
+                // Do nothing
+            }
+            else
+            {
+                Response.Redirect("signInPage.aspx");
+            }
+
+            if (!Page.IsPostBack) { 
+                if (Request.QueryString["registerSuccessful"] != null)
+                {
+                    showNotificationMessage(adminRegistrationStatusLbl, "Account has been created successfully!");
+                }
+            }
         }
 
         protected void adminRegisterBtn_Click(object sender, EventArgs e)
@@ -65,7 +81,10 @@ namespace awerkout
                     createCMD.Parameters.AddWithValue("@usertype", "ADMIN");
                     createCMD.Parameters.AddWithValue("@emailaddress", adminUsernameTxtBx.Text.Trim());
                     createCMD.ExecuteNonQuery();
-                    Response.Redirect("signInPage.aspx");
+
+
+                    string registerSuccessful = "true";
+                    Response.Redirect(String.Format("registerAdminPage.aspx?registerSuccessful={0}", registerSuccessful));
                 }
                 conn.Close();
             }
@@ -77,5 +96,30 @@ namespace awerkout
             }
         }
 
+        protected void hideNotificationMessage(Label lbl)
+        {
+            lbl.Visible = false;
+            lbl.Text = "";
+        }
+
+        protected void showNotificationMessage(Label lbl, string message = "Hello World!")
+        {
+            lbl.Visible = true;
+            lbl.Text = message;
+        }
+
+        protected void myDashboardlnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("adminDashboard.aspx");
+        }
+
+        protected void signOutlnk_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Request.Cookies.Clear();
+
+            Response.Redirect("signInPage.aspx");
+
+        }
     }
 }
