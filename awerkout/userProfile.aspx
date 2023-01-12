@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteFrame.Master" AutoEventWireup="true" CodeBehind="userProfile.aspx.cs" Inherits="awerkout.userProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="mainstyle.css" />
     <style type="text/css">
         .align-right {
             text-align: right;
