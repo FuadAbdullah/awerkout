@@ -13,13 +13,8 @@ namespace awerkout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Error messages are hidden at first
+             //Error messages are hidden at first
             userUsernameErrMsgLbl.Visible = false;
-            userFirstNameErrMsgLbl.Visible = false;
-            userLastNameErrMsgLbl.Visible = false;
-            userEmailErrMsgLbl.Visible = false;
-            userPasswordErrMsgLbl.Visible = false;
-            userRPasswordErrMsgLbl.Visible = false;
             generalErrorMsg.Visible = false;
             debugMessage("Hello World!");
         }
@@ -88,8 +83,22 @@ namespace awerkout
             {
                 generalErrorMsg.Visible = true;
                 generalErrorMsg.ForeColor = System.Drawing.Color.Red;
-                generalErrorMsg.Text = "Registration was not successful! Error: " + ex.ToString();
+                generalErrorMsg.Text = "Registration was not successful!" + ex.ToString();
             }
+        }
+
+        protected void SignInlnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("signInPage.aspx");
+        }
+
+        protected void PasswordFormat(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value.Length < 8)
+                args.IsValid = false;
+            else
+                args.IsValid = true;
+
         }
     }
 }

@@ -104,5 +104,10 @@ namespace awerkout
         {
             Response.Redirect("registerUserPage.aspx");
         }
+
+        protected void usernameTxtBx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

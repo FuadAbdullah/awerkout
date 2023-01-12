@@ -1,0 +1,39 @@
+﻿body {
+}
+
+#registerbox {
+    background-color: white;
+    color: black;
+    width: 40%;
+    border-radius: 15px;
+    padding: 20px 20px 20px 20px;
+    margin-top: 100px;
+    margin-left: 30%;
+}
+
+.btn {
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    width: 100%;
+    background: #D33737;
+    border-radius: 10px;
+}
+
+.SignInlnk {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;
+    color: #D33737;
+}
+
+.TxtBx {
+    font-size: 24px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #9A9A9A;
+    border-radius: 5px;
+}

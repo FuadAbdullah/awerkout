@@ -82,16 +82,20 @@
     <Content Include="createContent.aspx" />
     <Content Include="createQuiz.aspx" />
     <Content Include="landingPage.aspx" />
+    <Content Include="mainstyle.css" />
     <Content Include="manageContent.aspx" />
     <Content Include="manageQuizzes.aspx" />
     <Content Include="manageUsers.aspx" />
     <Content Include="content\nutritionPage.aspx" />
     <Content Include="ProfilePic\default.jpg" />
     <Content Include="registerAdminPage.aspx" />
+    <Content Include="registerstyle.css" />
     <Content Include="registerUserPage.aspx" />
     <Content Include="signInPage.aspx" />
+    <Content Include="signinstyle.css" />
     <Content Include="userDashboard.aspx" />
     <Content Include="userProfile.aspx" />
+    <Content Include="userprofilestyle.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

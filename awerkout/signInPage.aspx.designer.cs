@@ -60,15 +60,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Button signInBtn;
 
         /// <summary>
-        /// generalErrorMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label generalErrorMsg;
-
-        /// <summary>
         /// registerUserlnk control.
         /// </summary>
         /// <remarks>
@@ -76,5 +67,14 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton registerUserlnk;
+
+        /// <summary>
+        /// generalErrorMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label generalErrorMsg;
     }
 }

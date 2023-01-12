@@ -24,13 +24,13 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Label userUsernameLbl;
 
         /// <summary>
-        /// userUsernameTxtBx control.
+        /// UsernameValidate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userUsernameTxtBx;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UsernameValidate;
 
         /// <summary>
         /// userUsernameErrMsgLbl control.
@@ -42,6 +42,15 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Label userUsernameErrMsgLbl;
 
         /// <summary>
+        /// userUsernameTxtBx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox userUsernameTxtBx;
+
+        /// <summary>
         /// userFirstNameLbl control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label userFirstNameLbl;
+
+        /// <summary>
+        /// FirstNameValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator FirstNameValidate;
 
         /// <summary>
         /// userFirstNameTxtBx control.
@@ -60,15 +78,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox userFirstNameTxtBx;
 
         /// <summary>
-        /// userFirstNameErrMsgLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label userFirstNameErrMsgLbl;
-
-        /// <summary>
         /// userLastNameLbl control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label userLastNameLbl;
+
+        /// <summary>
+        /// LastNameValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator LastNameValidate;
 
         /// <summary>
         /// userLastNameTxtBx control.
@@ -87,15 +105,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox userLastNameTxtBx;
 
         /// <summary>
-        /// userLastNameErrMsgLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label userLastNameErrMsgLbl;
-
-        /// <summary>
         /// userEmailLbl control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,24 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label userEmailLbl;
+
+        /// <summary>
+        /// EmailAddressValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator EmailAddressValidate;
+
+        /// <summary>
+        /// EmailFormatValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator EmailFormatValidate;
 
         /// <summary>
         /// userEmailTxtBx control.
@@ -114,15 +141,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox userEmailTxtBx;
 
         /// <summary>
-        /// userEmailErrMsgLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label userEmailErrMsgLbl;
-
-        /// <summary>
         /// userPasswordLbl control.
         /// </summary>
         /// <remarks>
@@ -132,22 +150,22 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Label userPasswordLbl;
 
         /// <summary>
-        /// userPasswordTxtBx control.
+        /// PasswordValidate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userPasswordTxtBx;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordValidate;
 
         /// <summary>
-        /// userPasswordErrMsgLbl control.
+        /// PasswordFormatValidate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label userPasswordErrMsgLbl;
+        protected global::System.Web.UI.WebControls.CustomValidator PasswordFormatValidate;
 
         /// <summary>
         /// userPasswordHintLbl control.
@@ -159,6 +177,15 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Label userPasswordHintLbl;
 
         /// <summary>
+        /// userPasswordTxtBx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox userPasswordTxtBx;
+
+        /// <summary>
         /// userRPasswordLbl control.
         /// </summary>
         /// <remarks>
@@ -166,6 +193,24 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label userRPasswordLbl;
+
+        /// <summary>
+        /// RPaswordValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RPaswordValidate;
+
+        /// <summary>
+        /// ComparePasswordValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator ComparePasswordValidate;
 
         /// <summary>
         /// userRPasswordTxtBx control.
@@ -177,15 +222,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox userRPasswordTxtBx;
 
         /// <summary>
-        /// userRPasswordErrMsgLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label userRPasswordErrMsgLbl;
-
-        /// <summary>
         /// userRegisterBtn control.
         /// </summary>
         /// <remarks>
@@ -195,6 +231,15 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Button userRegisterBtn;
 
         /// <summary>
+        /// signInlnk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton signInlnk;
+
+        /// <summary>
         /// generalErrorMsg control.
         /// </summary>
         /// <remarks>
@@ -202,5 +247,14 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label generalErrorMsg;
+
+        /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     }
 }

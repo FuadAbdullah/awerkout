@@ -1,124 +1,300 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteFrame.Master" AutoEventWireup="true" CodeBehind="registerUserPage.aspx.cs" Inherits="awerkout.registerUserPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <appSettings>
+      <add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
+    </appSettings>
+    <link rel="stylesheet" href="mainstyle.css" />
+    <link rel="stylesheet" href="registerstyle.css" />
     <style type="text/css">
         .auto-style2 {
             height: 29px;
+            text-align: left;
         }
 
         .align-right {
             text-align: right;
         }
-        .auto-style3 {
-            text-align: right;
-            height: 29px;
-        }
-        .auto-style6 {
-            text-align: right;
-            height: 26px;
-        }
         .auto-style7 {
             height: 26px;
-        }
-        .auto-style8 {
-            text-align: right;
-            height: 31px;
+            text-align: left;
         }
         .auto-style9 {
             height: 31px;
+            text-align: left;
+        }
+        .auto-style10 {
+            text-align: justify;
+        }
+        .auto-style11 {
+            text-align: left;
+            width: 165px;
+        }
+        .auto-style13 {
+            height: 29px;
+            text-align: left;
+            width: 165px;
+        }
+        .auto-style15 {
+            text-align: left;
+            width: 165px;
+            height: 20px;
+        }
+        .auto-style16 {
+            text-align: left;
+            height: 20px;
+        }
+        .auto-style17 {
+            text-align: left;
+            height: 48px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentBlock" runat="server">
-    <h1>Create a User Account</h1>
+    <div id="registerbox">
 
-    <table class="auto-style1">
-        <tr>
-            <td class="align-right">
-                <asp:Label ID="userUsernameLbl" runat="server" Text="Username:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="userUsernameTxtBx" runat="server"></asp:TextBox>
-            </td>
-            <td>
-                <asp:Label ID="userUsernameErrMsgLbl" runat="server" Text="[Username Err]" ForeColor="Red"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style8">
-                <asp:Label ID="userFirstNameLbl" runat="server" Text="First Name:"></asp:Label>
-            </td>
-            <td class="auto-style9">
-                <asp:TextBox ID="userFirstNameTxtBx" runat="server"></asp:TextBox>
-            </td>
-            <td class="auto-style9">
-                <asp:Label ID="userFirstNameErrMsgLbl" runat="server" Text="[First Name Err]" ForeColor="Red"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style3">
-                <asp:Label ID="userLastNameLbl" runat="server" Text="Last Name:"></asp:Label>
-            </td>
-            <td class="auto-style2">
-                <asp:TextBox ID="userLastNameTxtBx" runat="server"></asp:TextBox>
-            </td>
-            <td class="auto-style2">
-                <asp:Label ID="userLastNameErrMsgLbl" runat="server" Text="[Last Name Err]" ForeColor="Red"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="align-right">
-                <asp:Label ID="userEmailLbl" runat="server" Text="Email Address:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="userEmailTxtBx" runat="server" TextMode="Email"></asp:TextBox>
-            </td>
-            <td>
-                <asp:Label ID="userEmailErrMsgLbl" runat="server" Text="[Email Err]" ForeColor="Red"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style3">
-                <asp:Label ID="userPasswordLbl" runat="server" Text="Password:"></asp:Label>
-            </td>
-            <td class="auto-style2">
-                <asp:TextBox ID="userPasswordTxtBx" runat="server" TextMode="Password"></asp:TextBox>
-            </td>
-            <td class="auto-style2">
-                <asp:Label ID="userPasswordErrMsgLbl" runat="server" Text="[Password Err]" ForeColor="Red"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style6">
-            </td>
-            <td class="auto-style7" colspan="2">
-                <asp:Label ID="userPasswordHintLbl" runat="server" Text="*Must contain at least 8 alphanumeric characters"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style3">
-                <asp:Label ID="userRPasswordLbl" runat="server" Text="Repeat Password:"></asp:Label>
-            </td>
-            <td class="auto-style2">
-                <asp:TextBox ID="userRPasswordTxtBx" runat="server" TextMode="Password"></asp:TextBox>
-            </td>
-            <td class="auto-style2">
-                <asp:Label ID="userRPasswordErrMsgLbl" runat="server" Text="[Password Repeat Err]" ForeColor="Red"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Button ID="userRegisterBtn" runat="server" Text="Create an Account" OnClick="userRegisterBtn_Click" />
-            </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td colspan="2">
-                <asp:Label ID="generalErrorMsg" runat="server" ForeColor="Red" Text="General Error"></asp:Label>
-            </td>
-        </tr>
-    </table>
+        <h1>SIGN UP</h1>
 
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style10" colspan="3">
+                    Sign up to become a member of Awerkout and get exclusive information!</td>
+            </tr>
+            <tr>
+                <td class="auto-style10">
+                    &nbsp;</td>
+                <td class="auto-style11">
+                    &nbsp;</td>
+                <td class="auto-style10">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style10">
+                    <asp:Label ID="userUsernameLbl" runat="server" Text="Username"></asp:Label>
+                    <asp:RequiredFieldValidator 
+                        ID="UsernameValidate" 
+                        runat="server" 
+                        ErrorMessage="Username is required." 
+                        ControlToValidate="userUsernameTxtBx"
+                        ForeColor="Red">
+                        *
+                    </asp:RequiredFieldValidator>
+                </td>
+                <td class="auto-style11">
+                    &nbsp;</td>
+                <td class="auto-style10">
+                    <asp:Label ID="userUsernameErrMsgLbl" runat="server" Text="[Username Err]" ForeColor="Red"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style10" colspan="3">
+                    <asp:TextBox ID="userUsernameTxtBx" class="TxtBx" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style16">
+                    </td>
+                <td class="auto-style15">
+                    </td>
+                <td class="auto-style16">
+                    </td>
+            </tr>
+            <tr>
+                <td class="auto-style10">
+                    <asp:Label ID="userFirstNameLbl" runat="server" Text="First Name"></asp:Label>
+                    <asp:RequiredFieldValidator 
+                        ID="FirstNameValidate" 
+                        runat="server" 
+                        ControlToValidate="userFirstNameTxtBx" 
+                        ErrorMessage="First name is required"
+                        ForeColor="Red">
+                        *
+                    </asp:RequiredFieldValidator>
+                </td>
+                <td class="auto-style11">
+                    &nbsp;</td>
+                <td class="auto-style10">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style9" colspan="3">
+                    <asp:TextBox ID="userFirstNameTxtBx" class="TxtBx" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    &nbsp;</td>
+                <td class="auto-style13">
+                    &nbsp;</td>
+                <td class="auto-style2">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <asp:Label ID="userLastNameLbl" runat="server" Text="Last Name"></asp:Label>
+                    <asp:RequiredFieldValidator 
+                        ID="LastNameValidate" 
+                        runat="server" 
+                        ControlToValidate="userLastNameTxtBx" 
+                        ErrorMessage="Last name is required."
+                        ForeColor="Red">
+                        *
+                    </asp:RequiredFieldValidator>
+                </td>
+                <td class="auto-style13">
+                    &nbsp;</td>
+                <td class="auto-style2">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style10" colspan="3">
+                    <asp:TextBox ID="userLastNameTxtBx" class="TxtBx" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style10">
+                    &nbsp;</td>
+                <td class="auto-style11">
+                    &nbsp;</td>
+                <td class="auto-style10">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style10">
+                    <asp:Label ID="userEmailLbl" runat="server" Text="Email Address"></asp:Label>
+                    <asp:RequiredFieldValidator 
+                        ID="EmailAddressValidate" 
+                        runat="server" 
+                        ControlToValidate="userEmailTxtBx" 
+                        ErrorMessage="Email address is required." 
+                        ForeColor="Red">
+                        *
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator
+                        ID="EmailFormatValidate"
+                        runat="server" 
+                        ErrorMessage="Email format is invalid."
+                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+                        ControlToValidate="userEmailTxtBx"
+                        ForeColor="Red">
+                        *
+                    </asp:RegularExpressionValidator>
+                </td>
+                <td class="auto-style11">
+                    &nbsp;</td>
+                <td class="auto-style10">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2" colspan="3">
+                    <asp:TextBox ID="userEmailTxtBx" class="TxtBx" runat="server" TextMode="Email"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    </td>
+                <td class="auto-style13">
+                    </td>
+                <td class="auto-style2">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <asp:Label ID="userPasswordLbl" runat="server" Text="Password"></asp:Label>
+                    <asp:RequiredFieldValidator 
+                        ID="PasswordValidate" 
+                        runat="server" 
+                        ControlToValidate="userPasswordTxtBx" 
+                        ErrorMessage="Password is required." 
+                        ForeColor="Red">
+                        *
+                    </asp:RequiredFieldValidator>
+                    <asp:CustomValidator ID="PasswordFormatValidate" runat="server"
+                        ControlToValidate="userPasswordTxtBx"
+                        ErrorMessage="Password should have eight or more alphanumerical characters!"
+                        OnServerValidate="PasswordFormat"
+                        ForeColor="Red">
+                        *
+                    </asp:CustomValidator>
+                </td>
+                <td class="auto-style13">
+                    &nbsp;</td>
+                <td class="auto-style2">
+                    <asp:Label ID="userPasswordHintLbl" runat="server" Text="*Must contain at least 8 alphanumeric characters"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style7" colspan="3">
+                    <asp:TextBox ID="userPasswordTxtBx" class="TxtBx" runat="server" TextMode="Password"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    &nbsp;</td>
+                <td class="auto-style13">
+                    &nbsp;</td>
+                <td class="auto-style2">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <asp:Label ID="userRPasswordLbl" runat="server" Text="Confirm password"></asp:Label>
+                    <asp:RequiredFieldValidator 
+                        ID="RPaswordValidate" 
+                        runat="server" 
+                        ControlToValidate="userRPasswordTxtBx" 
+                        ErrorMessage="Password re-type is required." 
+                        ForeColor="Red">
+                        *
+                    </asp:RequiredFieldValidator>
+                     <asp:CompareValidator ID="ComparePasswordValidate"
+                        runat="server"
+                        ControlToCompare="userPasswordTxtBx"
+                        ControlToValidate="userRPasswordTxtBx"
+                        EnableClientScript="False"
+                        ErrorMessage="Re-typed password is not the same as password."
+                        ForeColor="Red">
+                        *
+                    </asp:CompareValidator>
+                </td>
+                <td class="auto-style13">
+                    &nbsp;</td>
+                <td class="auto-style2">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style17" colspan="3">
+                    <asp:TextBox ID="userRPasswordTxtBx" class="TxtBx" runat="server" TextMode="Password"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style10">
+                    &nbsp;</td>
+                <td class="auto-style11">&nbsp;</td>
+                <td class="auto-style10">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style10" colspan="3">
+                    <asp:Button ID="userRegisterBtn" class="btn" runat="server" Text="SIGN UP" OnClick="userRegisterBtn_Click" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style10">
+                    <asp:LinkButton ID="signInlnk" runat="server" class="SignInlnk" OnClick="SignInlnk_Click">LOGIN</asp:LinkButton>
+                </td>
+                <td colspan="2" class="auto-style10">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style10" colspan="3">
+                    <asp:Label ID="generalErrorMsg" runat="server" ForeColor="Red" Text="General Error"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style10" colspan="3">
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="One or more fields were entered incorrectly." ForeColor="Red" />
+                </td>
+            </tr>
+        </table>
+    </div>
 </asp:Content>
