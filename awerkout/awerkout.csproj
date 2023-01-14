@@ -82,6 +82,7 @@
     <Content Include="content\intermediateWorkoutPage.aspx" />
     <Content Include="createContent.aspx" />
     <Content Include="createQuiz.aspx" />
+    <Content Include="createquizstyle.css" />
     <Content Include="Images\advanced.PNG" />
     <Content Include="Images\beginner.PNG" />
     <Content Include="Images\intermediate.PNG" />

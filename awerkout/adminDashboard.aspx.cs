@@ -49,5 +49,10 @@ namespace awerkout
         {
             Response.Redirect("createContent.aspx");
         }
+
+        protected void CreateQuizBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("createQuiz.aspx");
+        }
     }
 }

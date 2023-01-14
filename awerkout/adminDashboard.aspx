@@ -102,7 +102,9 @@
             <tr>
                 <td class="auto-style5">&nbsp;</td>
                 <td class="auto-style7">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="Update" class="btn" runat="server" Text="Update" />
+                </td>
             </tr>
             <tr>
                 <td class="auto-style5">
@@ -116,7 +118,9 @@
                     <asp:Label ID="quizUpdateDateLbl" runat="server" Font-Size="Smaller" Text="Updated On"></asp:Label>
                 </td>
                 <td class="auto-style7">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="CreateQuizBtn" class="btn" runat="server" Text="Create New" OnClick="CreateQuizBtn_Click" />
+                </td>
             </tr>
         </table>
 

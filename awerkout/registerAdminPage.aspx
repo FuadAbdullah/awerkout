@@ -268,8 +268,7 @@
             </tr>
             <tr>
                 <td class="auto-style8" colspan="3">
-                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" HeaderText="One or more fields were entered incorrectly." />
-                </td>
+                    &nbsp;</td>
             </tr>
             </table>
 
@@ -285,5 +284,6 @@
                 </td>
             </tr>
         </table>
+
     </asp:Content>
 
