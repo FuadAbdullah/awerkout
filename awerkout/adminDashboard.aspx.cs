@@ -44,5 +44,10 @@ namespace awerkout
         {
             Response.Redirect("registerAdminPage.aspx");
         }
+
+        protected void adminCreateContentlnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("createContent.aspx");
+        }
     }
 }

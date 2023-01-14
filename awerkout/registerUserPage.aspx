@@ -47,6 +47,20 @@
             text-align: left;
             height: 48px;
         }
+        .auto-style18 {
+            text-align: justify;
+            width: 84px;
+        }
+        .auto-style19 {
+            text-align: left;
+            height: 20px;
+            width: 84px;
+        }
+        .auto-style20 {
+            height: 29px;
+            text-align: left;
+            width: 84px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContentBlock" runat="server">
@@ -60,7 +74,7 @@
                     Sign up to become a member of Awerkout and get exclusive information!</td>
             </tr>
             <tr>
-                <td class="auto-style10">
+                <td class="auto-style18">
                     &nbsp;</td>
                 <td class="auto-style11">
                     &nbsp;</td>
@@ -68,7 +82,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style10">
+                <td class="auto-style18">
                     <asp:Label ID="userUsernameLbl" runat="server" Text="Username"></asp:Label>
                     <asp:RequiredFieldValidator 
                         ID="UsernameValidate" 
@@ -91,7 +105,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style16">
+                <td class="auto-style19">
                     </td>
                 <td class="auto-style15">
                     </td>
@@ -99,7 +113,7 @@
                     </td>
             </tr>
             <tr>
-                <td class="auto-style10">
+                <td class="auto-style18">
                     <asp:Label ID="userFirstNameLbl" runat="server" Text="First Name"></asp:Label>
                     <asp:RequiredFieldValidator 
                         ID="FirstNameValidate" 
@@ -121,7 +135,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">
+                <td class="auto-style20">
                     &nbsp;</td>
                 <td class="auto-style13">
                     &nbsp;</td>
@@ -129,7 +143,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">
+                <td class="auto-style20">
                     <asp:Label ID="userLastNameLbl" runat="server" Text="Last Name"></asp:Label>
                     <asp:RequiredFieldValidator 
                         ID="LastNameValidate" 
@@ -151,7 +165,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style10">
+                <td class="auto-style18">
                     &nbsp;</td>
                 <td class="auto-style11">
                     &nbsp;</td>
@@ -159,7 +173,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style10">
+                <td class="auto-style18">
                     <asp:Label ID="userEmailLbl" runat="server" Text="Email Address"></asp:Label>
                     <asp:RequiredFieldValidator 
                         ID="EmailAddressValidate" 
@@ -190,7 +204,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">
+                <td class="auto-style20">
                     </td>
                 <td class="auto-style13">
                     </td>
@@ -198,7 +212,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">
+                <td class="auto-style20">
                     <asp:Label ID="userPasswordLbl" runat="server" Text="Password"></asp:Label>
                     <asp:RequiredFieldValidator 
                         ID="PasswordValidate" 
@@ -228,7 +242,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">
+                <td class="auto-style20">
                     &nbsp;</td>
                 <td class="auto-style13">
                     &nbsp;</td>
@@ -236,7 +250,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">
+                <td class="auto-style20">
                     <asp:Label ID="userRPasswordLbl" runat="server" Text="Confirm password"></asp:Label>
                     <asp:RequiredFieldValidator 
                         ID="RPaswordValidate" 
@@ -267,7 +281,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style10">
+                <td class="auto-style18">
                     &nbsp;</td>
                 <td class="auto-style11">&nbsp;</td>
                 <td class="auto-style10">
@@ -275,12 +289,12 @@
             </tr>
             <tr>
                 <td class="auto-style10" colspan="3">
-                    <asp:Button ID="userRegisterBtn" class="btn" runat="server" Text="SIGN UP" OnClick="userRegisterBtn_Click" />
+                    <asp:Button ID="userRegisterBtn" class="btn" runat="server" Text="SIGN UP" OnClick="userRegisterBtn_Click"/>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style10">
-                    <asp:LinkButton ID="signInlnk" runat="server" class="SignInlnk" OnClick="SignInlnk_Click">LOGIN</asp:LinkButton>
+                <td class="auto-style18">
+                    <asp:LinkButton ID="signInlnk" runat="server" class="SignInlnk" OnClick="SignInlnk_Click" CausesValidation="False">LOGIN</asp:LinkButton>
                 </td>
                 <td colspan="2" class="auto-style10">
                     &nbsp;</td>

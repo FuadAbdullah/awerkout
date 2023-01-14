@@ -30,29 +30,38 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdditionalNavOption1" runat="server">
-        <table class="auto-style1">
+        <table style="width: 100%;">
         <tr>
             <td class="auto-style2">
-                <asp:LinkButton ID="myProfilelnk" runat="server" OnClick="myProfilelnk_Click">My Profile</asp:LinkButton>
+                <asp:LinkButton ID="myProfilelnk" runat="server" OnClick="myProfilelnk_Click" class="nav">My Profile</asp:LinkButton>
             </td>
             <td class="auto-style2">
-                <asp:LinkButton ID="signOutlnk" runat="server" OnClick="signOutlnk_Click">Sign Out</asp:LinkButton>
+                <asp:LinkButton ID="signOutlnk" runat="server" OnClick="signOutlnk_Click" class="nav">Sign Out</asp:LinkButton>
             </td>
         </tr>
     </table>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
     <asp:Label ID="greetLbl" runat="server" Text="Hello there!" Font-Bold="True"></asp:Label>
-    <table class="auto-style1">
+    <table class="nav2">
         <tr>
             <td>
-                <asp:LinkButton ID="manageUserlnk" runat="server" OnClick="manageUserlnk_Click">Manage Users</asp:LinkButton>
-            </td>
-            <td>
-                <asp:LinkButton ID="adminCreateAdminAcclnk" runat="server" OnClick="adminCreateAdminAcclnk_Click">Register Admin</asp:LinkButton>
+                <asp:LinkButton ID="manageUserlnk" class="nav2" runat="server" OnClick="manageUserlnk_Click" style="margin-right: 100px;">Manage Users</asp:LinkButton>
+                <asp:LinkButton ID="adminCreateAdminAcclnk" class="nav2" runat="server" OnClick="adminCreateAdminAcclnk_Click" style="margin-right: 100px;">Register Admin</asp:LinkButton>
+                <asp:LinkButton ID="createContnet" class="nav2" runat="server" OnClick="adminCreateContentlnk_Click">Create Content</asp:LinkButton>
             </td>
         </tr>
         </table>
+<%--    <div style="padding-left: 15%;">
+
+
+        <asp:Button ID="manageUser" class="btn" runat="server" Text="Manage User" OnClick="manageUserlnk_Click"/>
+        <asp:Button ID="CreateAdmin" class="btn" runat="server" Text="Register Admin" OnClick="adminCreateAdminAcclnk_Click" />
+
+    </div>--%>
+
+
+
     <br />
 
     <div id="quiz">

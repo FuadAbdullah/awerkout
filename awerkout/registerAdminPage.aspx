@@ -275,16 +275,15 @@
 
     </asp:Content>
     <asp:Content ID="Content3" runat="server" contentplaceholderid="AdditionalNavOption1">
-                    <table class="auto-style1">
+        <table style="width: 100%;">
             <tr>
                 <td class="align-right">
-                    <asp:LinkButton ID="myDashboardlnk" runat="server" OnClick="myDashboardlnk_Click">My Dashboard</asp:LinkButton>
+                    <asp:LinkButton ID="myDashboardlnk" class="nav" runat="server" OnClick="myDashboardlnk_Click" CausesValidation="false">My Dashboard</asp:LinkButton>
                 </td>
                 <td class="align-right">
-                    <asp:LinkButton ID="signOutlnk" runat="server" OnClick="signOutlnk_Click">Sign Out</asp:LinkButton>
+                    <asp:LinkButton ID="signOutlnk" class="nav" runat="server" OnClick="signOutlnk_Click" CausesValidation="false">Sign Out</asp:LinkButton>
                 </td>
             </tr>
         </table>
-    <div>
-</asp:Content>
+    </asp:Content>
 

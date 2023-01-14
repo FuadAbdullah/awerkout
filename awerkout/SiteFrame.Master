@@ -8,31 +8,19 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" href="mainstyle.css" />
-    <style type="text/css">
-        .auto-style1 {
-            text-decoration: none;
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <h1>Awerkout - An awesome workout site</h1>
+            <h1 style="text-align: center;">Awerkout - An awesome workout site</h1>
             <div >
-                <table align="left" class="auto-style1">
+                <table style="width: 100%;">
                     <tr>
                         <td>
-                            <asp:LinkButton ID="homelnk" runat="server" style="text-decoration:none;color:white;">AWERKOUT</asp:LinkButton>
-                        </td>
-                        <td>
-                            <asp:LinkButton ID="planslnk" runat="server" style="text-decoration:none;color:white;">WORKOUT PLANS</asp:LinkButton>
-                        </td>
-                        <td>
-                            <asp:LinkButton ID="guideslnk" runat="server" style="text-decoration:none;color:white;">GUIGES</asp:LinkButton>
-                        </td>
-                        <td>
-                            <asp:LinkButton ID="nutritionslnk" runat="server" style="text-decoration:none;color:white;">NUTRITIONS</asp:LinkButton>
+                            <asp:LinkButton ID="homelnk" runat="server" class="nav">AWERKOUT</asp:LinkButton>
+                            <asp:LinkButton ID="planslnk" runat="server" class="nav">WORKOUT PLANS</asp:LinkButton>
+                            <asp:LinkButton ID="guideslnk" runat="server" class="nav">GUIGES</asp:LinkButton>
+                            <asp:LinkButton ID="nutritionslnk" runat="server" class="nav">NUTRITIONS</asp:LinkButton>
                         </td>
                         <td>
                             <asp:ContentPlaceHolder ID="AdditionalNavOption1" runat="server">
@@ -42,11 +30,13 @@
                 </table>
             </div>
         </div>
-        <br />
-        <br />
         <div>
             <asp:ContentPlaceHolder ID="MainContentBlock" runat="server">
             </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            © 2022 • AWERKOUT
+
         </div>
     </form>
 </body>

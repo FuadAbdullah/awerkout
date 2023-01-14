@@ -13,9 +13,6 @@
 }
 
 .wrkbtn {
-    position: absolute;
-    bottom: 5%;
-    left: 7.5%;
     color: white;
     border: none;
     padding-top: 10px;
@@ -25,6 +22,7 @@
     width: 100%;
     background: #D33737;
     border-radius: 10px;
+    margin-top: 250px;
 }
 
 #content {
@@ -35,7 +33,6 @@
 
 .workoutplan {
     position: relative;
-    float: left;
     background-color: white;
     color: black;
     width: 25%;
@@ -45,12 +42,14 @@
 }
 
 #workoutplan1 {
+    margin-right: 5%;
+    float: left;
     background-image: url("Images/beginner.PNG");
-    margin-right: 7.5%;
     height: 400px;
 }
 
 #workoutplan2 {
+    float: left;
     background-image: url("Images/intermediate.PNG");
     height: 400px;
 }
@@ -73,7 +72,7 @@
     text-align: center;
     font-weight: 900;
     font-size: 40px;
-    color: #000000;
+    color: #D33737;
 }
 
 .bmitxt {

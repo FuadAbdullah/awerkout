@@ -20,10 +20,6 @@ namespace awerkout
             userFirstNameErrMsg.Visible = false;
             userLastNameErrMsg.Visible = false;
             userEmailErrMsg.Visible = false;
-            userLocationErrMsg.Visible = false;
-            userAboutMeErrMsg.Visible = false;
-            userLikesErrMsg.Visible = false;
-            userDislikesErrMsg.Visible = false;
             userPhoneNumberErrMsg.Visible = false;
             userWeightErrMsg.Visible = false;
             userHeightErrMsg.Visible = false;
@@ -218,6 +214,14 @@ namespace awerkout
             {
                 Response.Redirect("userDashboard.aspx");
             }
+        }
+
+        protected void PasswordFormat(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value.Length < 8)
+                args.IsValid = false;
+            else
+                args.IsValid = true;
         }
     }
 }

@@ -45,13 +45,13 @@
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdditionalNavOption1" runat="server">
-        <table class="auto-style1">
+        <table style="width: 100%;">
         <tr>
             <td class="auto-style2">
-                <asp:LinkButton ID="myProfilelnk" runat="server" OnClick="myProfilelnk_Click">My Profile</asp:LinkButton>
+                <asp:LinkButton ID="myProfilelnk" class="nav" runat="server" OnClick="myProfilelnk_Click">My Profile</asp:LinkButton>
             </td>
             <td class="auto-style2">
-                <asp:LinkButton ID="signOutlnk" runat="server" OnClick="signOutlnk_Click">Sign Out</asp:LinkButton>
+                <asp:LinkButton ID="signOutlnk" class="nav" runat="server" OnClick="signOutlnk_Click">Sign Out</asp:LinkButton>
             </td>
         </tr>
     </table>
@@ -60,7 +60,7 @@
     <asp:Label ID="greetLbl" runat="server" Text="Hello there!" Font-Bold="True"></asp:Label>
 
     <div id="quiz">
-        <h1 style="text-align: center;">QUIZ</h1>
+        <h1 class="auto-style10">QUIZ</h1>
         <table class="auto-style3">
             <tr>
                 <td colspan="4">
@@ -107,6 +107,7 @@
 
             <asp:Button ID="BeginnerBtn" class="wrkbtn" runat="server" Text="Learn more" OnClick="BeginnerBtn_Click"/>
         </div>
+
         <div id="workoutplan2" class="txt workoutplan">
 
 

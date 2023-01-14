@@ -20,10 +20,10 @@ namespace awerkout
             userFirstNameErrMsg.Visible = false;
             userLastNameErrMsg.Visible = false;
             userEmailErrMsg.Visible = false;
-            userLocationErrMsg.Visible = false;
-            userAboutMeErrMsg.Visible = false;
-            userLikesErrMsg.Visible = false;
-            userDislikesErrMsg.Visible = false;
+            //userLocationErrMsg.Visible = false;
+            //userAboutMeErrMsg.Visible = false;
+            //userLikesErrMsg.Visible = false;
+            //userDislikesErrMsg.Visible = false;
             userPhoneNumberErrMsg.Visible = false;
             userWeightErrMsg.Visible = false;
             userHeightErrMsg.Visible = false;
