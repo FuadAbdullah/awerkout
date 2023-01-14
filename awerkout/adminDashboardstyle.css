@@ -1,0 +1,21 @@
+﻿body {
+}
+
+#quiz {
+    background-color: white;
+    color: black;
+    width: 70%;
+    border-radius: 15px;
+    padding: 2%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.TxtBx {
+    font-size: 24px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #9A9A9A;
+    border-radius: 5px;
+}

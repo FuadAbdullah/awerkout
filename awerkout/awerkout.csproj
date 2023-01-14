@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminDashboard.aspx" />
+    <Content Include="adminDashboardstyle.css" />
     <Content Include="content\advancedWorkoutPage.aspx" />
     <Content Include="App_Data\awerkoutDB.mdf" />
     <Content Include="App_Data\awerkoutDB_log.ldf">
@@ -81,6 +82,9 @@
     <Content Include="content\intermediateWorkoutPage.aspx" />
     <Content Include="createContent.aspx" />
     <Content Include="createQuiz.aspx" />
+    <Content Include="Images\advanced.PNG" />
+    <Content Include="Images\beginner.PNG" />
+    <Content Include="Images\intermediate.PNG" />
     <Content Include="landingPage.aspx" />
     <Content Include="mainstyle.css" />
     <Content Include="manageContent.aspx" />
@@ -94,6 +98,7 @@
     <Content Include="signInPage.aspx" />
     <Content Include="signinstyle.css" />
     <Content Include="userDashboard.aspx" />
+    <Content Include="userDashboardstyle.css" />
     <Content Include="userProfile.aspx" />
     <Content Include="userprofilestyle.css" />
     <Content Include="Web.config" />

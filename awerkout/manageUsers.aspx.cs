@@ -15,6 +15,7 @@ namespace awerkout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            userIDLbl.Visible = false;
             userUsernameErrMsg.Visible = false;
             userFirstNameErrMsg.Visible = false;
             userLastNameErrMsg.Visible = false;

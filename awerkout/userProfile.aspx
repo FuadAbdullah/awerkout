@@ -85,7 +85,7 @@
         <table class="auto-style1">
             <tr>
                 <td colspan="3" class="align-center">
-                    <asp:Image ID="userPPImg" CssClass="img" runat="server" Height="200px" ImageAlign="Middle" Width="200px" />
+                    <asp:Image ID="userPPImg" class="img" runat="server" Height="200px" ImageAlign="Middle" Width="200px" />
                 </td>
             </tr>
             <tr>
@@ -125,7 +125,7 @@
                     <asp:Label ID="userGenderLbl" runat="server" Text="Gender:"></asp:Label>
                 </td>
                 <td class="auto-style12">
-                    <asp:DropDownList ID="userGenderDropDown" runat="server">
+                    <asp:DropDownList ID="userGenderDropDown" class="TxtBx" runat="server">
                     </asp:DropDownList>
                 </td>
                 <td>
