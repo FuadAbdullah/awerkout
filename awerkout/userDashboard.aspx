@@ -5,7 +5,6 @@
     <style type="text/css">
         .auto-style2 {
             text-align: right;
-            height: 26px;
         }
         .auto-style3 {
             width: 100%;

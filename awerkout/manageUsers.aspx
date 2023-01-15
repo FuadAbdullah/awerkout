@@ -78,7 +78,7 @@
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdditionalNavOption1" runat="server">
-            <table class="auto-style1">
+            <table style="width: 100%">
         <tr>
             <td class="auto-style2">
                 <asp:LinkButton ID="myDashboardlnk" runat="server" OnClick="myDashboardlnk_Click" class="nav">My Dashboard</asp:LinkButton>

@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="adminDashboard.aspx" />
     <Content Include="adminDashboardstyle.css" />
+    <Content Include="Awerkout.aspx" />
+    <Content Include="awerkoutstyle.css" />
     <Content Include="content\advancedWorkoutPage.aspx" />
     <Content Include="App_Data\awerkoutDB.mdf" />
     <Content Include="App_Data\awerkoutDB_log.ldf">
@@ -103,6 +105,8 @@
     <Content Include="userProfile.aspx" />
     <Content Include="userprofilestyle.css" />
     <Content Include="Web.config" />
+    <Content Include="WorkoutPlan.aspx" />
+    <Content Include="workoutstyle.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adminDashboard.aspx.cs">
@@ -111,6 +115,13 @@
     </Compile>
     <Compile Include="adminDashboard.aspx.designer.cs">
       <DependentUpon>adminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Awerkout.aspx.cs">
+      <DependentUpon>Awerkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Awerkout.aspx.designer.cs">
+      <DependentUpon>Awerkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="commonFunction.cs" />
     <Compile Include="content\advancedWorkoutPage.aspx.cs">
@@ -253,6 +264,13 @@
     </Compile>
     <Compile Include="userProfile.aspx.designer.cs">
       <DependentUpon>userProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkoutPlan.aspx.cs">
+      <DependentUpon>WorkoutPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkoutPlan.aspx.designer.cs">
+      <DependentUpon>WorkoutPlan.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

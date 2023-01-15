@@ -1,0 +1,93 @@
+﻿body {
+}
+
+.table {
+    text-align:right;
+}
+
+.workout {
+    background-color: white;
+    color: black;
+    width: 70%;
+    height: 500px;
+    border-radius: 15px;
+    padding: 2%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.content2 {
+/*    float: left;*/
+    padding-left: 13%;
+    width: 37%;
+}
+
+.content3 {
+/*    float: right;*/
+    width: 37%;
+    padding-right: 13%;
+}
+
+.guides {
+    background-color: white;
+    color: black;
+    width: 90%;
+    height: 500px;
+    border-radius: 15px;
+    padding: 2%;
+    margin-top: 100px;
+}
+
+.nutrition {
+    background-color: white;
+    color: black;
+    width: 90%;
+    height: 500px;
+    border-radius: 15px;
+    padding: 2%;
+    margin-top: 100px;
+}
+
+.signin {
+    background-color: white;
+    color: black;
+    width: 90%;
+    height: 1125px;
+    border-radius: 15px;
+    padding: 2%;
+    margin-left: 6%;
+    margin-top: 100px;
+}
+
+.btn {
+    margin-top: 350px;
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    width: 30%;
+    background: #D33737;
+    border-radius: 10px;
+}
+
+.signupbtn {
+    margin-top: 900px;
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    width: 100%;
+    background: #D33737;
+    border-radius: 10px;
+}
+
+.txt {
+    font-weight: 900;
+    text-align: center;
+    font-size: 64px;
+    color: #000000;
+}

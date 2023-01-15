@@ -17,8 +17,8 @@
                 <table style="width: 100%;">
                     <tr>
                         <td>
-                            <asp:LinkButton ID="homelnk" runat="server" class="nav">AWERKOUT</asp:LinkButton>
-                            <asp:LinkButton ID="planslnk" runat="server" class="nav">WORKOUT PLANS</asp:LinkButton>
+                            <asp:LinkButton ID="homelnk" runat="server" class="nav" OnClick="homelnk_Click">AWERKOUT</asp:LinkButton>
+                            <asp:LinkButton ID="planslnk" runat="server" class="nav" OnClick="planslnk_Click">WORKOUT PLANS</asp:LinkButton>
                             <asp:LinkButton ID="guideslnk" runat="server" class="nav">GUIGES</asp:LinkButton>
                             <asp:LinkButton ID="nutritionslnk" runat="server" class="nav">NUTRITIONS</asp:LinkButton>
                         </td>

@@ -337,5 +337,13 @@ namespace awerkout
         {
             Response.Redirect("adminDashboard.aspx");
         }
+
+        protected void PasswordFormat(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value.Length < 8)
+                args.IsValid = false;
+            else
+                args.IsValid = true;
+        }
     }
 }

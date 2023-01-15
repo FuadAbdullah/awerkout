@@ -14,5 +14,14 @@ namespace awerkout
 
         }
 
+        protected void homelnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Awerkout.aspx");
+        }
+
+        protected void planslnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("WorkoutPlan.aspx");
+        }
     }
 }
