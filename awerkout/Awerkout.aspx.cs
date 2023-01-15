@@ -57,7 +57,7 @@ namespace awerkout
 
         protected void NutritionBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("#.aspx");
+            Response.Redirect("Nutrition.aspx");
         }
 
         protected void SignupBtn_Click(object sender, EventArgs e)

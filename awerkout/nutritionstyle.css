@@ -4,3 +4,24 @@
 .table {
     text-align: right;
 }
+
+.container {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.header {
+    margin-top: 50px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #FFFFFF;
+}
+
+.content {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: justify;
+    color: #FFFFFF;
+}
