@@ -43,5 +43,20 @@ namespace awerkout
         {
             Response.Redirect("signInPage.aspx");
         }
+
+        protected void BeginnerBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Beginner.aspx");
+        }
+
+        protected void IntermediateBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Intermediate.aspx");
+        }
+
+        protected void AdvancedBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Advanced.aspx");
+        }
     }
 }

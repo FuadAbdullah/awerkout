@@ -1,0 +1,46 @@
+﻿body {
+}
+
+.clear {
+    clear: both;
+}
+
+.table {
+    text-align: right;
+}
+
+.header {
+    margin-top: 100px;
+    width: 100%;
+}
+
+#imgheader {
+    margin-left: 10%;
+    float: left;
+    width: 40%;
+    border-radius: 15px;
+}
+
+#txt {
+    margin-right: 10%;
+    width: 35%;
+    float: right;
+    font-weight: 900;
+    text-align: justify;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.daytxt {
+    font-weight: 900;
+    text-align: justify;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+
+.content {
+    margin-top: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 80%;
+}

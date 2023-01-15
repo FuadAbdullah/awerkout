@@ -69,8 +69,14 @@
   <ItemGroup>
     <Content Include="adminDashboard.aspx" />
     <Content Include="adminDashboardstyle.css" />
+    <Content Include="Advanced.aspx" />
     <Content Include="Awerkout.aspx" />
     <Content Include="awerkoutstyle.css" />
+    <Content Include="Beginner.aspx" />
+    <Content Include="guide.aspx" />
+    <Content Include="guidestyle.css" />
+    <Content Include="Intermediate.aspx" />
+    <Content Include="workoutplandetailstyle.css" />
     <Content Include="content\advancedWorkoutPage.aspx" />
     <Content Include="App_Data\awerkoutDB.mdf" />
     <Content Include="App_Data\awerkoutDB_log.ldf">
@@ -85,8 +91,11 @@
     <Content Include="createContent.aspx" />
     <Content Include="createQuiz.aspx" />
     <Content Include="createquizstyle.css" />
+    <Content Include="Images\Advanced header.PNG" />
     <Content Include="Images\advanced.PNG" />
+    <Content Include="Images\Beginner header.PNG" />
     <Content Include="Images\beginner.PNG" />
+    <Content Include="Images\Intermediate header.PNG" />
     <Content Include="Images\intermediate.PNG" />
     <Content Include="landingPage.aspx" />
     <Content Include="mainstyle.css" />
@@ -116,12 +125,26 @@
     <Compile Include="adminDashboard.aspx.designer.cs">
       <DependentUpon>adminDashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Advanced.aspx.cs">
+      <DependentUpon>Advanced.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Advanced.aspx.designer.cs">
+      <DependentUpon>Advanced.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Awerkout.aspx.cs">
       <DependentUpon>Awerkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Awerkout.aspx.designer.cs">
       <DependentUpon>Awerkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Beginner.aspx.cs">
+      <DependentUpon>Beginner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Beginner.aspx.designer.cs">
+      <DependentUpon>Beginner.aspx</DependentUpon>
     </Compile>
     <Compile Include="commonFunction.cs" />
     <Compile Include="content\advancedWorkoutPage.aspx.cs">
@@ -186,6 +209,20 @@
     </Compile>
     <Compile Include="createQuiz.aspx.designer.cs">
       <DependentUpon>createQuiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="guide.aspx.cs">
+      <DependentUpon>guide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guide.aspx.designer.cs">
+      <DependentUpon>guide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Intermediate.aspx.cs">
+      <DependentUpon>Intermediate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Intermediate.aspx.designer.cs">
+      <DependentUpon>Intermediate.aspx</DependentUpon>
     </Compile>
     <Compile Include="landingPage.aspx.cs">
       <DependentUpon>landingPage.aspx</DependentUpon>

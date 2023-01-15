@@ -55,17 +55,17 @@ namespace awerkout
 
         protected void AdvancedBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("#");  //go to advanced workout plan page
+            Response.Redirect("Advanced.aspx");  //go to advanced workout plan page
         }
 
         protected void IntermediateBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("#");   //go to intermediate workout plan page
+            Response.Redirect("Intermediate.aspx");   //go to intermediate workout plan page
         }
 
         protected void BeginnerBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("#");   //go to beginner workout plan page
+            Response.Redirect("Beginner.aspx");   //go to beginner workout plan page
         }
         
 

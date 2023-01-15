@@ -16,42 +16,50 @@
     margin-top: 100px;
 }
 
-.content2 {
+.container {
+    width: 100%;
+}
+
+/*.content2 {*/
 /*    float: left;*/
-    padding-left: 13%;
+    /*padding-left: 13%;
     width: 37%;
 }
 
-.content3 {
+.content3 {*/
 /*    float: right;*/
-    width: 37%;
+    /*width: 37%;
     padding-right: 13%;
-}
+}*/
 
-.guides {
+#guides {
+    float: left;
     background-color: white;
     color: black;
-    width: 90%;
+    width: 30%;
     height: 500px;
     border-radius: 15px;
     padding: 2%;
     margin-top: 100px;
+    margin-left: 13%;
 }
 
-.nutrition {
+#nutrition {
     background-color: white;
     color: black;
-    width: 90%;
+    width: 30%;
     height: 500px;
     border-radius: 15px;
     padding: 2%;
     margin-top: 100px;
+    margin-left: 13%;
 }
 
-.signin {
+#signin {
+    float: left;
     background-color: white;
     color: black;
-    width: 90%;
+    width: 30%;
     height: 1125px;
     border-radius: 15px;
     padding: 2%;

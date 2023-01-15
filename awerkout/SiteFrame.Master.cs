@@ -23,5 +23,10 @@ namespace awerkout
         {
             Response.Redirect("WorkoutPlan.aspx");
         }
+
+        protected void guideslnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("guide.aspx");
+        }
     }
 }

@@ -1,6 +1,10 @@
 ﻿body {
 }
 
+.table {
+    text-align: right;
+}
+
 .main {
     background-color: white;
     color: black;
@@ -17,4 +21,59 @@
     text-align: center;
     font-size: 64px;
     color: #000000;
+}
+
+#plan1 {
+    float: left;
+    width: 25%;
+    background-color: white;
+    color: black;
+    height: 400px;
+    border-radius: 15px;
+    padding: 2%;
+    margin-top: 100px;
+}
+
+#plan2 {
+    margin-left: 7%;
+    float: left;
+    width: 25%;
+    background-color: white;
+    color: black;
+    height: 400px;
+    border-radius: 15px;
+    padding: 2%;
+    margin-top: 100px;
+}
+
+#plan3 {
+    float: right;
+    width: 25%;
+    background-color: white;
+    color: black;
+    height: 400px;
+    border-radius: 15px;
+    padding: 2%;
+    margin-top: 100px;
+}
+
+
+.container {
+    width: 74%;
+    padding-left: 13%;
+    padding-right: 13%;
+    height: 570px;
+}
+
+.btn {
+    margin-top: 275px;
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    width: 100%;
+    background: #D33737;
+    border-radius: 10px;
 }

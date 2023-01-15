@@ -43,8 +43,22 @@
             <asp:Button ID="NutritionBtn" class="btn" runat="server" Text="Learn more" />
         </div>    
     </div>--%>
-
-        <div class="content2">
+    <div class="container">
+        <div id="guides" class="txt">
+            Guides<br />
+            <asp:Button ID="GuidesBtn" class="btn" style="float: right" runat="server" Text="Learn more" />
+        </div>
+        
+        <div id="nutrition" class="txt">
+            Nutrition<br />
+            <asp:Button ID="NutritionBtn" class="btn" style="float: right" runat="server" Text="Learn more" />
+        </div>
+        <div id="signin"  class="txt">
+            Become a member today
+            <asp:Button ID="SigninBtn" class="signupbtn" runat="server" Text="SIGN UP NOW" />
+    </div>
+    </div>
+        <%--<div class="content2">
             <div class="guides txt">
                 Guides<br />
             <asp:Button ID="GuidesBtn" class="btn" style="float: right" runat="server" Text="Learn more" />
@@ -59,5 +73,10 @@
                 Become a member today
                 <asp:Button ID="SigninBtn" class="signupbtn" runat="server" Text="SIGN UP NOW" />
             </div>
-        </div>
+        </div>--%>
+        
+            <%--<div class="nutrition txt">
+                Nutrition<br />
+            <asp:Button ID="NutritionBtn" class="btn" style="float: right" runat="server" Text="Learn more" />
+            </div>  --%>
 </asp:Content>
