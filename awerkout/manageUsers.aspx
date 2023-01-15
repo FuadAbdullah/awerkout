@@ -39,8 +39,8 @@
             height: 28px;
         }
                 .auto-style10 {
-                    width: 159px;
-                    height: 48px;
+            width: 159px;
+            height: 48px;
             text-align: right;
         }
                 .auto-style11 {
@@ -50,30 +50,19 @@
             width: 159px;
             text-align: right;
         }
-        .auto-style14 {
-            height: 29px;
-            width: 393px;
-        }
-        .auto-style15 {
-            width: 393px;
-        }
-        .auto-style16 {
-            height: 28px;
-            width: 393px;
-        }
-        .auto-style17 {
-            height: 26px;
-            width: 393px;
-        }
-        .auto-style18 {
-            height: 48px;
-            width: 393px;
-        }
         .auto-style19 {
             width: 100%;
         }
         .auto-style24 {
             height: 22px;
+        }
+        .auto-style25 {
+            width: 159px;
+            text-align: right;
+            height: 45px;
+        }
+        .auto-style27 {
+            height: 45px;
         }
         </style>
 </asp:Content>
@@ -91,7 +80,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
     <div id="profilebox">
-        <table class="auto-style19">
+        <table style="width: 100%">
             <tr>
                 <td class="align-center">
                     <asp:Label ID="userSearchLbl" runat="server" Text="Search:"></asp:Label>
@@ -100,28 +89,28 @@
                     </td>
             </tr>
         </table>
-        <table class="auto-style1">
+        <table style="width: 100%">
             <tr>
-                <td colspan="3" class="align-center">
+                <td colspan="2" class="align-center">
                     <asp:Label ID="userSearchErrMsg" runat="server" Text="Search Error" ForeColor="Red"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="align-center">
+                <td colspan="2" class="align-center">
                     &nbsp;</td>
             </tr>
             <tr>
-                <td colspan="3" class="align-center">
+                <td colspan="2" class="align-center">
                     <asp:Image ID="userPPImg" class="img" runat="server" Height="200px" ImageAlign="Middle" Width="200px" />
                 </td>
             </tr>
             <tr>
-                <td class="align-center" colspan="3">
+                <td class="align-center" colspan="2">
                     <asp:FileUpload ID="userPPUpload" runat="server" />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style7" colspan="3">
+                <td class="auto-style7" colspan="2">
                     <asp:Label ID="userIDLbl" runat="server" Font-Bold="True" Text="USERID"></asp:Label>
                 </td>
             </tr>
@@ -130,45 +119,37 @@
                     <asp:RequiredFieldValidator ID="userFirstNameErrMsg" runat="server" ForeColor="Red" ControlToValidate="userFirstNameTxtBx" ErrorMessage="First name is required." >*</asp:RequiredFieldValidator>
                     <asp:Label ID="userFirstNameLbl" runat="server" Text="First Name:"></asp:Label>
                 </td>
-                <td class="auto-style14">
+                <td class="auto-style7">
                     <asp:TextBox ID="userFirstNameTxtBx" class="TxtBx" runat="server"></asp:TextBox>
                 </td>
-                <td class="auto-style7">
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style10">
                     <asp:RequiredFieldValidator ID="userLastNameErrMsg" runat="server" ForeColor="Red" ControlToValidate="userLastNameTxtBx" ErrorMessage="Last name is required." >*</asp:RequiredFieldValidator>
                     <asp:Label ID="userLastNameLbl" runat="server" Text="Last Name:"></asp:Label>
                 </td>
-                <td class="auto-style18">
+                <td class="auto-style11">
                     <asp:TextBox ID="userLastNameTxtBx" class="TxtBx" runat="server"></asp:TextBox>
                 </td>
-                <td class="auto-style11">
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style13">
                     <asp:RequiredFieldValidator ID="userGenderErrMsg" runat="server" ForeColor="Red" ErrorMessage="Gender is required." ControlToValidate="userGenderDropDown">*</asp:RequiredFieldValidator>
                     <asp:Label ID="userGenderLbl" runat="server" Text="Gender:"></asp:Label>
                 </td>
-                <td class="auto-style15">
+                <td>
                     <asp:DropDownList ID="userGenderDropDown" class="TxtBx" runat="server">
                     </asp:DropDownList>
                 </td>
-                <td>
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style6">
                     <asp:RequiredFieldValidator ID="userDoBErrMsg" runat="server" ForeColor="Red" ErrorMessage="Date of Birth is required." ControlToValidate="userDoBTxtBx">*</asp:RequiredFieldValidator>
                     <asp:Label ID="userDoBLbl" runat="server" Text="Date of Birth:"></asp:Label>
                 </td>
-                <td class="auto-style14">
+                <td class="auto-style7">
                     <asp:TextBox ID="userDoBTxtBx" class="TxtBx" runat="server" TextMode="Date"></asp:TextBox>
                 </td>
-                <td class="auto-style7">
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style8">
@@ -184,11 +165,9 @@
                     </asp:RegularExpressionValidator>
                     <asp:Label ID="userEmailLbl" runat="server" Text="Email Address:"></asp:Label>
                 </td>
-                <td class="auto-style16">
+                <td class="auto-style9">
                     <asp:TextBox ID="userEmailTxtBx" class="TxtBx" runat="server" TextMode="Email"></asp:TextBox>
                 </td>
-                <td class="auto-style9">
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style13">
@@ -202,11 +181,9 @@
                     </asp:RequiredFieldValidator>
                     <asp:Label ID="userUsernameLbl" runat="server" Text="Username:"></asp:Label>
                 </td>
-                <td class="auto-style15">
+                <td>
                     <asp:TextBox ID="userUsernameTxtBx" class="TxtBx" runat="server"></asp:TextBox>
                 </td>
-                <td>
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style5">
@@ -227,11 +204,9 @@
                     </asp:CustomValidator>
                     <asp:Label ID="userPasswordLbl" runat="server" Text="Password:"></asp:Label>
                 </td>
-                <td class="auto-style17">
+                <td class="auto-style3">
                     <asp:TextBox ID="userPasswordTxtBx" class="TxtBx" runat="server" TextMode="Password"></asp:TextBox>
                 </td>
-                <td class="auto-style3">
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style6">
@@ -249,11 +224,9 @@
                     </asp:CompareValidator>
                     <asp:Label ID="userRPasswordLbl" runat="server" Text="Repeat Password:"></asp:Label>
                 </td>
-                <td class="auto-style14">
+                <td class="auto-style7">
                     <asp:TextBox ID="userRPasswordTxtBx" class="TxtBx" runat="server" TextMode="Password"></asp:TextBox>
                 </td>
-                <td class="auto-style7">
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style6">
@@ -262,52 +235,42 @@
                     </asp:RequiredFieldValidator>
                     <asp:Label ID="userUsertypeLbl" runat="server" Text="User Type:"></asp:Label>
                 </td>
-                <td class="auto-style14">
+                <td class="auto-style7">
                     <asp:DropDownList ID="userUsertypeDropDown" class="TxtBx" runat="server">
                     </asp:DropDownList>
                 </td>
-                <td class="auto-style7">
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style6">
                     <asp:Label ID="userLocationLbl" runat="server" Text="Location:"></asp:Label>
                 </td>
-                <td class="auto-style14">
+                <td class="auto-style7">
                     <asp:TextBox ID="userLocationTxtBx" class="TxtBx" runat="server"></asp:TextBox>
                 </td>
-                <td class="auto-style7">
-                    &nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style13">
+                <td class="auto-style25">
                     <asp:Label ID="userAboutMeLbl" runat="server" Text="About Me:"></asp:Label>
                 </td>
-                <td class="auto-style15">
+                <td class="auto-style27">
                     <asp:TextBox ID="userAboutMeTxtBx" class="TxtBx" runat="server" TextMode="MultiLine"></asp:TextBox>
                 </td>
-                <td>
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style10">
                     <asp:Label ID="userLikesLbl" runat="server" Text="Likes:"></asp:Label>
                 </td>
-                <td class="auto-style18">
+                <td class="auto-style11">
                     <asp:TextBox ID="userLikesTxtBx" class="TxtBx" runat="server" TextMode="MultiLine"></asp:TextBox>
                 </td>
-                <td class="auto-style11">
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style13">
                     <asp:Label ID="userDislikesLbl" runat="server" Text="Dislikes:"></asp:Label>
                 </td>
-                <td class="auto-style15">
+                <td>
                     <asp:TextBox ID="userDislikesTxtBx" class="TxtBx" runat="server" TextMode="MultiLine"></asp:TextBox>
                 </td>
-                <td>
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style6">
@@ -316,33 +279,27 @@
                     </asp:RegularExpressionValidator>
                     <asp:Label ID="userPhoneNumberLbl" runat="server" Text="Phone Number:"></asp:Label>
                 </td>
-                <td class="auto-style14">
+                <td class="auto-style7">
                     <asp:TextBox ID="userPhoneNumberTxtBx" class="TxtBx" runat="server"></asp:TextBox>
                 </td>
-                <td class="auto-style7">
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style6">
                     <asp:CompareValidator ID="userWeightErrMsg" runat="server" ErrorMessage="Weight invalid. Enter an integer." Operator="DataTypeCheck" Type="Integer" ForeColor="Red" ControlToValidate="userWeightTxtBx">*</asp:CompareValidator>
                     <asp:Label ID="userWeightLbl" runat="server" Text="Weight:"></asp:Label>
                 </td>
-                <td class="auto-style14">
+                <td class="auto-style7">
                     <asp:TextBox ID="userWeightTxtBx" runat="server" class="TxtBx" TextMode="Number"></asp:TextBox>
                 </td>
-                <td class="auto-style7">
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style5">
                     <asp:CompareValidator ID="userHeightErrMsg" runat="server" ErrorMessage="Height invalid. Enter an integer." Operator="DataTypeCheck" Type="Integer" ForeColor="Red" ControlToValidate="userHeightTxtBx">*</asp:CompareValidator>
                     <asp:Label ID="userHeightLbl" runat="server" Text="Height:"></asp:Label>
                 </td>
-                <td class="auto-style17">
+                <td class="auto-style3">
                     <asp:TextBox ID="userHeightTxtBx" class="TxtBx" runat="server" TextMode="Number"></asp:TextBox>
                 </td>
-                <td class="auto-style3">
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style5">
@@ -351,16 +308,14 @@
                     </asp:RequiredFieldValidator>
                     <asp:Label ID="userAccountStatusLbl" runat="server" Text="Account Status:"></asp:Label>
                 </td>
-                <td class="auto-style17">
+                <td class="auto-style3">
                     <asp:DropDownList ID="userAccountStatusDropDown" class="TxtBx" runat="server">
                     </asp:DropDownList>
-                </td>
-                <td class="auto-style3">
                     <%--<asp:Label ID="userAccountStatusErrMsg" runat="server" ForeColor="Red" Text="Error Message"></asp:Label>--%>
                 </td>
             </tr>
             <tr>
-                <td colspan="3">
+                <td colspan="2">
                     &nbsp;</td>
             </tr>
         </table>

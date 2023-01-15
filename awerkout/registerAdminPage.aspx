@@ -46,7 +46,7 @@
     <div id="registerbox">
         <h1>CREATE AN ADMIN ACCOUNT</h1>
 
-        <table class="auto-style1">
+        <table style="width: 100%">
             <tr>
                 <td colspan="3" class="auto-style8">
                     <asp:Label ID="adminRegistrationStatusLbl" runat="server" Text="Registration Status"></asp:Label>
@@ -268,7 +268,8 @@
             </tr>
             <tr>
                 <td class="auto-style8" colspan="3">
-                    &nbsp;</td>
+                    <asp:ValidationSummary ID="ValidationSummary" runat="server" ForeColor="Red" HeaderText="One or more fields were entered incorrectly." />
+                </td>
             </tr>
             </table>
 

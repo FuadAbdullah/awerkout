@@ -27,56 +27,26 @@
     <div class="workout txt">
         Workout
         For Beginner<br />
-        <asp:Button ID="WorkoutPlanBtn" class="btn" style="float: right" runat ="server" Text="Learn more" />
+        <asp:Button ID="WorkoutPlanBtn" class="btn" style="float: right" runat ="server" Text="Learn more" OnClick="WorkoutPlanBtn_Click" />
     </div>
-    <%--<div class="content2">
-        <div class="guides">
-            Guides
-            <asp:Button ID="GuidesBtn" class="btn" runat="server" Text="Learn more" />
-        </div>
-        <div class="signin">
-            Become a member today
-            <asp:Button ID="SigninBtn" class="signupbtn" runat="server" Text="SIGN UP NOW" />
-        </div>
-        <div class="nutrition">
-            Nutrition
-            <asp:Button ID="NutritionBtn" class="btn" runat="server" Text="Learn more" />
-        </div>    
-    </div>--%>
-    <div class="container">
+    <div class="container" style="float: left">
         <div id="guides" class="txt">
-            Guides<br />
-            <asp:Button ID="GuidesBtn" class="btn" style="float: right" runat="server" Text="Learn more" />
+            Guides
+            <asp:Button ID="GuidesBtn" class="gbtn" runat="server" Text="Learn more" OnClick="GuidesBtn_Click"/>
         </div>
-        
         <div id="nutrition" class="txt">
-            Nutrition<br />
-            <asp:Button ID="NutritionBtn" class="btn" style="float: right" runat="server" Text="Learn more" />
+            Nutrition
+            <asp:Button ID="NutritionBtn" class="gbtn" runat="server" Text="Learn more" OnClick="NutritionBtn_Click" />
         </div>
-        <div id="signin"  class="txt">
+
+    </div>
+    <div class="container2" style="float: right">
+        <div id="signup" class="txt">
             Become a member today
-            <asp:Button ID="SigninBtn" class="signupbtn" runat="server" Text="SIGN UP NOW" />
-    </div>
-    </div>
-        <%--<div class="content2">
-            <div class="guides txt">
-                Guides<br />
-            <asp:Button ID="GuidesBtn" class="btn" style="float: right" runat="server" Text="Learn more" />
-            </div>
-            <div class="nutrition txt">
-                Nutrition<br />
-            <asp:Button ID="NutritionBtn" class="btn" style="float: right" runat="server" Text="Learn more" />
-            </div>  
+            <asp:Button ID="SignupBtn" class="sbtn" runat="server" Text="Learn more" OnClick="SignupBtn_Click" />
         </div>
-        <div class="content3">
-            <div class="signin txt">
-                Become a member today
-                <asp:Button ID="SigninBtn" class="signupbtn" runat="server" Text="SIGN UP NOW" />
-            </div>
-        </div>--%>
-        
-            <%--<div class="nutrition txt">
-                Nutrition<br />
-            <asp:Button ID="NutritionBtn" class="btn" style="float: right" runat="server" Text="Learn more" />
-            </div>  --%>
+
+    </div>
+
 </asp:Content>
+  

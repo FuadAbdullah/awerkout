@@ -20,7 +20,7 @@
                             <asp:LinkButton ID="homelnk" runat="server" class="nav" OnClick="homelnk_Click">AWERKOUT</asp:LinkButton>
                             <asp:LinkButton ID="planslnk" runat="server" class="nav" OnClick="planslnk_Click">WORKOUT PLANS</asp:LinkButton>
                             <asp:LinkButton ID="guideslnk" runat="server" class="nav" OnClick="guideslnk_Click">GUIDES</asp:LinkButton>
-                            <asp:LinkButton ID="nutritionslnk" runat="server" class="nav">NUTRITIONS</asp:LinkButton>
+                            <asp:LinkButton ID="nutritionslnk" runat="server" class="nav" OnClick="nutritionslnk_Click">NUTRITIONS</asp:LinkButton>
                         </td>
                         <td>
                             <asp:ContentPlaceHolder ID="AdditionalNavOption1" runat="server">

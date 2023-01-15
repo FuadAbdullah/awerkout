@@ -28,5 +28,10 @@ namespace awerkout
         {
             Response.Redirect("guide.aspx");
         }
+
+        protected void nutritionslnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Nutrition.aspx");
+        }
     }
 }

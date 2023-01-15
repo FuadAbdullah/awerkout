@@ -44,5 +44,25 @@ namespace awerkout
         {
             Response.Redirect("signInPage.aspx");
         }
+
+        protected void WorkoutPlanBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Beginner.aspx");
+        }
+
+        protected void GuidesBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("guide.aspx");
+        }
+
+        protected void NutritionBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("#.aspx");
+        }
+
+        protected void SignupBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("registerUserPage.aspx");
+        }
     }
 }
