@@ -4,3 +4,21 @@
 .table {
     text-align: right;
 }
+
+
+.video {
+    margin-top: 100px;
+}
+
+
+/*.video iframe {
+    width: 75%;
+    height: 500px;
+}*/
+
+.txt {
+    font-weight: 900;
+    text-align: center;
+    font-size: 30px;
+    color: #FFFFFF;
+}
