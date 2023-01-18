@@ -137,5 +137,183 @@
             a registered dietitian to determine your individual needs based on 
             your goals to ensure your diet is nutritionally adequate.
         </div>
-    </div>
+        <div class="header">
+            Bodybuilding Nutrition: Foods to Eat and Avoid
+        </div>
+        <div class="content">
+            <br />
+            Like training, diet is a vital part of bodybuilding.
+            <br />
+            <br />
+            Eating the right foods in the appropriate amounts provides your muscles with the nutrients they need to recover from workouts and grow bigger and stronger.
+            <br />
+            <br />
+            Conversely, consuming the wrong foods or not enough of the right ones will leave you with subpar results.
+            <br />
+            <br />
+            Here are foods you should focus on and foods to limit or avoid:
+            <br />
+            <br />
+        </div>
+        <div class="header">
+            Foods to Focus On
+        </div>
+        <div class="content">
+            <br />
+            The foods you eat don’t need to differ between the bulking and cutting phase — usually, it’s the amounts that do.
+            <br />
+            <br />
+            Foods to eat include (7Trusted Source):
+            <br />
+            <br />
+            <li>Meats, poultry, and fish: Sirloin steak, ground beef, pork tenderloin, venison, chicken breast, salmon, tilapia, and cod.</li><br />
+            <li>Dairy: Yogurt, cottage cheese, low fat milk, and cheese.</li><br />
+            <li>Grains: Bread, cereal, crackers, oatmeal, quinoa, popcorn, and rice.</li><br />
+            <li>Fruits: Oranges, apples, bananas, grapes, pears, peaches, watermelon, and berries.</li><br />
+            <li>Starchy vegetables: Potatoes, corn, green peas, green lima beans, and cassava.</li><br />
+            <li>Vegetables: Broccoli, spinach, leafy salad greens, tomatoes, green beans, cucumber, zucchini, asparagus, peppers, and mushrooms.</li><br />
+            <li>Seeds and nuts: Almonds, walnuts, sunflower seeds, chia seeds, and flax seeds.</li><br />
+            <li>Beans and legumes: Chickpeas, lentils, kidney beans, black beans, and pinto beans.</li><br />
+            <li>Oils: Olive oil, flaxseed oil, and avocado oil.</li><br /><br />
+        </div>
+        <div class="header">
+            Foods to Limit
+        </div>
+        <div class="content">
+            <br />
+            While you should include a variety of foods in your diet, there are some you should limit.            <br />
+            <br />
+            These include:
+            <br />
+            <br />
+            <li>Alcohol: Alcohol can negatively affect your ability to build muscle and lose fat, especially if you consume it in excess (8Trusted Source).</li><br />
+            <li>Added sugars: These offer plenty of calories but few nutrients. Foods high in added sugars include candy, cookies, doughnuts, ice cream, cake, and sugar-sweetened beverages, such as soda and sports drinks (5Trusted Source).</li><br />
+            <li>Deep-fried foods: These may promote inflammation and — when consumed in excess — disease. Examples include fried fish, French fries, onion rings, chicken strips, and cheese curds (9Trusted Source).</li><br /><br />
+            In addition to limiting these, you may also want to avoid certain foods before going to the gym that can slow digestion and cause stomach upset during your workout.
+            <br />
+            These include:
+            <br />
+            <br />
+            <li>High-fat foods: High-fat meats, buttery foods, and heavy sauces or creams.</li><br />
+            <li>High-fiber foods: Beans and cruciferous vegetables like broccoli or cauliflower.</li><br />
+            <li>Carbonated beverages: Sparkling water or diet soda.</li><br /><br />
+        </div>
+        <div class="header">
+            Bodybuilding Supplements
+        </div>
+        <div class="content">
+            <br />
+            Many bodybuilders take dietary supplements, some of which are useful while others are not (10Trusted Source, 11Trusted Source).            <br />
+            <br />
+            The best bodybuilding supplements include:
+            <br />
+            <br />
+            <li>Whey protein: Consuming whey protein powder is an easy and convenient way to increase your protein intake.</li><br />
+            <li>Creatine: Creatine provides your muscles with the energy needed to perform an additional rep. While there are many brands of creatine, look for creatine monohydrate as it’s the most effective (12Trusted Source).</li><br />
+            <li>Caffeine: Caffeine decreases fatigue and allows you to work harder. Pre-workout supplements, coffee, and tea are often high in caffeine. (13Trusted Source).</li><br /><br />
+            A multi vitamin and mineral supplement may be helpful if you’re limiting your calorie intake to reduce body fat during your cutting phase.<br />
+        </div>
+         <div class="header">
+            One-Week Sample Menu
+        </div>
+        <div class="content">
+            <br />
+            Many people believe bodybuilding diets are restrictive, repetitive, and boring.<br />
+            <br />
+            Traditional bodybuilding diets typically contain limited food selections and little variety among and within food groups, leading to an inadequate intake of essential minerals and vitamins (14Trusted Source).
+            <br />
+            For this reason, it’s important to incorporate variety into your diet to ensure your nutritional needs are being met — especially during a cutting phase when you eat limited calories.<br />
+            <br />
+            When you’re in a bulking phase, your food intake will be much higher than when you’re in a cutting phase.
+            <br />
+            You can enjoy the same foods in the cutting phase that you would when bulking — just in smaller portions. <br />
+            <br />
+            Here is a sample one-week bodybuilding menu:
+            <br />
+        <div class="header">
+            Monday
+        </div>
+        <div class="content">
+            <br />
+            <li>Breakfast: Scrambled eggs with mushrooms, oatmeal, and a pear.</li><br />
+            <li>Snack: Low-fat cottage cheese with blueberries.</li><br />
+            <li>Lunch: Venison burger, white rice, and broccoli.</li><br />
+            <li>Snack: Protein shake and a banana.</li><br />
+            <li>Dinner: Salmon, quinoa, and asparagus.</li><br />
+            <br />
+        </div>
+        <div class="header">
+            Tuesday
+        </div>
+        <div class="content">
+            <br />
+            <li>Breakfast: Protein pancakes with light syrup, peanut butter, and raspberries.</li><br />
+            <li>Snack: Hard-boiled eggs and an apple.</li><br />
+            <li>Lunch: Sirloin steak, sweet potato, and spinach salad with vinaigrette.</li><br />
+            <li>Snack: Protein shake and a peach.</li><br />
+            <li>Dinner: Ground turkey and marinara sauce over pasta, with a side of cauliflower.</li><br />
+            <br />
+        </div>
+        <div class="header">
+            Wednesday
+        </div>
+        <div class="content">
+            <br />
+            <li>Breakfast: Chicken sausage with egg, roasted potatoes, and an apple.</li><br />
+            <li>Snack: Greek yogurt, strawberries, and almonds.</li><br />
+            <li>Lunch: Turkey breast, basmati rice, and mushrooms.</li><br />
+            <li>Snack: Protein shake and grapes.</li><br />
+            <li>Dinner: Mackerel, brown rice, asparagus, and salad leaves with vinaigrette.</li><br />
+            <br />
+        </div>
+        <div class="header">
+            Thursday
+        </div>
+        <div class="content">
+            <br />
+            <li>Breakfast: Ground turkey, egg, cheese, and salsa in a whole-grain tortilla.</li><br />
+            <li>Snack: Yogurt with granola and a pear.</li><br />
+            <li>Lunch: Chicken breast, baked potato, sour cream, and broccoli.</li><br />
+            <li>Snack: Protein shake and mixed berries.</li><br />
+            <li>Dinner: Stir-fry with shrimp, egg, brown rice, bell peppers, peas, and carrots.</li><br />
+            <br />
+        </div>
+        <div class="header">
+            Friday
+        </div>
+        <div class="content">
+            <br />
+            <li>Breakfast: Blueberries, strawberries, and Greek yogurt on overnight oats.</li><br />
+            <li>Snack: Jerky and mixed nuts with an orange.</li><br />
+            <li>Lunch: Tilapia fillets with lime juice, black and pinto beans, and seasonal veggies.</li><br />
+            <li>Snack: Protein shake and watermelon.</li><br />
+            <li>Dinner: Ground beef with corn, brown rice, green peas, and beans.</li><br />
+            <br />
+        </div>
+        <div class="header">
+            Saturday
+        </div>
+        <div class="content">
+            <br />
+            <li>Breakfast: Ground turkey and egg with corn, bell peppers, cheese, and salsa.</li><br />
+            <li>Snack: Can of tuna with crackers and an apple.</li><br />
+            <li>Lunch: Tilapia fillet and potato wedges with steamed broccoli and cauliflower.</li><br />
+            <li>Snack: Protein shake and pear.</li><br />
+            <li>Dinner: Diced beef with rice, black beans, bell peppers, onions, cheese, and pico de gallo.</li><br />
+            <br />
+        </div>
+        <div class="header">
+            Sunday
+        </div>
+        <div class="content">
+            <br />
+            <li>Breakfast: Eggs sunny-side up and avocado toast with fresh fruit.</li><br />
+            <li>Snack: Protein balls with almond butter and an orange.</li><br />
+            <li>Lunch: Pork tenderloin slices with roasted garlic potatoes, green beans, and carrots.</li><br />
+            <li>Snack: Protein shake and strawberries.</li><br />
+            <li>Dinner: Turkey meatballs, marinara sauce, and parmesan cheese over pasta, with a side of sautéed kale.</li><br />
+            <br />
+        </div>
 </asp:Content>
+
+
