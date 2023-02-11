@@ -67,7 +67,12 @@ namespace awerkout
         {
             Response.Redirect("Beginner.aspx");   //go to beginner workout plan page
         }
-        
+
+        protected void ContentPageBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("./content/contentPage.aspx");   //go to beginner workout plan page
+        }
+
 
         protected void calculate_Click(object sender, EventArgs e)
         {

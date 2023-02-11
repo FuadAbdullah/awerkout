@@ -98,7 +98,19 @@
         </table>
 
     </div>
+
+     <div id="content2">
+
+        <div id="contentpage" class="txt workoutplan">
+
+
+            Browse Curated Posts
+
+            <asp:Button ID="ContentPageBtn" class="wrkbtn" runat="server" Text="Go!" OnClick="ContentPageBtn_Click"/>
+        </div>
+    </div>
     <div id="content">
+
         <div id="workoutplan1" class="txt workoutplan">
 
 

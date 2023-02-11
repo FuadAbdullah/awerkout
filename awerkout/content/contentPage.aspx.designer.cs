@@ -15,13 +15,13 @@ namespace awerkout.content
     {
 
         /// <summary>
-        /// myDashboardlnk control.
+        /// myProfilelnk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton myDashboardlnk;
+        protected global::System.Web.UI.WebControls.LinkButton myProfilelnk;
 
         /// <summary>
         /// signOutlnk control.
@@ -33,21 +33,12 @@ namespace awerkout.content
         protected global::System.Web.UI.WebControls.LinkButton signOutlnk;
 
         /// <summary>
-        /// ImageButton1 control.
+        /// contentRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
-
-        /// <summary>
-        /// contentTitleLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label contentTitleLbl;
+        protected global::System.Web.UI.WebControls.Repeater contentRepeater;
     }
 }

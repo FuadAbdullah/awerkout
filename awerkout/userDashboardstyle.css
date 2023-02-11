@@ -31,6 +31,12 @@
     padding-right: 10%;
 }
 
+#content2 {
+    height: 500px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 .workoutplan {
     position: relative;
     background-color: white;
@@ -39,6 +45,13 @@
     height: 400px;
     border-radius: 15px;
     padding: 2.5%;
+}
+
+#contentpage {
+    margin-right: 5%;
+    float: left;
+    background-image: url("Images/intermediate.PNG");
+    height: 400px;
 }
 
 #workoutplan1 {
