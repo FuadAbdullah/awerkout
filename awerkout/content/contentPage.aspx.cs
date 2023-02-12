@@ -36,7 +36,7 @@ namespace awerkout.content
                     // --
 
                     // Count the number of posts available for display
-                    string query = "select count(*) from postData";
+                    string query = "select count(*) from postData where isDeleted='false'";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     int check = Convert.ToInt32(cmd.ExecuteScalar().ToString());
 
@@ -45,7 +45,7 @@ namespace awerkout.content
                     {
 
                         // Fetch the first name and the user type
-                        string fetchPosts = "select * from postData";
+                        string fetchPosts = "select * from postData where isDeleted='false'";
 
                         SqlDataAdapter postDataAdapter = new SqlDataAdapter(fetchPosts, conn);
                         DataTable postDataTable = new DataTable();
@@ -65,6 +65,7 @@ namespace awerkout.content
                     }
                     else // No posts are available
                     {
+                        noContentLbl.Visible = true;
                         /* generalErrorMsg.Visible = true;
                         generalErrorMsg.ForeColor = System.Drawing.Color.Red;
                         generalErrorMsg.Text = "Incorrect username or password!"; */

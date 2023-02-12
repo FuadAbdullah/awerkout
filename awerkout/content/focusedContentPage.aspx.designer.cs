@@ -42,6 +42,15 @@ namespace awerkout.content
         protected global::System.Web.UI.WebControls.LinkButton signInlnk;
 
         /// <summary>
+        /// focusedEditTitleTxtBx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox focusedEditTitleTxtBx;
+
+        /// <summary>
         /// focusedContentTitleLbl control.
         /// </summary>
         /// <remarks>
@@ -60,6 +69,24 @@ namespace awerkout.content
         protected global::System.Web.UI.WebControls.Image focusedContentImg;
 
         /// <summary>
+        /// focusedEditPicReupload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload focusedEditPicReupload;
+
+        /// <summary>
+        /// focusedEditDescTxtBx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox focusedEditDescTxtBx;
+
+        /// <summary>
         /// focusedContentDescLbl control.
         /// </summary>
         /// <remarks>
@@ -76,6 +103,33 @@ namespace awerkout.content
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label focusedContentAuthorLbl;
+
+        /// <summary>
+        /// focusedContentUpdateLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label focusedContentUpdateLbl;
+
+        /// <summary>
+        /// focusedEditPostSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button focusedEditPostSubmitBtn;
+
+        /// <summary>
+        /// focusedDeletePostBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button focusedDeletePostBtn;
 
         /// <summary>
         /// focusedCommentTxtBx control.

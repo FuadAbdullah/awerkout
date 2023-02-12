@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -93,16 +94,24 @@ namespace awerkout.content
 
                         commonFunction.debugMessage(postDataTable.Rows[0][9].ToString().Trim());
 
-                        focusedContentTitleLbl.Text = postDataTable.Rows[0][2].ToString().Trim();
-                        focusedContentDescLbl.Text = postDataTable.Rows[0][3].ToString().Trim();
-                        focusedContentImg.ImageUrl = postDataTable.Rows[0][8].ToString().Trim();
-                        focusedContentAuthorLbl.Text = "Posted by " + postDataTable.Rows[0][9].ToString().Trim() + 
-                            "#" + postDataTable.Rows[0][1].ToString().Trim() + 
-                            " on " + postDataTable.Rows[0][5].ToString().Trim() +
-                            ", last updated on " + postDataTable.Rows[0][6].ToString().Trim();
+                        // Standard view
+                        focusedContentTitleLbl.Text = Server.HtmlDecode(postDataTable.Rows[0][2].ToString().Trim());
+                        focusedContentDescLbl.Text = Server.HtmlDecode(postDataTable.Rows[0][3].ToString().Trim());
+                        focusedContentImg.ImageUrl = Server.HtmlDecode(postDataTable.Rows[0][8].ToString().Trim());
+                        focusedContentImg.AlternateText = Server.HtmlDecode(postDataTable.Rows[0][8].ToString().Trim());
+
+                        // Admin view
+                        focusedEditTitleTxtBx.Text = Server.HtmlDecode(postDataTable.Rows[0][2].ToString().Trim());
+                        focusedEditDescTxtBx.Text = Server.HtmlDecode(postDataTable.Rows[0][3].ToString().Trim());
+
+                        focusedContentAuthorLbl.Text = "Posted by " + postDataTable.Rows[0][9].ToString().Trim() +
+                            "#" + postDataTable.Rows[0][1].ToString().Trim() +
+                            " on " + postDataTable.Rows[0][5].ToString().Trim();
+
+                        focusedContentUpdateLbl.Text = "Last updated on " + postDataTable.Rows[0][6].ToString().Trim();
 
                         // Fetch its comments that is not set as deleted
-                        string fetchComments = "select * from commentData where postID = " 
+                        string fetchComments = "select * from commentData where postID = "
                             + postID + "and isDeleted = 'false'";
 
                         SqlDataAdapter commentDataAdapter = new SqlDataAdapter(fetchComments, conn);
@@ -198,7 +207,7 @@ namespace awerkout.content
                 string commentID = btn.CommandArgument.ToString().Trim();
 
                 string query = "update commentData set commentdata = '" +
-                    txt.Text.Trim() + "', updatedAt = '" +
+                    Server.HtmlEncode(txt.Text.Trim()) + "', updatedAt = '" +
                     DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where commentID = '" +
                     commentID + "'";
 
@@ -230,6 +239,84 @@ namespace awerkout.content
                 Response.Redirect(string.Format("~/content/focusedContentPage.aspx?viewpost={0}", Session["CurrentPostPageID"].ToString().Trim()));
 
             }
+        }
+
+        protected void focusedEditPostSubmitBtn_Click(object sender, EventArgs e)
+        {
+
+            string folderPathStr = "~/ContentPic/";
+
+            // for file upload 
+            string folderPath = Server.MapPath(folderPathStr);
+
+            string fileName = focusedContentImg.AlternateText;
+            string fileExt = Path.GetExtension(focusedEditPicReupload.FileName);
+
+            string contentdata = "";
+
+            if (fileName == "") // assuming no img existed or stored
+            {
+                string newFileName = commonFunction.getRandomHexNumber(6);
+                // save file to dir
+                focusedEditPicReupload.SaveAs(folderPath + Path.GetFileName(newFileName) + fileExt);
+
+                // display the pic in img control
+                focusedContentImg.ImageUrl = folderPathStr + Path.GetFileName(newFileName) + fileExt;
+
+                contentdata = "bannerPath=" + folderPathStr + newFileName + fileExt + ";";
+            }
+            else // Got pic ady
+            {
+                if (focusedEditPicReupload.FileName == "")
+                { // Not upload pic
+                    focusedContentImg.ImageUrl = focusedContentImg.AlternateText;
+                    contentdata = focusedContentImg.ImageUrl + ";";
+                }
+                else // change existing pic
+                {
+                    string newFileName = commonFunction.getRandomHexNumber(6);
+                    commonFunction.debugMessage(newFileName);
+                    focusedEditPicReupload.SaveAs(folderPath + Path.GetFileName(newFileName) + fileExt);
+                    focusedContentImg.ImageUrl = folderPathStr + Path.GetFileName(newFileName) + fileExt;
+
+                    contentdata = "bannerPath=" + folderPathStr + newFileName + fileExt + ";";
+                }
+            }
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
+            conn.Open();
+
+
+            string query = "update postData set postTitle = '" +
+                focusedEditTitleTxtBx.Text.Trim() + "', postDescription = '" +
+                focusedEditDescTxtBx.Text.Trim() + "', contentdata = '" +
+                contentdata + "', updatedAt = '" +
+                DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where postID = '" +
+                Session["CurrentPostPageID"] + "'";
+
+            SqlCommand updateCmd = new SqlCommand(query, conn);
+            updateCmd.ExecuteNonQuery();
+
+            conn.Close();
+            Response.Redirect(string.Format("~/content/focusedContentPage.aspx?viewpost={0}", Session["CurrentPostPageID"].ToString().Trim()));
+
+        }
+
+        protected void focusedDeletePostBtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
+            conn.Open();
+
+            string query = "update postData set isDeleted = 'true', updatedAt = '" +
+                DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where postID = '" +
+                Session["CurrentPostPageID"] + "'";
+
+            SqlCommand updateCmd = new SqlCommand(query, conn);
+            updateCmd.ExecuteNonQuery();
+
+            conn.Close();
+            Response.Redirect(string.Format("~/content/contentPage.aspx"));
+
         }
     }
 }

@@ -93,9 +93,9 @@ namespace awerkout
                     SqlCommand createCMD = new SqlCommand(createQuery, conn);
 
                     createCMD.Parameters.AddWithValue("@userID", Session["userID"]);
-                    createCMD.Parameters.AddWithValue("@postTitle", contentTitleTxtBx.Text.Trim());
-                    createCMD.Parameters.AddWithValue("@postDescription", contentTextTxtBx.Text.Trim());
-                    createCMD.Parameters.AddWithValue("@contentdata", contentdata);
+                    createCMD.Parameters.AddWithValue("@postTitle", Server.HtmlEncode(contentTitleTxtBx.Text.Trim()));
+                    createCMD.Parameters.AddWithValue("@postDescription", Server.HtmlEncode(contentTextTxtBx.Text.Trim()));
+                    createCMD.Parameters.AddWithValue("@contentdata", Server.HtmlEncode(contentdata));
                     createCMD.ExecuteNonQuery();
                     Response.Redirect("createContent.aspx");
                 

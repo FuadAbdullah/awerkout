@@ -70,6 +70,10 @@
     </table>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
+    <br />
+    <br />
+    <br />
+    <asp:Label ID="noContentLbl" runat="server" Visible="false" Text="Uh-oh, it seems like no post had been made just yet, :'("></asp:Label>
     <asp:Repeater ID="contentRepeater" runat="server">
         <ItemTemplate>
             <table class="auto-style1">

@@ -42,6 +42,15 @@ namespace awerkout.content
         protected global::System.Web.UI.WebControls.LinkButton signInlnk;
 
         /// <summary>
+        /// noContentLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label noContentLbl;
+
+        /// <summary>
         /// contentRepeater control.
         /// </summary>
         /// <remarks>
