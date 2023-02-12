@@ -66,7 +66,7 @@ namespace awerkout.content
                     if (check > 0)
                     {
 
-                        // Fetch the post and its comments
+                        // Fetch the post
                         string fetchPost = "select * from postData where postID=" + postID + "";
 
                         SqlDataAdapter postDataAdapter = new SqlDataAdapter(fetchPost, conn);
@@ -98,10 +98,12 @@ namespace awerkout.content
                         focusedContentImg.ImageUrl = postDataTable.Rows[0][8].ToString().Trim();
                         focusedContentAuthorLbl.Text = "Posted by " + postDataTable.Rows[0][9].ToString().Trim() + 
                             "#" + postDataTable.Rows[0][1].ToString().Trim() + 
-                            " at " + postDataTable.Rows[0][5].ToString().Trim();
+                            " on " + postDataTable.Rows[0][5].ToString().Trim() +
+                            ", last updated on " + postDataTable.Rows[0][6].ToString().Trim();
 
-                        // Fetch the post and its comments
-                        string fetchComments = "select * from commentData where postID = " + postID + "";
+                        // Fetch its comments that is not set as deleted
+                        string fetchComments = "select * from commentData where postID = " 
+                            + postID + "and isDeleted = 'false'";
 
                         SqlDataAdapter commentDataAdapter = new SqlDataAdapter(fetchComments, conn);
                         DataTable commentDataTable = new DataTable();
@@ -180,6 +182,54 @@ namespace awerkout.content
             Response.Redirect(string.Format("~/content/focusedContentPage.aspx?viewpost={0}", Session["CurrentPostPageID"].ToString().Trim()));
 
             conn.Close();
+        }
+
+        protected void focusedContentCommentRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "PerformEditComment")
+            {
+
+                TextBox txt = (TextBox)e.Item.FindControl("focusedEditCommentTxtBx");
+                Button btn = (Button)e.Item.FindControl("focusedEditCommentBtn");
+
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
+                conn.Open();
+
+                string commentID = btn.CommandArgument.ToString().Trim();
+
+                string query = "update commentData set commentdata = '" +
+                    txt.Text.Trim() + "', updatedAt = '" +
+                    DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where commentID = '" +
+                    commentID + "'";
+
+                SqlCommand updateCmd = new SqlCommand(query, conn);
+                updateCmd.ExecuteNonQuery();
+
+                conn.Close();
+                Response.Redirect(string.Format("~/content/focusedContentPage.aspx?viewpost={0}", Session["CurrentPostPageID"].ToString().Trim()));
+
+            }
+
+            if (e.CommandName == "PerformDeleteComment")
+            {
+                Button btn = (Button)e.Item.FindControl("focusedDeleteCommentBtn");
+
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
+                conn.Open();
+
+                string commentID = btn.CommandArgument.ToString().Trim();
+
+                string query = "update commentData set isDeleted = 'true', updatedAt = '" +
+                    DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where commentID = '" +
+                    commentID + "'";
+
+                SqlCommand updateCmd = new SqlCommand(query, conn);
+                updateCmd.ExecuteNonQuery();
+
+                conn.Close();
+                Response.Redirect(string.Format("~/content/focusedContentPage.aspx?viewpost={0}", Session["CurrentPostPageID"].ToString().Trim()));
+
+            }
         }
     }
 }
