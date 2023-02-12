@@ -82,11 +82,6 @@ namespace awerkout.content
             }
         }
 
-        protected void contentRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
-        {
-
-        }
-
         protected void signOutlnk_Click(object sender, EventArgs e)
         {
 
@@ -104,6 +99,13 @@ namespace awerkout.content
         protected void signInlnk_Click(object sender, EventArgs e)
         {
             Response.Redirect("../signInPage.aspx");
+        }
+
+        protected void contentFocusBtn_Click(object sender, EventArgs e)
+        {
+            ImageButton contentFocusBtn = (ImageButton)sender;
+            string focusContent = string.Format("./focusedContentPage.aspx?viewpost={0}", contentFocusBtn.CommandArgument);
+            Response.Redirect(focusContent);
         }
 
     }
