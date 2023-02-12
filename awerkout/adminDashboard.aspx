@@ -41,10 +41,10 @@
         <table style="width: 100%;">
         <tr>
             <td class="auto-style2">
-                <asp:LinkButton ID="myProfilelnk" runat="server" OnClick="myProfilelnk_Click" class="nav">My Profile</asp:LinkButton>
+                <asp:LinkButton ID="myProfilelnk" runat="server" OnClick="myProfilelnk_Click" class="nav" CausesValidation="False">My Profile</asp:LinkButton>
             </td>
             <td class="auto-style2">
-                <asp:LinkButton ID="signOutlnk" runat="server" OnClick="signOutlnk_Click" class="nav">Sign Out</asp:LinkButton>
+                <asp:LinkButton ID="signOutlnk" runat="server" OnClick="signOutlnk_Click" class="nav" CausesValidation="False">Sign Out</asp:LinkButton>
             </td>
         </tr>
     </table>
@@ -54,9 +54,9 @@
     <table class="nav2">
         <tr>
             <td>
-                <asp:LinkButton ID="manageUserlnk" class="nav2" runat="server" OnClick="manageUserlnk_Click" style="margin-right: 100px;">Manage Users</asp:LinkButton>
-                <asp:LinkButton ID="adminCreateAdminAcclnk" class="nav2" runat="server" OnClick="adminCreateAdminAcclnk_Click" style="margin-right: 100px;">Register Admin</asp:LinkButton>
-                <asp:LinkButton ID="createContnet" class="nav2" runat="server" OnClick="adminCreateContentlnk_Click">Create Content</asp:LinkButton>
+                <asp:LinkButton ID="manageUserlnk" class="nav2" runat="server" OnClick="manageUserlnk_Click" style="margin-right: 100px;" CausesValidation="False">Manage Users</asp:LinkButton>
+                <asp:LinkButton ID="adminCreateAdminAcclnk" class="nav2" runat="server" OnClick="adminCreateAdminAcclnk_Click" style="margin-right: 100px;" CausesValidation="False">Register Admin</asp:LinkButton>
+                <asp:LinkButton ID="createContnet" class="nav2" runat="server" OnClick="adminCreateContentlnk_Click" CausesValidation="False">Create Content</asp:LinkButton>
             </td>
         </tr>
         </table>

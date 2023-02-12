@@ -17,6 +17,16 @@ namespace awerkout
             userUsernameErrMsgLbl.Visible = false;
             generalErrorMsg.Visible = false;
             debugMessage("Hello World!");
+
+            // If the user had already logged in
+            if (Session["username"] != null)
+            {
+                if (Session["usertype"].ToString() == "ADMIN")
+                    Response.Redirect("adminDashboard.aspx");
+                else
+                    Response.Redirect("userDashboard.aspx");
+
+            }
         }
 
         protected void debugMessage(string debugmsg)

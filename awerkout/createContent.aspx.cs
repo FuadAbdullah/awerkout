@@ -15,6 +15,7 @@ namespace awerkout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            generalErrorMsg.Visible = false;
             if (Session["username"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
             {
                 // Do nothing
@@ -49,13 +50,21 @@ namespace awerkout
             // for file upload 
             string folderPath = Server.MapPath(folderPathStr);
 
+            string contentdata;
+
             // check if dir exists
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath); // create one if not exist
             }
 
-            string fileExt = Path.GetExtension(contentBannerFileUpload.FileName);
+            // No banner pic was uploaded
+            if (contentBannerFileUpload.FileName == "")
+            {
+                contentdata = "bannerPath=" + folderPathStr + "default.jpg;";
+            } else // Banner pic attached
+            {
+                string fileExt = Path.GetExtension(contentBannerFileUpload.FileName);
 
                 string newFileName = commonFunction.getRandomHexNumber(6);
                 // save file to dir
@@ -64,7 +73,10 @@ namespace awerkout
                 // display the pic in img control
                 string bannerFileName = folderPathStr + Path.GetFileName(newFileName) + fileExt;
 
-            string contentdata = "bannerPath=" + bannerFileName + ";";
+                contentdata = "bannerPath=" + bannerFileName + ";";
+            }
+
+
             try
             {
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);

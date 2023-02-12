@@ -47,6 +47,13 @@
         </div>
 
     </div>
+    <div class="container3">
+        <div id="curatedpost" class="txt">
+            Browse Curated Posts
+            <asp:Button ID="contentPageBtn" class="sbtn" runat="server" Text="Go!" OnClick="contentPageBtn_Click" />
+        </div>
+
+    </div>
 
 </asp:Content>
   

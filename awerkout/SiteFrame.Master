@@ -17,10 +17,10 @@
                 <table style="width: 100%;">
                     <tr>
                         <td>
-                            <asp:LinkButton ID="homelnk" runat="server" class="nav" OnClick="homelnk_Click">AWERKOUT</asp:LinkButton>
-                            <asp:LinkButton ID="planslnk" runat="server" class="nav" OnClick="planslnk_Click">WORKOUT PLANS</asp:LinkButton>
-                            <asp:LinkButton ID="guideslnk" runat="server" class="nav" OnClick="guideslnk_Click">GUIDES</asp:LinkButton>
-                            <asp:LinkButton ID="nutritionslnk" runat="server" class="nav" OnClick="nutritionslnk_Click">NUTRITIONS</asp:LinkButton>
+                            <asp:LinkButton ID="homelnk" runat="server" class="nav" OnClick="homelnk_Click" CausesValidation="False">AWERKOUT</asp:LinkButton>
+                            <asp:LinkButton ID="planslnk" runat="server" class="nav" OnClick="planslnk_Click" CausesValidation="False">WORKOUT PLANS</asp:LinkButton>
+                            <asp:LinkButton ID="guideslnk" runat="server" class="nav" OnClick="guideslnk_Click" CausesValidation="False">GUIDES</asp:LinkButton>
+                            <asp:LinkButton ID="nutritionslnk" runat="server" class="nav" OnClick="nutritionslnk_Click" CausesValidation="False">NUTRITIONS</asp:LinkButton>
                         </td>
                         <td>
                             <asp:ContentPlaceHolder ID="AdditionalNavOption1" runat="server">

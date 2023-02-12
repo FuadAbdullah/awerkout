@@ -64,5 +64,10 @@ namespace awerkout
         {
             Response.Redirect("registerUserPage.aspx");
         }
+
+        protected void contentPageBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("./content/contentPage.aspx");
+        }
     }
 }

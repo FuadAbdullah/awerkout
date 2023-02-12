@@ -105,6 +105,17 @@
     margin-top: 100px;
 }
 
+#curatedpost {
+    position: relative;
+    width: 60%;
+    background-color: white;
+    color: black;
+    height: 295px;
+    border-radius: 15px;
+    padding: 2%;
+    margin-top: 100px;
+}
+
 
 .container {
     width: 37%;
@@ -116,5 +127,12 @@
     width: 37%;
     padding-right: 13%;
     height: 1100px;
+}
+
+.container3 {
+    width: 75%;
+    padding-left: 25%;
+    height: 500px;
+    margin-bottom: 10%;
 }
 

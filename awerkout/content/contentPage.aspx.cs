@@ -13,13 +13,17 @@ namespace awerkout.content
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] != null)
+            if (Session["username"] != null) // Is logged in
             {
-                // Do nothing yet
+                signInlnk.Visible = false;
+                signOutlnk.Visible = true;
+                myProfilelnk.Visible = true;
             }
             else
             {
-                Response.Redirect("../signInPage.aspx");
+                signInlnk.Visible = true;
+                signOutlnk.Visible = false;
+                myProfilelnk.Visible = false;
             }
 
             if (!IsPostBack)
@@ -97,6 +101,10 @@ namespace awerkout.content
             Response.Redirect("../userDashboard.aspx");
         }
 
+        protected void signInlnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../signInPage.aspx");
+        }
 
     }
 }
