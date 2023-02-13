@@ -65,8 +65,8 @@
             <td>
                 <asp:LinkButton ID="manageUserlnk" class="nav2" runat="server" OnClick="manageUserlnk_Click" Style="margin-right: 25px;" CausesValidation="False">Manage Users</asp:LinkButton>
                 <asp:LinkButton ID="adminCreateAdminAcclnk" class="nav2" runat="server" OnClick="adminCreateAdminAcclnk_Click" Style="margin-right: 25px;" CausesValidation="False">Register Admin</asp:LinkButton>
-                <asp:LinkButton ID="createContent" class="nav2" runat="server" OnClick="adminCreateContentlnk_Click" Style="margin-right: 25px;"  CausesValidation="False">Create Content</asp:LinkButton>
-                <asp:LinkButton ID="manageQuizzes" class="nav2" runat="server" OnClick="adminManageQuizlnk_Click" Style="margin-right: 25px;"  CausesValidation="False">Manage Quizzes</asp:LinkButton>
+                <asp:LinkButton ID="createContent" class="nav2" runat="server" OnClick="adminCreateContentlnk_Click" Style="margin-right: 25px;" CausesValidation="False">Create Content</asp:LinkButton>
+                <asp:LinkButton ID="manageQuizzes" class="nav2" runat="server" OnClick="adminManageQuizlnk_Click" Style="margin-right: 25px;" CausesValidation="False">Manage Quizzes</asp:LinkButton>
             </td>
         </tr>
     </table>
@@ -77,5 +77,57 @@
         <asp:Button ID="CreateAdmin" class="btn" runat="server" Text="Register Admin" OnClick="adminCreateAdminAcclnk_Click" />
 
     </div>--%>
+
+    <div id="Feedback">
+        <h1 style="text-align: center;">Users' Feedbacks</h1>
+        <table class="auto-style3">
+            <tr>
+                <td class="auto-style7">
+                    <asp:CheckBox ID="FeedbackShowReviewedChkBx" runat="server" 
+                        AutoPostBack="True"
+                        Text="Show Reviewed Feedbacks"
+                        OnCheckedChanged="FeedbackShowReviewedChkBx_CheckedChanged"/>
+                    <br />
+                    <asp:Label ID="noContentLbl" runat="server" Visible="false" Text="Hooray, no feedbacks to be reviewed! <(^.^)>"></asp:Label>
+                    
+                    <br />
+                    <br />
+                    <asp:Repeater ID="FeedbackRepeater" runat="server" OnItemCommand="FeedbackRepeater_ItemCommand">
+                        <ItemTemplate>
+                            <table style="width: 75%">
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="FeedbackIDLbl" runat="server" Text='<%# "FID: " + Eval("feedbackID") %>'></asp:Label>
+                                        <br />
+                                        <asp:Label ID="FeedbackSubjectLbl" runat="server" Text='<%# "Subject: " + Eval("feedbacktitle") %>'></asp:Label>
+                                        <br />
+                                        <asp:Label ID="FeedbackDescriptionLbl" runat="server" Text='<%# "Description: " + Eval("feedbackdesc") %>'></asp:Label>
+                                        <br />
+                                        <asp:Label ID="FeedbackRatingLbl" runat="server" Text='<%# "Rating given: " + Eval("feedbackrating").ToString() + "/5.0 points" %>'></asp:Label>
+                                        <br />
+                                        <asp:Label ID="FeedbackAuthorLbl" runat="server" Text='<%# "Username: " + Eval("username") %>'></asp:Label>
+                                        <br />
+                                        <asp:Label ID="FeedbackCreationLbl" runat="server" Text='<%# "Date : " + Eval("updatedAt") %>'></asp:Label>
+                                        <br />
+                                        <asp:Label ID="FeedbackIsReviewedLbl" runat="server" 
+                                            Text="Reviewed"
+                                            Visible='<%# bool.Parse(Eval("isReviewed").ToString().Trim()) %>'></asp:Label>
+                                        <br />
+                                        <asp:Button ID="FeedbackSetReviewedBtn" class="btn" runat="server" Text="Set Reviewed" 
+                                            CommandName="PerformReviewed" 
+                                            CommandArgument='<%# Eval("feedbackID") %>'
+                                            Visible='<%# !bool.Parse(Eval("isReviewed").ToString().Trim()) %>'/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </td>
+            </tr>
+
+        </table>
+
+
+    </div>
 
 </asp:Content>
