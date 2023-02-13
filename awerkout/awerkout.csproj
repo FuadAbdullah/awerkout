@@ -73,6 +73,7 @@
     <Content Include="Awerkout.aspx" />
     <Content Include="awerkoutstyle.css" />
     <Content Include="Beginner.aspx" />
+    <Content Include="content\reportCardPage.aspx" />
     <Content Include="guide.aspx" />
     <Content Include="guidestyle.css" />
     <Content Include="Intermediate.aspx" />
@@ -176,6 +177,13 @@
     </Compile>
     <Compile Include="content\quizPage.aspx.designer.cs">
       <DependentUpon>quizPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content\reportCardPage.aspx.cs">
+      <DependentUpon>reportCardPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content\reportCardPage.aspx.designer.cs">
+      <DependentUpon>reportCardPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="content\workoutPlanPage.aspx.cs">
       <DependentUpon>workoutPlanPage.aspx</DependentUpon>

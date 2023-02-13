@@ -26,12 +26,14 @@
 }
 
 #content {
+    position: relative;
     height: 500px;
     padding-left: 10%;
     padding-right: 10%;
 }
 
 #content2 {
+    position: relative;
     height: 500px;
     padding-left: 10%;
     padding-right: 10%;
@@ -51,6 +53,18 @@
     margin-right: 5%;
     float: left;
     background-image: url("Images/intermediate.PNG");
+    height: 400px;
+}
+
+#contentpage2 {
+    float: left;
+    background-image: url("Images/beginner.PNG");
+    height: 400px;
+}
+
+#contentpage3 {
+    float: right;
+    background-image: url("Images/advanced.PNG");
     height: 400px;
 }
 

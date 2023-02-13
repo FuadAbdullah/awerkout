@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteFrame.Master" AutoEventWireup="true" CodeBehind="userDashboard.aspx.cs" Inherits="awerkout.userDashboard" %>
+﻿<%@ Page Title="" Language="C#" MaintainScrollPositionOnPostback="true" MasterPageFile="~/SiteFrame.Master" AutoEventWireup="true" CodeBehind="userDashboard.aspx.cs" Inherits="awerkout.userDashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="mainstyle.css" />
     <link rel="stylesheet" href="userDashboardstyle.css" />
@@ -58,47 +58,6 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
     <asp:Label ID="greetLbl" runat="server" Text="Hello there!" Font-Bold="True"></asp:Label>
 
-    <div id="quiz">
-        <h1 class="auto-style10">QUIZ</h1>
-        <table class="auto-style3">
-            <tr>
-                <td colspan="4">
-
-        <asp:Label ID="question" runat="server" Text="[question]"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style6">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style4">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style6">Answer 1</td>
-                <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style4">Answer 2</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style6">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style4">Submit button</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style6">
-                    <asp:Label ID="Score" runat="server" Text="[score]"></asp:Label>
-                </td>
-                <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style4">&nbsp;</td>
-                <td>
-                    <asp:Label ID="QuestionTracker" runat="server" Text="NoOfQuestion"></asp:Label>
-                </td>
-            </tr>
-        </table>
-
-    </div>
-
      <div id="content2">
 
         <div id="contentpage" class="txt workoutplan">
@@ -107,6 +66,19 @@
             Browse Curated Posts
 
             <asp:Button ID="ContentPageBtn" class="wrkbtn" runat="server" Text="Go!" OnClick="ContentPageBtn_Click"/>
+        </div>
+         <div id="contentpage2" class="txt workoutplan">
+
+
+            Answer Some Quizzes
+
+            <asp:Button ID="QuizPageBtn" class="wrkbtn" runat="server" Text="Bring it on!" OnClick="QuizPageBtn_Click"/>
+        </div><div id="contentpage3" class="txt workoutplan">
+
+
+            View Quiz Report Card
+
+            <asp:Button ID="ReportCardBtn" class="wrkbtn" runat="server" Text="Go Ahead!" OnClick="ReportCardBtn_Click"/>
         </div>
     </div>
     <div id="content">

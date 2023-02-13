@@ -76,19 +76,21 @@ namespace awerkout.content
 
                         postDataTable.Columns.Add("bannerPath", typeof(string));
                         postDataTable.Columns.Add("username", typeof(string));
+                        postDataTable.Columns.Add("accstatus", typeof(string));
 
                         foreach (DataRow row in postDataTable.Rows)
                         {
                             // System.Diagnostics.Debug.WriteLine(row["contentdata"].ToString().Split(';')[0].Replace("bannerPath=~", ".."));
 
                             row["bannerPath"] = row["contentdata"].ToString().Split(';')[0].Replace("bannerPath=~", "..");
-                            string fetchUsername = "select username from userData where userID = " + row[1] + "";
+                            string fetchUsername = "select username, accstatus from userData where userID = " + row[1] + "";
 
                             SqlDataAdapter usernameDataAdapter = new SqlDataAdapter(fetchUsername, conn);
                             DataTable usernameDataTable = new DataTable();
                             usernameDataAdapter.Fill(usernameDataTable);
 
                             row["username"] = usernameDataTable.Rows[0][0];
+                            row["accstatus"] = usernameDataTable.Rows[0][1];
                         }
 
 
@@ -104,32 +106,39 @@ namespace awerkout.content
                         focusedEditTitleTxtBx.Text = Server.HtmlDecode(postDataTable.Rows[0][2].ToString().Trim());
                         focusedEditDescTxtBx.Text = Server.HtmlDecode(postDataTable.Rows[0][3].ToString().Trim());
 
-                        focusedContentAuthorLbl.Text = "Posted by " + postDataTable.Rows[0][9].ToString().Trim() +
+                        focusedContentAuthorLbl.Text = "Posted by " + (
+                            postDataTable.Rows[0][10].ToString().Trim().Equals("A") 
+                            ? postDataTable.Rows[0][9].ToString().Trim() 
+                            : "[DELETED USER]" ) +
                             "#" + postDataTable.Rows[0][1].ToString().Trim() +
                             " on " + postDataTable.Rows[0][5].ToString().Trim();
 
                         focusedContentUpdateLbl.Text = "Last updated on " + postDataTable.Rows[0][6].ToString().Trim();
 
-                        // Fetch its comments that is not set as deleted
-                        string fetchComments = "select * from commentData where postID = "
-                            + postID + "and isDeleted = 'false'";
+                        // Fetch its latest 10 comments that is not set as deleted
+                        string fetchComments = "select TOP 10 * from commentData where postID = "
+                            + postID + "and isDeleted = 'false' order by updatedAt DESC";
 
                         SqlDataAdapter commentDataAdapter = new SqlDataAdapter(fetchComments, conn);
                         DataTable commentDataTable = new DataTable();
                         commentDataAdapter.Fill(commentDataTable);
 
                         commentDataTable.Columns.Add("username", typeof(string));
+                        commentDataTable.Columns.Add("accstatus", typeof(string));
 
                         foreach (DataRow row in commentDataTable.Rows)
                         {
                             // System.Diagnostics.Debug.WriteLine(row["contentdata"].ToString().Split(';')[0].Replace("bannerPath=~", ".."));
-                            string fetchUsername = "select username from userData where userID = " + row[1] + "";
+                            string fetchUsername = "select username, accstatus from userData where userID = " + row[1] + "";
 
                             SqlDataAdapter usernameDataAdapter = new SqlDataAdapter(fetchUsername, conn);
                             DataTable usernameDataTable = new DataTable();
                             usernameDataAdapter.Fill(usernameDataTable);
 
-                            row["username"] = usernameDataTable.Rows[0][0];
+                            row["accstatus"] = usernameDataTable.Rows[0][1];
+                            row["username"] = usernameDataTable.Rows[0][1].ToString().Trim().Equals("A")
+                            ? usernameDataTable.Rows[0][0].ToString().Trim()
+                            : "[DELETED USER]";
                         }
 
                         focusedContentCommentRepeater.DataSource = commentDataTable;
@@ -288,8 +297,8 @@ namespace awerkout.content
 
 
             string query = "update postData set postTitle = '" +
-                focusedEditTitleTxtBx.Text.Trim() + "', postDescription = '" +
-                focusedEditDescTxtBx.Text.Trim() + "', contentdata = '" +
+                Server.HtmlEncode(focusedEditTitleTxtBx.Text.Trim()) + "', postDescription = '" +
+                Server.HtmlEncode(focusedEditDescTxtBx.Text.Trim()) + "', contentdata = '" +
                 contentdata + "', updatedAt = '" +
                 DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where postID = '" +
                 Session["CurrentPostPageID"] + "'";

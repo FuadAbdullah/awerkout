@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteFrame.Master" AutoEventWireup="true" CodeBehind="createQuiz.aspx.cs" Inherits="awerkout.createQuiz" %>
+﻿<%@ Page Title="" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/SiteFrame.Master" AutoEventWireup="true" CodeBehind="createQuiz.aspx.cs" Inherits="awerkout.createQuiz" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="mainstyle.css" />
     <link rel="stylesheet" href="createquizstyle.css" />

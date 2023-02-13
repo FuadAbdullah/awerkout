@@ -42,6 +42,15 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Label userSearchLbl;
 
         /// <summary>
+        /// userSearchCategoryDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList userSearchCategoryDropDown;
+
+        /// <summary>
         /// userSearchTxtBx control.
         /// </summary>
         /// <remarks>

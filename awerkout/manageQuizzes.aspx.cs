@@ -169,10 +169,10 @@ namespace awerkout
             conn.Open();
 
             // Delimiter as input is forbidden, therefore sanitized
-            string choices = option1TxtBx.Text.Trim().Replace(";", "") + ";" +
-                option2TxtBx.Text.Trim().Replace(";", "") + ";" +
-                option3TxtBx.Text.Trim().Replace(";", "") + ";" +
-                option4TxtBx.Text.Trim().Replace(";", "") + ";";
+            string choices = option1TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
+                option2TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
+                option3TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
+                option4TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";";
 
             string encodedChoices = Server.HtmlEncode(choices);
 

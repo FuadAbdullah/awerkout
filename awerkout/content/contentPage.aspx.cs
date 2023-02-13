@@ -44,8 +44,8 @@ namespace awerkout.content
                     if (check > 0)
                     {
 
-                        // Fetch the first name and the user type
-                        string fetchPosts = "select * from postData where isDeleted='false'";
+                        // Fetch only 5 recently updated/created posts
+                        string fetchPosts = "select TOP 5 * from postData where isDeleted='false' order by updatedAt DESC";
 
                         SqlDataAdapter postDataAdapter = new SqlDataAdapter(fetchPosts, conn);
                         DataTable postDataTable = new DataTable();

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteFrame.Master" AutoEventWireup="true" CodeBehind="manageUsers.aspx.cs" Inherits="awerkout.manageUsers" %>
+﻿<%@ Page Title="" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/SiteFrame.Master" AutoEventWireup="true" CodeBehind="manageUsers.aspx.cs" Inherits="awerkout.manageUsers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="mainstyle.css" />
     <link rel="stylesheet" href="userprofilestyle.css" />
@@ -84,6 +84,11 @@
             <tr>
                 <td class="align-center">
                     <asp:Label ID="userSearchLbl" runat="server" Text="Search:"></asp:Label>
+                    <asp:DropDownList ID="userSearchCategoryDropDown" runat="server">
+                        <asp:ListItem Value="ID">User ID</asp:ListItem>
+                        <asp:ListItem>Username</asp:ListItem>
+                        <asp:ListItem Value="Email">Email Address</asp:ListItem>
+                    </asp:DropDownList>
                     <asp:TextBox ID="userSearchTxtBx" runat="server"></asp:TextBox>
                     <asp:Button ID="userSearchBtn" runat="server" OnClick="userSearchBtn_Click" Text="Go" />
                     </td>

@@ -122,7 +122,7 @@ namespace awerkout
                 userGenderDropDown.ClearSelection();
                 // Trim is needed because apparently there is a whitespace somewhere
                 userGenderDropDown.Items.FindByText(profileDataTable.Rows[0][7].ToString().Trim()).Selected = true;
-                
+
                 userUsertypeDropDown.ClearSelection();
                 // Trim is needed because apparently there is a whitespace somewhere
                 userUsertypeDropDown.Items.FindByText(profileDataTable.Rows[0][3].ToString().Trim()).Selected = true;
@@ -147,11 +147,27 @@ namespace awerkout
         protected void userSearchBtn_Click(object sender, EventArgs e)
         {
             string searchKeyword = userSearchTxtBx.Text.Trim();
+            string methodOfSearch = userSearchCategoryDropDown.SelectedValue.ToString().Trim();
+            string sqlColumn = "";
+
+            switch (methodOfSearch)
+            {
+                case "Username":
+                    sqlColumn = "username";
+                    break;
+                case "Email":
+                    sqlColumn = "emailaddress";
+                    break;
+                default:
+                    sqlColumn = "userID";
+                    break;
+
+            }
 
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
             conn.Open();
 
-            string query = "select * from userData where userID = '" 
+            string query = "select * from userData where " + sqlColumn +  " = '"
                 + searchKeyword + "' and userID != '"
                 + Session["userID"].ToString().Trim() + "'";
             SqlDataAdapter profileDataAdapter = new SqlDataAdapter(query, conn);
@@ -182,7 +198,7 @@ namespace awerkout
                     userDoBTxtBx.Text = DateTime.Parse(profileDataTable.Rows[0][16].ToString()).ToString("yyyy-MM-dd");
                     userCreationDateLbl.Text = "Account Creation Date: " + DateTime.Parse(profileDataTable.Rows[0][18].ToString()).ToString("dd-MM-yyyy hh:mm:ss");
                     userUpdatedOnLbl.Text = "Latest Changes Made On: " + DateTime.Parse(profileDataTable.Rows[0][19].ToString()).ToString("dd-MM-yyyy hh:mm:ss");
-                   
+
                     userGenderDropDown.ClearSelection();
                     // Trim is needed because apparently there is a whitespace somewhere
                     userGenderDropDown.Items.FindByText(profileDataTable.Rows[0][7].ToString().Trim()).Selected = true;
@@ -191,23 +207,30 @@ namespace awerkout
                     // Trim is needed because apparently there is a whitespace somewhere
                     userUsertypeDropDown.Items.FindByText(profileDataTable.Rows[0][3].ToString().Trim()).Selected = true;
 
-                } else
+                    userAccountStatusDropDown.ClearSelection();
+                    // Trim is needed because apparently there is a whitespace somewhere
+                    userAccountStatusDropDown.Items.FindByText(profileDataTable.Rows[0][17].ToString().Trim()).Selected = true;
+
+                }
+                else
                 {
                     showErrorMessage(userSearchErrMsg, "Account by the search keyword could not be found!");
                 }
 
             }
 
-            
+
             conn.Close();
         }
 
-        protected void hideErrorMessage(Label lbl) {
+        protected void hideErrorMessage(Label lbl)
+        {
             lbl.Visible = false;
             lbl.Text = "";
         }
 
-        protected void showErrorMessage(Label lbl, string message = "Ambiguous Error") {
+        protected void showErrorMessage(Label lbl, string message = "Ambiguous Error")
+        {
             lbl.Visible = true;
             lbl.Text = message;
             lbl.ForeColor = System.Drawing.Color.Red;
@@ -257,7 +280,7 @@ namespace awerkout
 
 
             string query = "";
-            string bufferUserID = userIDLbl.Text.Contains("ADMIN") ? userIDLbl.Text.Replace("ADMIN ", "").Trim() : userIDLbl.Text.Replace("USER ", "").Trim(); 
+            string bufferUserID = userIDLbl.Text.Contains("ADMIN") ? userIDLbl.Text.Replace("ADMIN ", "").Trim() : userIDLbl.Text.Replace("USER ", "").Trim();
 
             // If no new password was provided, retain old password
             if (userPasswordTxtBx.Text == "")
