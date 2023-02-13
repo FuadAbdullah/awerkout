@@ -80,7 +80,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Label ID="Option2" runat="server" Text="Option2: "></asp:Label>
+                    <asp:Label ID="Option2" runat="server" Text="Option 2: "></asp:Label>
                     <asp:RequiredFieldValidator 
                         ID="Option2ErrMsg" 
                         runat="server" 
@@ -100,7 +100,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Label ID="Option3" runat="server" Text="Option3: "></asp:Label>
+                    <asp:Label ID="Option3" runat="server" Text="Option 3: "></asp:Label>
                     <asp:RequiredFieldValidator 
                         ID="Option3ErrMsg" 
                         runat="server" 
@@ -120,7 +120,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Label ID="Option4" runat="server" Text="Option4: "></asp:Label>
+                    <asp:Label ID="Option4" runat="server" Text="Option 4: "></asp:Label>
                     <asp:RequiredFieldValidator 
                         ID="Option4ErrMsg" 
                         runat="server" 
@@ -152,10 +152,10 @@
                 </td>
                 <td>
                     <asp:DropDownList ID="AnswerDropDown" class="TxtBx" runat="server">
-                        <asp:ListItem>Option1</asp:ListItem>
-                        <asp:ListItem>Option2</asp:ListItem>
-                        <asp:ListItem>Option3</asp:ListItem>
-                        <asp:ListItem>Option4</asp:ListItem>
+                        <asp:ListItem Value="1">Option 1</asp:ListItem>
+                        <asp:ListItem Value="2">Option 2</asp:ListItem>
+                        <asp:ListItem Value="3">Option 3</asp:ListItem>
+                        <asp:ListItem Value="4">Option 4</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>

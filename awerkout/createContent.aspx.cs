@@ -62,7 +62,8 @@ namespace awerkout
             if (contentBannerFileUpload.FileName == "")
             {
                 contentdata = "bannerPath=" + folderPathStr + "default.jpg;";
-            } else // Banner pic attached
+            }
+            else // Banner pic attached
             {
                 string fileExt = Path.GetExtension(contentBannerFileUpload.FileName);
 
@@ -82,23 +83,23 @@ namespace awerkout
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
                 conn.Open();
 
-                    // Creating the record in the table called postData
-                    string createQuery = "insert into postData (userID, " +
-                        "postTitle, " +
-                        "postDescription, " +
-                        "contentdata ) values (@userID," +
-                        "@postTitle, " +
-                        "@postDescription, " +
-                        "@contentdata)";
-                    SqlCommand createCMD = new SqlCommand(createQuery, conn);
+                // Creating the record in the table called postData
+                string createQuery = "insert into postData (userID, " +
+                    "postTitle, " +
+                    "postDescription, " +
+                    "contentdata ) values (@userID," +
+                    "@postTitle, " +
+                    "@postDescription, " +
+                    "@contentdata)";
+                SqlCommand createCMD = new SqlCommand(createQuery, conn);
 
-                    createCMD.Parameters.AddWithValue("@userID", Session["userID"]);
-                    createCMD.Parameters.AddWithValue("@postTitle", Server.HtmlEncode(contentTitleTxtBx.Text.Trim()));
-                    createCMD.Parameters.AddWithValue("@postDescription", Server.HtmlEncode(contentTextTxtBx.Text.Trim()));
-                    createCMD.Parameters.AddWithValue("@contentdata", Server.HtmlEncode(contentdata));
-                    createCMD.ExecuteNonQuery();
-                    Response.Redirect("createContent.aspx");
-                
+                createCMD.Parameters.AddWithValue("@userID", Session["userID"]);
+                createCMD.Parameters.AddWithValue("@postTitle", Server.HtmlEncode(contentTitleTxtBx.Text.Trim()));
+                createCMD.Parameters.AddWithValue("@postDescription", Server.HtmlEncode(contentTextTxtBx.Text.Trim()));
+                createCMD.Parameters.AddWithValue("@contentdata", Server.HtmlEncode(contentdata));
+                createCMD.ExecuteNonQuery();
+                Response.Redirect("createContent.aspx");
+
                 conn.Close();
             }
             catch (Exception ex)
@@ -112,8 +113,8 @@ namespace awerkout
         protected void myDashboardlnk_Click(object sender, EventArgs e)
         {
             // Only admin has access to this site
-                Response.Redirect("adminDashboard.aspx");
-          
+            Response.Redirect("adminDashboard.aspx");
+
         }
 
         protected void signOutlnk_Click(object sender, EventArgs e)

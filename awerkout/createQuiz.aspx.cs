@@ -23,6 +23,7 @@ namespace awerkout
 
             if (Session["username"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
             {
+                // Only admin has access to this page
                 // Do nothing
             }
             else
@@ -38,28 +39,31 @@ namespace awerkout
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
                 conn.Open();
 
-                string createQuery = "insert into quizData1 (question, " +
-                        "option1, " +
-                        "option2, " +
-                        "option3, " +
-                        "option4, " +
-                        "answer ) values (@question," +
-                        "@option1, " +
-                        "@option2, " +
-                        "@option3, " +
-                        "@option4, " +
-                        "@answer )";
+                // Delimiter as input is forbidden, therefore sanitized
+                string choices = option1TxtBx.Text.Trim().Replace(";","") + ";" +
+                    option2TxtBx.Text.Trim().Replace(";", "") + ";" +
+                    option3TxtBx.Text.Trim().Replace(";", "") + ";" +
+                    option4TxtBx.Text.Trim().Replace(";", "") + ";";
+
+                string encodedChoices = Server.HtmlEncode(choices);
+
+                string createQuery = "insert into quizData (question, " +
+                        "userID, " +
+                        "correctans, " +
+                        "choices ) values (@question," +
+                        "@userID, " +
+                        "@correctans, " +
+                        "@choices )";
                 SqlCommand createCMD = new SqlCommand(createQuery, conn);
 
                 createCMD.Parameters.AddWithValue("@question", questionTxtBx.Text.Trim());
-                createCMD.Parameters.AddWithValue("@option1", option1TxtBx.Text.Trim());
-                createCMD.Parameters.AddWithValue("@option2", option2TxtBx.Text.Trim());
-                createCMD.Parameters.AddWithValue("@option3", option3TxtBx.Text.Trim());
-                createCMD.Parameters.AddWithValue("@option4", option4TxtBx.Text.Trim());
-                createCMD.Parameters.AddWithValue("@answer", AnswerDropDown.Text.Trim());
+                createCMD.Parameters.AddWithValue("@userID", Session["userID"]);
+                createCMD.Parameters.AddWithValue("@correctans", AnswerDropDown.SelectedValue);
+                createCMD.Parameters.AddWithValue("@choices", encodedChoices);
                 createCMD.ExecuteNonQuery();
 
                 conn.Close();
+                Response.Redirect("createQuiz.aspx");
             }
             catch (Exception ex)
             {
@@ -82,5 +86,6 @@ namespace awerkout
             Response.Redirect("signInPage.aspx");
 
         }
+
     }
 }

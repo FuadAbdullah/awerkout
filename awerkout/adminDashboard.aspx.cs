@@ -15,13 +15,6 @@ namespace awerkout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            QuestionErrMsg.Visible = false;
-            Option1ErrMsg.Visible = false;
-            Option2ErrMsg.Visible = false;
-            Option3ErrMsg.Visible = false;
-            Option4ErrMsg.Visible = false;
-            AnswerErrMsg.Visible = false;
-
             if (Session["username"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
             {
                 greetLbl.Text = "Hello there, Admin " + Session["username"] + "!";
@@ -61,29 +54,9 @@ namespace awerkout
             Response.Redirect("createContent.aspx");
         }
 
-        protected void CreateQuizBtn_Click(object sender, EventArgs e)
+        protected void adminManageQuizlnk_Click(object sender, EventArgs e)
         {
-            Response.Redirect("createQuiz.aspx");
-        }
-
-        protected void QuestionDropDown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
-            con.Open();
-
-            SqlDataAdapter da = new SqlDataAdapter("select * from quizData1 fetch first 1 rows only", con);
-
-
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            option1TxtBx.Text = dt.Rows[0][2].ToString();
-            option2TxtBx.Text = dt.Rows[0][3].ToString();
-            option3TxtBx.Text = dt.Rows[0][4].ToString();
-            option4TxtBx.Text = dt.Rows[0][5].ToString();
-            AnswerDropDown.Text = dt.Rows[0][6].ToString();
-
-
+            Response.Redirect("manageQuizzes.aspx");
         }
     }
 }

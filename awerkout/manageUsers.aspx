@@ -320,10 +320,9 @@
             </tr>
         </table>
         <table class="auto-style19">
-            <tr>
+            <tr style="text-align: center;">
                 <td>
                     <asp:Button ID="userUpdateProfileBtn" class="applybtn" runat="server" Text="Apply Changes" OnClick="userUpdateProfileBtn_Click" />
-                    <asp:Button ID="userDeleteProfileBtn" class="deletebtn" runat="server" ForeColor="red" OnClick="userDeleteProfileBtn_Click" Text="Delete Account" />
                 </td>
             </tr>
             <tr>
