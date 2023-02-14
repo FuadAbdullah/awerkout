@@ -24,10 +24,9 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
     <asp:Label ID="greetLbl" runat="server" Text="Hello there!" Font-Bold="True"></asp:Label>
-    <div class="workout txt">
-        Workout
-        For Beginner<br />
-        <asp:Button ID="WorkoutPlanBtn" class="btn" style="float: right" runat ="server" Text="Learn more" OnClick="WorkoutPlanBtn_Click" />
+    <div class="workout txt" style="color: #D33737;">
+        Browse Curated Posts<br />
+        <asp:Button ID="WorkoutPlanBtn" class="btn" style="float: right" runat ="server" Text="Go!" OnClick="contentPageBtn_Click" />
     </div>
     <div class="container" style="float: left">
         <div id="guides" class="txt">
@@ -47,11 +46,7 @@
         </div>
 
     </div>
-    <div class="container3">
-        <div id="curatedpost" class="txt">
-            Browse Curated Posts
-            <asp:Button ID="contentPageBtn" class="sbtn" runat="server" Text="Go!" OnClick="contentPageBtn_Click" />
-        </div>
+
 
     </div>
 

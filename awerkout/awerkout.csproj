@@ -76,6 +76,13 @@
     <Content Include="content\reportCardPage.aspx" />
     <Content Include="guide.aspx" />
     <Content Include="guidestyle.css" />
+    <Content Include="Images\answer_quiz.png" />
+    <Content Include="Images\curated_post.png" />
+    <Content Include="Images\curated_post2.png" />
+    <Content Include="Images\guide.png" />
+    <Content Include="Images\nutrition.png" />
+    <Content Include="Images\quiz_report.png" />
+    <Content Include="Images\sign_up.png" />
     <Content Include="Intermediate.aspx" />
     <Content Include="Nutrition.aspx" />
     <Content Include="nutritionstyle.css" />

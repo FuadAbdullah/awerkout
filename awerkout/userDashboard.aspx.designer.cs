@@ -159,6 +159,15 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Label calculation;
 
         /// <summary>
+        /// Subject_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Subject_required;
+
+        /// <summary>
         /// FeedbackSubjectLbl control.
         /// </summary>
         /// <remarks>
@@ -175,6 +184,15 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox FeedbackSubjectTxtBx;
+
+        /// <summary>
+        /// Description_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Description_required;
 
         /// <summary>
         /// FeedbackDescLbl control.
@@ -265,5 +283,14 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
+        /// ValidationSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary;
     }
 }

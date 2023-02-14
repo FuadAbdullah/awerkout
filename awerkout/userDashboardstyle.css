@@ -33,6 +33,7 @@
 }
 
 #content2 {
+    margin-top: 100px;
     position: relative;
     height: 500px;
     padding-left: 10%;
@@ -52,19 +53,19 @@
 #contentpage {
     margin-right: 5%;
     float: left;
-    background-image: url("Images/intermediate.PNG");
+    background-image: url("Images/curated_post.png");
     height: 400px;
 }
 
 #contentpage2 {
     float: left;
-    background-image: url("Images/beginner.PNG");
+    background-image: url("Images/answer_quiz.png");
     height: 400px;
 }
 
 #contentpage3 {
     float: right;
-    background-image: url("Images/advanced.PNG");
+    background-image: url("Images/quiz_report.png");
     height: 400px;
 }
 
@@ -86,6 +87,7 @@
     background-image: url("Images/advanced.PNG");
     height: 400px;
 }
+
 
 .TxtBx {
     font-size: 24px;

@@ -24,18 +24,6 @@ namespace awerkout
                 Response.Redirect("signInPage.aspx");
             }
 
-            /*   load quiz questions from quizData and store the score...
-             * 
-             * 
-             * 
-             * 
-             * 
-             * 
-             * 
-             */
-
-
-
 
         }
 

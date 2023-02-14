@@ -87,7 +87,7 @@
             <asp:Button ID="ContentPageBtn" class="wrkbtn" runat="server" Text="Go!" OnClick="ContentPageBtn_Click" />
         </div>
         <div id="contentpage2" class="txt workoutplan">
-            Answer Some Quizzes
+            Answer Quizzes
 
             <asp:Button ID="QuizPageBtn" class="wrkbtn" runat="server" Text="Bring it on!" OnClick="QuizPageBtn_Click" />
         </div>
@@ -180,6 +180,7 @@
             </tr>
             <tr>
                 <td class="auto-style13">
+                    <asp:RequiredFieldValidator ID="Subject_required" runat="server" ControlToValidate="FeedbackSubjectTxtBx" ErrorMessage="Subject is required." ForeColor="Red">*</asp:RequiredFieldValidator>
                     <asp:Label ID="FeedbackSubjectLbl" class="bmitxt" runat="server" Text="Subject:"></asp:Label>
                 </td>
                 <td class="auto-style14">
@@ -192,6 +193,7 @@
             </tr>
             <tr>
                 <td class="auto-style9">
+                    <asp:RequiredFieldValidator ID="Description_required" runat="server" ControlToValidate="FeedbackDescTxtBx" ErrorMessage="Description is required." ForeColor="Red">*</asp:RequiredFieldValidator>
                     <asp:Label ID="FeedbackDescLbl" class="bmitxt" runat="server" Text="Description:"></asp:Label>
                 </td>
                 <td class="auto-style8">
@@ -223,7 +225,8 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">
+                    &nbsp;</td>
                 <td class="auto-style8">&nbsp;</td>
             </tr>
             <tr>
@@ -231,6 +234,11 @@
                     <asp:Label ID="Label3" runat="server" Text="[errMsg]" ForeColor="red"></asp:Label>
                 </td>
                 <td class="auto-style8">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style8" colspan="2">
+                    <asp:ValidationSummary ID="ValidationSummary" runat="server" ForeColor="Red" HeaderText="One or more fields were entered incorrectly." />
+                </td>
             </tr>
         </table>
 
