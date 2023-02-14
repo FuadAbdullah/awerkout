@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" MaintainScrollPositionOnPostback="true" Language="C#" MasterPageFile="~/SiteFrame.Master" AutoEventWireup="true" CodeBehind="quizPage.aspx.cs" Inherits="awerkout.content.quizPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="stylesheet" href="../mainstyle.css" />
     <link rel="stylesheet" href="../userprofilestyle.css" />
-    <link rel="stylesheet" href="quizstyle.css"/>
+    <link rel="stylesheet" href="quizstyle.css" />
     <style type="text/css">
         .align-right {
             text-align: right;
@@ -66,6 +67,63 @@
             text-align: right;
         }
     </style>
+    <script type="text/javascript">
+        let answeredObj = {
+            'Question1': false,
+            'Question2': false,
+            'Question3': false,
+            'Question4': false,
+            'Question5': false,
+            'Question6': false,
+            'Question7': false,
+            'Question8': false,
+            'Question9': false,
+            'Question10': false,
+        };
+
+        function registerAnswer(index) {
+            answeredObj["Question" + index] = true;
+
+            var count = 0;
+            for (var key in answeredObj) {
+                if (answeredObj.hasOwnProperty(key) && answeredObj[key]) {
+                    count++;
+                }
+            }
+            SetQuizAnswerObj(count);
+            console.log("Count:" + count);
+        }
+
+        function SetQuizAnswerObj(value) {
+
+            $.ajax({
+                type: 'POST',
+                url: 'quizPage.aspx/SetSessionData',
+                data: JSON.stringify({ value: value }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function () {
+                    console.log('Data sent to server successfully.');
+                },
+                error: function () {
+                    console.log('Error sending data to server.');
+                }
+            });
+        }
+
+        function refreshPage() {
+            window.location.reload();
+        }
+
+                //function RadioButton_CheckedChanged(sender, args) {
+                //    var group = document.getElementsByName(sender.name);
+                //    for (var i = 0; i < group.length; i++) {
+                //        group[i].checked = false;
+                //    }
+                //    sender.checked = true;
+                //}
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdditionalNavOption1" runat="server">
     <table style="width: 100%;">
@@ -85,16 +143,7 @@
     <br />
     <asp:Repeater ID="quizRepeater" runat="server">
         <ItemTemplate>
-            <script type="text/javascript">
-                function RadioButton_CheckedChanged(sender, args) {
-                    var group = document.getElementsByName(sender.name);
-                    for (var i = 0; i < group.length; i++) {
-                        group[i].checked = false;
-                    }
-                    sender.checked = true;
-                }
-            </script>
-            <table id="quiz" >
+            <table id="quiz">
                 <tr>
                     <td class="auto-style4 txt">
                         <asp:Label ID="quizTitleLbl" class="questiontxt" runat="server" Text='<%# Eval("question") %>'></asp:Label>
@@ -103,30 +152,27 @@
                         <asp:RadioButton ID="Option1" runat="server"
                             Text='<%# Eval("Answer1") %>'
                             GroupName='<%# Eval("quizID") %>'
-                            AutoPostBack="true"
-                            onclick="RadioButton_CheckedChanged" />
+                            onclick='<%# "registerAnswer(" + ( Container.ItemIndex + 1 ) + ")" %>' />
                         <br />
                         <asp:RadioButton ID="Option2" runat="server"
                             Text='<%# Eval("Answer2") %>'
                             GroupName='<%# Eval("quizID") %>'
-                            AutoPostBack="true"
-                            onclick="RadioButton_CheckedChanged" />
+                            onclick='<%# "registerAnswer(" + ( Container.ItemIndex + 1 ) + ")" %>' />
                         <br />
                         <asp:RadioButton ID="Option3" runat="server"
                             Text='<%# Eval("Answer3") %>'
                             GroupName='<%# Eval("quizID") %>'
-                            AutoPostBack="true"
-                            onclick="RadioButton_CheckedChanged" />
+                            onclick='<%# "registerAnswer(" + ( Container.ItemIndex + 1 ) + ")" %>' />
                         <br />
                         <asp:RadioButton ID="Option4" runat="server"
                             Text='<%# Eval("Answer4") %>'
                             GroupName='<%# Eval("quizID") %>'
-                            AutoPostBack="true"
-                            onclick="RadioButton_CheckedChanged" />
+                            onclick='<%# "registerAnswer(" + ( Container.ItemIndex + 1 ) + ")" %>' />
                         <br />
                         <br />
                     </td>
                 </tr>
+                
         </ItemTemplate>
         <FooterTemplate>
             <tr>

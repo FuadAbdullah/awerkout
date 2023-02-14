@@ -5,6 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -91,47 +93,81 @@ namespace awerkout.content
 
         protected void quizSubmitBtn_Click(object sender, EventArgs e)
         {
-            int index = 0;
-
-            foreach (RepeaterItem item in quizRepeater.Items)
+            if (HttpContext.Current.Session["quizCountIndex"] == null)
             {
-                RadioButton rbOption1 = (RadioButton)item.FindControl("Option1");
-                RadioButton rbOption2 = (RadioButton)item.FindControl("Option2");
-                RadioButton rbOption3 = (RadioButton)item.FindControl("Option3");
-                RadioButton rbOption4 = (RadioButton)item.FindControl("Option4");
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + "You have not answered any questions, give a shot at it first!" + "');", true);
+            } else if (int.Parse(HttpContext.Current.Session["quizCountIndex"].ToString()) < 10)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + "Some answers were left unanswered, you can do this! I'll restart it for you for some challenge..." + "');", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Refresh", "refreshPage();", true);
+            }
+            else
+            {
+                int index = 0;
+                List<string> rbID = new List<string>();
+                List<string> rbGroupName = new List<string>();
 
-                RadioButton[] rbArray = new RadioButton[4];
-                rbArray[0] = rbOption1;
-                rbArray[1] = rbOption2;
-                rbArray[2] = rbOption3;
-                rbArray[3] = rbOption4;
-
-                foreach (RadioButton rb in rbArray)
+                foreach (RepeaterItem item in quizRepeater.Items)
                 {
-                    if (rb.Checked)
+                    RadioButton rbOption1 = (RadioButton)item.FindControl("Option1");
+                    RadioButton rbOption2 = (RadioButton)item.FindControl("Option2");
+                    RadioButton rbOption3 = (RadioButton)item.FindControl("Option3");
+                    RadioButton rbOption4 = (RadioButton)item.FindControl("Option4");
+
+                    RadioButton[] rbArray = new RadioButton[4];
+                    rbArray[0] = rbOption1;
+                    rbArray[1] = rbOption2;
+                    rbArray[2] = rbOption3;
+                    rbArray[3] = rbOption4;
+
+                    foreach (RadioButton rb in rbArray)
                     {
-                        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
-                        conn.Open();
+                        if (rb.Checked)
+                        {
+                            rbID.Add(rb.GroupName.ToString().Trim());
+                            rbGroupName.Add(rb.ID.ToString().Replace("Option", "").Trim());
 
-                        // Creating the record in the table called postData
-                        string createQuery = "insert into quizSaveData (userID, " +
-                            "quizID, " +
-                            "answer ) values (@userID," +
-                            "@quizID, " +
-                            "@answer )";
-                        SqlCommand createCMD = new SqlCommand(createQuery, conn);
-
-                        createCMD.Parameters.AddWithValue("@userID", Session["userID"]);
-                        createCMD.Parameters.AddWithValue("@quizID", rb.GroupName.ToString().Trim());
-                        createCMD.Parameters.AddWithValue("@answer", rb.ID.ToString().Replace("Option", "").Trim());
-                        createCMD.ExecuteNonQuery();
-
-                        conn.Close();
-                        index += 1;
+                            index += 1;
+                        }
                     }
                 }
+
+                for (int i = 0; i < 10; i++)
+                {
+                    SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
+                    conn.Open();
+
+                    // Creating the record in the table called postData
+                    string createQuery = "insert into quizSaveData (userID, " +
+                        "quizID, " +
+                        "answer ) values (@userID," +
+                        "@quizID, " +
+                        "@answer )";
+                    SqlCommand createCMD = new SqlCommand(createQuery, conn);
+
+                    createCMD.Parameters.AddWithValue("@userID", Session["userID"]);
+                    createCMD.Parameters.AddWithValue("@quizID", rbID[i]);
+                    createCMD.Parameters.AddWithValue("@answer", rbGroupName[i]);
+                    createCMD.ExecuteNonQuery();
+
+                    conn.Close();
+                    HttpContext.Current.Session["quizCountIndex"] = null;
+                    Response.Redirect("~/content/reportCardPage.aspx");
+                }
             }
-            Response.Redirect("~/userDashboard.aspx");
+
         }
+
+        [WebMethod]
+        public static void SetSessionData(string value)
+        {
+            HttpContext.Current.Session["quizCountIndex"] = value;
+
+            commonFunction.debugMessage(HttpContext.Current.Session["quizCountIndex"].ToString());
+        }
+
     }
+
+
 }
+

@@ -235,6 +235,7 @@
       <DependentUpon>Beginner.aspx</DependentUpon>
     </Compile>
     <Compile Include="commonFunction.cs" />
+    <Compile Include="content\answeredObj.cs" />
     <Compile Include="content\focusedContentPage.aspx.cs">
       <DependentUpon>focusedContentPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
