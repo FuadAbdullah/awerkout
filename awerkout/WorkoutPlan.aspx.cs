@@ -58,5 +58,10 @@ namespace awerkout
         {
             Response.Redirect("Advanced.aspx");
         }
+
+        protected void WorkoutPlan_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("content/WorkoutPlanPage.aspx");
+        }
     }
 }

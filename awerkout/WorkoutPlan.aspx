@@ -29,7 +29,10 @@
         Aesthetics<br />
         Shredded<br />
         Powerlifting<br />
-        Exercising</div>
+        Exercising
+        <asp:Button ID="WorkoutBtn" class="wrkoutbtn" runat="server" Text="Learn more" OnClick="WorkoutPlan_Click"/>
+    </div>
+
     <div class="container">
         <div id="plan1" class="txt">
             Beginner

@@ -13,8 +13,8 @@ namespace awerkout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            calculation.Visible = false;
             ErrMsg.Visible = false;
+            calculation.Visible = false;
             if (Session["username"] != null)
             {
                 greetLbl.Text = "Hello there, " + Session["username"] + "!";

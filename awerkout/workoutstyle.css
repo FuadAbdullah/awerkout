@@ -6,6 +6,7 @@
 }
 
 .main {
+    background-image: url("Images/goals.png");
     background-color: white;
     color: black;
     width: 70%;
@@ -20,10 +21,11 @@
     font-weight: 900;
     text-align: center;
     font-size: 40px;
-    color: #000000;
+    color: #D33737;
 }
 
 #plan1 {
+    background-image: url("Images/beginner.PNG");   
     float: left;
     width: 25%;
     background-color: white;
@@ -35,6 +37,7 @@
 }
 
 #plan2 {
+    background-image: url("Images/intermediate.PNG");
     margin-left: 7%;
     float: left;
     width: 25%;
@@ -47,6 +50,7 @@
 }
 
 #plan3 {
+    background-image: url("Images/advanced.PNG");
     float: right;
     width: 25%;
     background-color: white;
@@ -67,6 +71,19 @@
 
 .btn {
     margin-top: 275px;
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 24px;
+    width: 100%;
+    background: #D33737;
+    border-radius: 10px;
+}
+
+.wrkoutbtn {
+    margin-top: 50px;
     color: white;
     border: none;
     padding-top: 10px;

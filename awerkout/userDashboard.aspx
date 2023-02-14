@@ -84,17 +84,17 @@
         <div id="contentpage" class="txt workoutplan">
             Browse Curated Posts
 
-            <asp:Button ID="ContentPageBtn" class="wrkbtn" runat="server" Text="Go!" OnClick="ContentPageBtn_Click" />
+            <asp:Button ID="ContentPageBtn" class="wrkbtn" runat="server" Text="Go!" OnClick="ContentPageBtn_Click" CausesValidation="False" />
         </div>
         <div id="contentpage2" class="txt workoutplan">
             Answer Quizzes
 
-            <asp:Button ID="QuizPageBtn" class="wrkbtn" runat="server" Text="Bring it on!" OnClick="QuizPageBtn_Click" />
+            <asp:Button ID="QuizPageBtn" class="wrkbtn" runat="server" Text="Bring it on!" OnClick="QuizPageBtn_Click" CausesValidation="False" />
         </div>
         <div id="contentpage3" class="txt workoutplan">
             View Quiz Report Card
 
-            <asp:Button ID="ReportCardBtn" class="wrkbtn" runat="server" Text="Go Ahead!" OnClick="ReportCardBtn_Click" />
+            <asp:Button ID="ReportCardBtn" class="wrkbtn" runat="server" Text="Go Ahead!" OnClick="ReportCardBtn_Click" CausesValidation="False" />
         </div>
     </div>
     <div id="content">
@@ -102,16 +102,16 @@
         <div id="workoutplan1" class="txt workoutplan">
             Beginner Workout plan
 
-            <asp:Button ID="BeginnerBtn" class="wrkbtn" runat="server" Text="Learn more" OnClick="BeginnerBtn_Click" />
+            <asp:Button ID="BeginnerBtn" class="wrkbtn" runat="server" Text="Learn more" OnClick="BeginnerBtn_Click" CausesValidation="False" />
         </div>
 
         <div id="workoutplan2" class="txt workoutplan">
             Intermediate Workout Plan
-            <asp:Button ID="IntermediateBtn" class="wrkbtn" runat="server" Text="Learn more" OnClick="IntermediateBtn_Click" />
+            <asp:Button ID="IntermediateBtn" class="wrkbtn" runat="server" Text="Learn more" OnClick="IntermediateBtn_Click" CausesValidation="False" />
         </div>
         <div id="workoutplan3" class="txt workoutplan">
             Advanced Workout Plan
-            <asp:Button ID="AdvancedBtn" class="wrkbtn" runat="server" Text="Learn more" OnClick="AdvancedBtn_Click" />
+            <asp:Button ID="AdvancedBtn" class="wrkbtn" runat="server" Text="Learn more" OnClick="AdvancedBtn_Click" CausesValidation="False" />
         </div>
 
     </div>
@@ -153,12 +153,8 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style7">&nbsp;</td>
-                <td class="auto-style8">&nbsp;</td>
-            </tr>
-            <tr>
                 <td class="auto-style7">
-                    <asp:Label ID="ErrMsg" runat="server" Text="[errMsg]" ForeColor="red"></asp:Label>
+                    <asp:Label ID="ErrMsg" runat="server" Text="[ErrMsg]" ForeColor="red"></asp:Label>
                 </td>
                 <td class="auto-style8">&nbsp;</td>
             </tr>
@@ -180,7 +176,7 @@
             </tr>
             <tr>
                 <td class="auto-style13">
-                    <asp:RequiredFieldValidator ID="Subject_required" runat="server" ControlToValidate="FeedbackSubjectTxtBx" ErrorMessage="Subject is required." ForeColor="Red">*</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="Subject_required" runat="server" ControlToValidate="FeedbackSubjectTxtBx" ErrorMessage="Subject is required." ForeColor="Red" ValidationGroup="feedback">*</asp:RequiredFieldValidator>
                     <asp:Label ID="FeedbackSubjectLbl" class="bmitxt" runat="server" Text="Subject:"></asp:Label>
                 </td>
                 <td class="auto-style14">
@@ -193,7 +189,7 @@
             </tr>
             <tr>
                 <td class="auto-style9">
-                    <asp:RequiredFieldValidator ID="Description_required" runat="server" ControlToValidate="FeedbackDescTxtBx" ErrorMessage="Description is required." ForeColor="Red">*</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="Description_required" runat="server" ControlToValidate="FeedbackDescTxtBx" ErrorMessage="Description is required." ForeColor="Red" ValidationGroup="feedback">*</asp:RequiredFieldValidator>
                     <asp:Label ID="FeedbackDescLbl" class="bmitxt" runat="server" Text="Description:"></asp:Label>
                 </td>
                 <td class="auto-style8">
@@ -237,7 +233,7 @@
             </tr>
             <tr>
                 <td class="auto-style8" colspan="2">
-                    <asp:ValidationSummary ID="ValidationSummary" runat="server" ForeColor="Red" HeaderText="One or more fields were entered incorrectly." />
+                    <asp:ValidationSummary ID="ValidationSummary" runat="server" ForeColor="Red" HeaderText="One or more fields were entered incorrectly." ValidationGroup="feedback" />
                 </td>
             </tr>
         </table>
