@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../mainstyle.css" />
     <link rel="stylesheet" href="../userprofilestyle.css" />
+    <link rel="stylesheet" href="quizstyle.css"/>
     <style type="text/css">
         .align-right {
             text-align: right;
@@ -93,10 +94,10 @@
                     sender.checked = true;
                 }
             </script>
-            <table class="auto-style1" style="width: 100%">
+            <table id="quiz" >
                 <tr>
-                    <td class="auto-style4">
-                        <asp:Label ID="quizTitleLbl" runat="server" Text='<%# Eval("question") %>'></asp:Label>
+                    <td class="auto-style4 txt">
+                        <asp:Label ID="quizTitleLbl" class="questiontxt" runat="server" Text='<%# Eval("question") %>'></asp:Label>
                         <br />
                         <br />
                         <asp:RadioButton ID="Option1" runat="server"

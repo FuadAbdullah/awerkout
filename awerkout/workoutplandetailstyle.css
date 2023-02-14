@@ -38,9 +38,26 @@
     color: #FFFFFF;
 }
 
+.row{
+    margin-top: 50px;
+}
+
 .content {
+    float: left;
     margin-top: 100px;
     padding-left: 10%;
     padding-right: 10%;
     width: 80%;
+}
+
+.workout {
+    margin-left: 25px;
+    width: 30%;
+    float: left;
+    font-size: 15px;
+}
+
+.workoutimg {
+    width: 100%;
+    height: auto;
 }

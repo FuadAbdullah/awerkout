@@ -74,7 +74,9 @@
     <Content Include="awerkoutstyle.css" />
     <Content Include="Beginner.aspx" />
     <Content Include="content\contentPagestyle.css" />
+    <Content Include="content\quizstyle.css" />
     <Content Include="content\reportCardPage.aspx" />
+    <Content Include="content\reportCardstyle.css" />
     <Content Include="guide.aspx" />
     <Content Include="guidestyle.css" />
     <Content Include="Images\answer_quiz.png" />

@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../mainstyle.css" />
     <link rel="stylesheet" href="../userprofilestyle.css" />
+    <link rel="stylesheet" href="reportCardstyle.css" />
     <style type="text/css">
         .align-right {
             text-align: right;
@@ -96,10 +97,11 @@
                     sender.checked = true;
                 }
             </script>
-            <table class="auto-style1" style="width: 100%">
+            <table id="card" class="auto-style1 txt">
                 <tr>
                     <td class="auto-style4">
-                        <asp:Label ID="quizTitleLbl" runat="server" Text='<%# Eval("question") %>'></asp:Label>
+                        <asp:Label ID="quizTitleLbl" class="questiontxt" runat="server" Text='<%# Eval("question") %>'></asp:Label>
+                        <br />
                         <br />
                         <asp:RadioButton ID="Option1" runat="server"
                             Checked='<%# Eval("answer").ToString().Trim().Equals("Option1") ? true : false %>'
@@ -128,6 +130,7 @@
                             GroupName='<%# Eval("quizID") %>'
                             AutoPostBack="true"
                             onclick="RadioButton_CheckedChanged" />
+                        <br />
                         <br />
                         <asp:Label ID="quizCorrectnessLbl" runat="server" Text='<%# "Answer is " + (Eval("answer").ToString().Trim().Equals(Eval("correctans").ToString().Trim()) ? "correct" : "incorrect") %>'></asp:Label>
                         <br />

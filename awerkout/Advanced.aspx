@@ -51,24 +51,207 @@
     </div>
     <div class="clear"></div>
     <div class="content daytxt">
-        Day 1: Chest &amp; Back Workout</div>
+        Day 1: Chest &amp; Back Workout
+        <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/50.gif" />
+                Barbell Bench Press – work 5 rep max today
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/51.gif" />
+                Incline Dumbbell Press – aim for 3 sets of 6-8 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/52.gif" />
+                Dips – aim for 3 sets of 6-10 reps
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/53.gif" />
+                Pullups – aim for 3 sets of 5-8 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/54.gif" />
+                Pendlay Rows – aim for 3 sets of 6-10 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/55.gif" />
+                Pulldowns – aim for 3 sets of 6-10 reps
+            </div>
+        </div>
+
+    </div>
 
     <div class="content daytxt">
-        Day 2: Legs Workout</div>
+        Day 2: Legs Workout
+                <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/56.gif" />
+                Squats: work 5 rep max on day 2
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/57.gif" />
+                Leg Press – aim for 3 sets of 6-10 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/58.gif" />
+                Stiff-Legged Deadlift – aim for 5 sets of 5 reps
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/59.gif" />
+                Hamstring Curls – aim for 3 sets of 6-8 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/60.gif" />
+                Calf-Raise – aim for 5 sets of 10 reps
+
+            </div>
+        </div>
+
+    </div>
 
     <div class="content daytxt">
-        Day 3: Shoulders and Arms Workout</div>
+        Day 3: Shoulders and Arms Workout
+        <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/61.gif" />
+                Military Press or Dumbbell Press – aim for 3 sets of 6-8
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/62.gif" />
+                Lateral Raises – aim for 5 sets of 10 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/63.gif" />
+                Barbell Curls – aim for 5 sets of 6-10 reps
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/64.gif" />
+                Dumbbell Curls – aim for 3 sets of 6-10 reps
+
+            </div>
+        </div>
+    </div>
 
     <div class="content daytxt">
         Day 4: Rest</div>
 
     <div class="content daytxt">
-        Day 5: Chest, Shoulders, and Triceps Workout</div>
+        Day 5: Chest, Shoulders, and Triceps Workout
+                <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/65.gif" />
+                Flat Dumbbell Press – aim for 5 sets of 20-6 (Pyramiding) reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/66.gif" />
+                Incline Dumbbell Press – aim for 3 sets of 6-10 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/67.gif" />
+                Hammer Strength Press – aim for 3 sets of 10 reps
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/68.gif" />
+                Cable Flys – aim for 3 sets of 12-15 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/69.gif" />
+                Lateral Raises – aim for 5 sets of 15-20 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/70.gif" />
+                Reverse-Grip Pull-Downs – aim for 5 sets of 15-20 reps
+            </div>
+        </div>
+    </div>
 
     <div class="content daytxt">
-        Day 6: Back and Biceps Workout</div>
+        Day 6: Back and Biceps Workout
+                        <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/71.gif" />
+                Barbell Rows – aim for 5 sets of 20-8 (Pyramiding) reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/72.gif" />
+                Barbell Shrugs – aim for 3 sets of 15-20 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/73.gif" />
+                Rack Deadlifts – aim for 3 sets of 10-12 reps
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/74.gif" />
+                Pullups – aim for 3 sets of 6-10 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/75.gif" />
+                Pulldowns – aim for 3 sets of 6-10 reps
+
+            </div>
+        </div>
+    </div>
 
     <div class="content daytxt">
-        Day 7: Legs Workout</div>
-        </span>
+        Day 7: Legs Workout
+        <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/76.gif" />
+                Front Squats – aim for 5 sets of 20-8 (Pyramiding) reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/77.gif" />
+                Leg Extensions – aim for 5 sets of 10 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/78.gif" />
+                Hamstring Curls – aim for 5 sets of 6-10 reps
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/79.gif" />
+                Seated Calf Raise – aim for 5 sets of 6-10 reps
+
+            </div>
+            <div class="workout">
+                <img class="workoutimg" src="WorkoutContent/80.gif" />
+                Standing Calf Raise – aim for 3 sets of 8-12 reps
+
+            </div>
+    </div>
 </asp:Content>

@@ -77,9 +77,9 @@
     <asp:Label ID="noContentLbl" runat="server" Visible="false" Text="Uh-oh, it seems like no post had been made just yet, :'("></asp:Label>
     <asp:Repeater ID="contentRepeater" runat="server">
         <ItemTemplate>
-            <table class="auto-style1">
+            <table id="contentRepeat">
                 <tr>
-                    <td class="auto-style4">
+                    <td>
                         <asp:Label ID="contentTitleLbl" runat="server" Text='<%# Eval("postTitle") %>'></asp:Label>
                         <br />
                         <asp:ImageButton ID="contentFocusBtn" runat="server" Height="200px" Width="500px" CommandArgument='<%# Eval("postID") %>' OnClick="contentFocusBtn_Click" ImageUrl='<%# Eval("bannerPath") %>' />
