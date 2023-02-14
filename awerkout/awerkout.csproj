@@ -73,6 +73,7 @@
     <Content Include="Awerkout.aspx" />
     <Content Include="awerkoutstyle.css" />
     <Content Include="Beginner.aspx" />
+    <Content Include="content\contentPagestyle.css" />
     <Content Include="content\reportCardPage.aspx" />
     <Content Include="guide.aspx" />
     <Content Include="guidestyle.css" />
@@ -87,17 +88,14 @@
     <Content Include="Nutrition.aspx" />
     <Content Include="nutritionstyle.css" />
     <Content Include="workoutplandetailstyle.css" />
-    <Content Include="content\advancedWorkoutPage.aspx" />
     <Content Include="App_Data\awerkoutDB.mdf" />
     <Content Include="App_Data\awerkoutDB_log.ldf">
       <DependentUpon>awerkoutDB.mdf</DependentUpon>
     </Content>
-    <Content Include="content\beginnerWorkoutPage.aspx" />
     <Content Include="content\focusedContentPage.aspx" />
     <Content Include="content\quizPage.aspx" />
     <Content Include="content\workoutPlanPage.aspx" />
     <Content Include="content\contentPage.aspx" />
-    <Content Include="content\intermediateWorkoutPage.aspx" />
     <Content Include="createContent.aspx" />
     <Content Include="createQuiz.aspx" />
     <Content Include="createquizstyle.css" />
@@ -107,12 +105,9 @@
     <Content Include="Images\beginner.PNG" />
     <Content Include="Images\Intermediate header.PNG" />
     <Content Include="Images\intermediate.PNG" />
-    <Content Include="landingPage.aspx" />
     <Content Include="mainstyle.css" />
-    <Content Include="manageContent.aspx" />
     <Content Include="manageQuizzes.aspx" />
     <Content Include="manageUsers.aspx" />
-    <Content Include="content\nutritionPage.aspx" />
     <Content Include="ProfilePic\default.jpg" />
     <Content Include="registerAdminPage.aspx" />
     <Content Include="registerstyle.css" />
@@ -157,20 +152,6 @@
       <DependentUpon>Beginner.aspx</DependentUpon>
     </Compile>
     <Compile Include="commonFunction.cs" />
-    <Compile Include="content\advancedWorkoutPage.aspx.cs">
-      <DependentUpon>advancedWorkoutPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="content\advancedWorkoutPage.aspx.designer.cs">
-      <DependentUpon>advancedWorkoutPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="content\beginnerWorkoutPage.aspx.cs">
-      <DependentUpon>beginnerWorkoutPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="content\beginnerWorkoutPage.aspx.designer.cs">
-      <DependentUpon>beginnerWorkoutPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="content\focusedContentPage.aspx.cs">
       <DependentUpon>focusedContentPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -206,13 +187,6 @@
     <Compile Include="content\contentPage.aspx.designer.cs">
       <DependentUpon>contentPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="content\intermediateWorkoutPage.aspx.cs">
-      <DependentUpon>intermediateWorkoutPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="content\intermediateWorkoutPage.aspx.designer.cs">
-      <DependentUpon>intermediateWorkoutPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="createContent.aspx.cs">
       <DependentUpon>createContent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -241,20 +215,6 @@
     <Compile Include="Intermediate.aspx.designer.cs">
       <DependentUpon>Intermediate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="landingPage.aspx.cs">
-      <DependentUpon>landingPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="landingPage.aspx.designer.cs">
-      <DependentUpon>landingPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="manageContent.aspx.cs">
-      <DependentUpon>manageContent.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="manageContent.aspx.designer.cs">
-      <DependentUpon>manageContent.aspx</DependentUpon>
-    </Compile>
     <Compile Include="manageQuizzes.aspx.cs">
       <DependentUpon>manageQuizzes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,13 +228,6 @@
     </Compile>
     <Compile Include="manageUsers.aspx.designer.cs">
       <DependentUpon>manageUsers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="content\nutritionPage.aspx.cs">
-      <DependentUpon>nutritionPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="content\nutritionPage.aspx.designer.cs">
-      <DependentUpon>nutritionPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nutrition.aspx.cs">
       <DependentUpon>Nutrition.aspx</DependentUpon>

@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../mainstyle.css" />
     <link rel="stylesheet" href="../userDashboardstyle.css" />
+     <link rel="stylesheet" href="contentPagestyle.css" />
     <style type="text/css">
         .auto-style2 {
             text-align: right;

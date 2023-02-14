@@ -18,13 +18,20 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdditionalNavOption1" runat="server">
-        <table class="auto-style1">
+        <table style="width: 100%;" class="table">
         <tr>
-            <td class="auto-style2">
-                <asp:LinkButton ID="myDashboardlnk" runat="server" OnClick="myDashboardlnk_Click">My Dashboard</asp:LinkButton>
+            <td>
+                <asp:LinkButton ID="myProfilelnk" class="nav" runat="server" OnClick="myProfilelnk_Click">My Profile</asp:LinkButton>
             </td>
-            <td class="auto-style2">
-                <asp:LinkButton ID="signOutlnk" runat="server" OnClick="signOutlnk_Click">Sign Out</asp:LinkButton>
+            <td>
+                <asp:LinkButton ID="signOutlnk" class="nav" runat="server" OnClick="signOutlnk_Click">Sign Out</asp:LinkButton>
+            </td>
+        </tr>
+    </table>
+    <table style="width: 100%;" class="table">
+        <tr>
+            <td>
+                <asp:LinkButton ID="signinlnk" class="nav" runat="server" OnClick="signInlnk_Click">Sign In</asp:LinkButton>
             </td>
         </tr>
     </table>

@@ -13,5 +13,23 @@ namespace awerkout.content
         {
 
         }
+
+        protected void myProfilelnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("userProfile.aspx");
+        }
+
+        protected void signOutlnk_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Request.Cookies.Clear();
+
+            Response.Redirect("signInPage.aspx");
+        }
+
+        protected void signInlnk_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("signInPage.aspx");
+        }
     }
 }
