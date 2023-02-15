@@ -45,8 +45,8 @@
                         ID="QuestionErrMsg" 
                         runat="server" 
                         ErrorMessage="Question is required"
-                        ForeColor="Red" 
-                        ControlToValidate="questionTxtBx">
+                        ControlToValidate="questionTxtBx"
+                        ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
                 </td>

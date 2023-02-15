@@ -190,9 +190,6 @@
             </tr>
             <tr>
                 <td class="auto-style6">
-                    <asp:RequiredFieldValidator ID="userRPasswordErrMsg" runat="server" ControlToValidate="userRPasswordTxtBx" ErrorMessage="Password re-type is required." ForeColor="Red">
-                        *
-                    </asp:RequiredFieldValidator>
                      <asp:CompareValidator ID="ComparePasswordValidate"
                         runat="server"
                         ControlToCompare="userPasswordTxtBx"

@@ -15,13 +15,13 @@ namespace awerkout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            QuestionErrMsg.Visible = false;
-            Option1ErrMsg.Visible = false;
-            Option2ErrMsg.Visible = false;
-            Option3ErrMsg.Visible = false;
-            Option4ErrMsg.Visible = false;
-            AnswerErrMsg.Visible = false;
+            generalErrorMsg.Visible = false;
+            //QuestionErrMsg.Visible = false;
+            //Option1ErrMsg.Visible = false;
+            //Option2ErrMsg.Visible = false;
+            //Option3ErrMsg.Visible = false;
+            //Option4ErrMsg.Visible = false;
+            //AnswerErrMsg.Visible = false;
 
             if (Session["username"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
             {

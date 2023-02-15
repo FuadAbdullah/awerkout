@@ -276,13 +276,13 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Button FeedbackSubmitButton;
 
         /// <summary>
-        /// Label3 control.
+        /// ErrMsg2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label ErrMsg2;
 
         /// <summary>
         /// ValidationSummary control.

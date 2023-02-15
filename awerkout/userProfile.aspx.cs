@@ -17,17 +17,17 @@ namespace awerkout
         protected void Page_Load(object sender, EventArgs e)
         {
             userIDLbl.Visible = false;
-            userUsernameErrMsg.Visible = false;
-            userFirstNameErrMsg.Visible = false;
-            userLastNameErrMsg.Visible = false;
-            userEmailErrMsg.Visible = false;
-            userPhoneNumberErrMsg.Visible = false;
-            userWeightErrMsg.Visible = false;
-            userHeightErrMsg.Visible = false;
-            userDoBErrMsg.Visible = false;
-            userGenderErrMsg.Visible = false;
-            userPasswordErrMsg.Visible = false;
-            userRPasswordErrMsg.Visible = false;
+            //userUsernameErrMsg.Visible = false;
+            //userFirstNameErrMsg.Visible = false;
+            //userLastNameErrMsg.Visible = false;
+            //userEmailErrMsg.Visible = false;
+            //userPhoneNumberErrMsg.Visible = false;
+            //userWeightErrMsg.Visible = false;
+            //userHeightErrMsg.Visible = false;
+            //userDoBErrMsg.Visible = false;
+            //userGenderErrMsg.Visible = false;
+            //userPasswordErrMsg.Visible = false;
+            //userRPasswordErrMsg.Visible = false;
             generalErrorMsg.Visible = false;
 
             userUsernameTxtBx.Enabled = false;

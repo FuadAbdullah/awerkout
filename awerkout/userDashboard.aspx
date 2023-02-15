@@ -62,6 +62,15 @@
             text-align: left;
             height: 27px;
         }
+        .auto-style17 {
+            width: 200px;
+            text-align: left;
+            height: 22px;
+        }
+        .auto-style18 {
+            text-align: left;
+            height: 22px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdditionalNavOption1" runat="server">
@@ -221,13 +230,13 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style7">
-                    &nbsp;</td>
-                <td class="auto-style8">&nbsp;</td>
+                <td class="auto-style17">
+                    </td>
+                <td class="auto-style18"></td>
             </tr>
             <tr>
                 <td class="auto-style7">
-                    <asp:Label ID="Label3" runat="server" Text="[errMsg]" ForeColor="red"></asp:Label>
+                    <asp:Label ID="ErrMsg2" runat="server" Text="[errMsg]" ForeColor="red"></asp:Label>
                 </td>
                 <td class="auto-style8">&nbsp;</td>
             </tr>

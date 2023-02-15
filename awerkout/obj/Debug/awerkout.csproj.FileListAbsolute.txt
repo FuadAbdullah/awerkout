@@ -229,7 +229,6 @@ M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awe
 M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awerkout\bin\roslyn\VBCSCompiler.exe.config
 M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awerkout\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awerkout\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awerkout\obj\Debug\awerkout.csproj.AssemblyReference.cache
 M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awerkout\obj\Debug\awerkout.csproj.CoreCompileInputs.cache
 M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awerkout\obj\Debug\awerkout.csproj.CopyComplete
 M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awerkout\obj\Debug\awerkout.dll

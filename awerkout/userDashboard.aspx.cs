@@ -14,6 +14,7 @@ namespace awerkout
         protected void Page_Load(object sender, EventArgs e)
         {
             ErrMsg.Visible = false;
+            ErrMsg2.Visible = false;
             calculation.Visible = false;
             if (Session["username"] != null)
             {
@@ -103,52 +104,68 @@ namespace awerkout
 
         protected void FeedbackSubmitButton_Click(object sender, EventArgs e)
         {
-            try
+
+            string subjectTxt = "";
+            subjectTxt = FeedbackSubjectTxtBx.Text;
+
+            string descTxt = "";
+            descTxt = FeedbackDescTxtBx.Text;
+
+            if (subjectTxt == "" || descTxt == "")
             {
-
-                RadioButton[] rb = new RadioButton[5];
-
-                rb[0] = r1;
-                rb[1] = r2;
-                rb[2] = r3;
-                rb[3] = r4;
-                rb[4] = r5;
-                decimal rating = 0;
-
-                foreach (RadioButton r in rb)
-                {
-                    if (r.Checked)
-                    {
-                        rating = decimal.Parse(r.ID.ToString().Replace("r", ""));
-                    }
-                }
-
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
-                conn.Open();
-
-                string createQuery = "insert into feedbackData (userID, " +
-                        "feedbacktitle, " +
-                        "feedbackdesc, " +
-                        "feedbackrating ) values (@userID," +
-                        "@feedbacktitle, " +
-                        "@feedbackdesc, " +
-                        "@feedbackrating )";
-                SqlCommand createCMD = new SqlCommand(createQuery, conn);
-
-                createCMD.Parameters.AddWithValue("@userID", Session["userID"].ToString().Trim());
-                createCMD.Parameters.AddWithValue("@feedbacktitle", Server.HtmlEncode(FeedbackSubjectTxtBx.Text.Trim()));
-                createCMD.Parameters.AddWithValue("@feedbackdesc", Server.HtmlEncode(FeedbackDescTxtBx.Text.Trim()));
-                createCMD.Parameters.AddWithValue("@feedbackrating", rating);
-                createCMD.ExecuteNonQuery();
-
-                conn.Close();
-                Response.Redirect("userDashboard.aspx");
+                ErrMsg2.Visible = true;
+                ErrMsg2.ForeColor = System.Drawing.Color.Red;
+                ErrMsg2.Text = "Please provide subject and description for feedback. Much appreciated! :)";
             }
-            catch (Exception ex)
+            else
             {
-                /*generalErrorMsg.Visible = true;
-                generalErrorMsg.ForeColor = System.Drawing.Color.Red;
-                generalErrorMsg.Text = "Quiz was not created successful!" + ex.ToString();*/
+                try
+                {
+
+                    RadioButton[] rb = new RadioButton[5];
+
+                    rb[0] = r1;
+                    rb[1] = r2;
+                    rb[2] = r3;
+                    rb[3] = r4;
+                    rb[4] = r5;
+                    decimal rating = 0;
+
+                    foreach (RadioButton r in rb)
+                    {
+                        if (r.Checked)
+                        {
+                            rating = decimal.Parse(r.ID.ToString().Replace("r", ""));
+                        }
+                    }
+
+                    SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
+                    conn.Open();
+
+                    string createQuery = "insert into feedbackData (userID, " +
+                            "feedbacktitle, " +
+                            "feedbackdesc, " +
+                            "feedbackrating ) values (@userID," +
+                            "@feedbacktitle, " +
+                            "@feedbackdesc, " +
+                            "@feedbackrating )";
+                    SqlCommand createCMD = new SqlCommand(createQuery, conn);
+
+                    createCMD.Parameters.AddWithValue("@userID", Session["userID"].ToString().Trim());
+                    createCMD.Parameters.AddWithValue("@feedbacktitle", Server.HtmlEncode(FeedbackSubjectTxtBx.Text.Trim()));
+                    createCMD.Parameters.AddWithValue("@feedbackdesc", Server.HtmlEncode(FeedbackDescTxtBx.Text.Trim()));
+                    createCMD.Parameters.AddWithValue("@feedbackrating", rating);
+                    createCMD.ExecuteNonQuery();
+
+                    conn.Close();
+                    Response.Redirect("userDashboard.aspx");
+                }
+                catch (Exception ex)
+                {
+                    ErrMsg2.Visible = true;
+                    ErrMsg2.ForeColor = System.Drawing.Color.Red;
+                    ErrMsg2.Text = "Feedback was not given successful!" + ex.ToString();
+                }
             }
         }
 

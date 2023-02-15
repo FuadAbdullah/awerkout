@@ -96,7 +96,7 @@
                         runat="server"
                         ErrorMessage="Question is required"
                         ForeColor="Red"
-                        ControlToValidate="questionDropDown">
+                        ControlToValidate="QuestionDropDown">
                         *
                     </asp:RequiredFieldValidator>
                     <asp:Label ID="QuizQuestionID" runat="server" Text="Question ID: "></asp:Label>
@@ -265,8 +265,9 @@
                 <td class="auto-style17"></td>
             </tr>
             <tr>
-                <td class="auto-style12">&nbsp;</td>
-                <td class="auto-style9">&nbsp;</td>
+                <td colspan="2">
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="One or more fields were entered incorrectly." ForeColor="Red" />
+                </td>
                 <td>
                     <asp:Button ID="CreateQuizBtn" class="btn" runat="server" Text="Create New" OnClick="CreateQuizBtn_Click" CausesValidation="false" />
                 </td>
