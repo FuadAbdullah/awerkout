@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace awerkout
 {
@@ -152,52 +153,110 @@ namespace awerkout
 
             string query = "";
 
-            // If no new password was provided, retain old password
-            if (userPasswordTxtBx.Text == "") {
-                query = "update userData set firstname = '" +
-                userFirstNameTxtBx.Text.Trim() + "', lastname = '" +
-                userLastNameTxtBx.Text.Trim() + "', username = '" +
-                userUsernameTxtBx.Text.Trim() + "', emailaddress = '" +
-                userEmailTxtBx.Text.Trim() + "', gender = '" +
-                userGenderDropDown.SelectedValue.Trim() + "', profileimg = '" +
-                userPPImg.ImageUrl.Trim() + "', location = '" +
-                userLocationTxtBx.Text.Trim() + "', aboutme = '" +
-                userAboutMeTxtBx.Text.Trim() + "', likes = '" +
-                userLikesTxtBx.Text.Trim() + "', dislikes = '" +
-                userDislikesTxtBx.Text.Trim() + "', phonenumber = '" +
-                userPhoneNumberTxtBx.Text.Trim() + "', weight = '" +
-                userWeightTxtBx.Text.Trim() + "', height = '" +
-                userHeightTxtBx.Text.Trim() + "', dateofbirth = '" +
-                userDoBTxtBx.Text.Trim() + "', updatedAt = '" +
-                DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where username = '" +
-                Session["username"] + "'";
-            } else // Otherwise, a new password is provided and should be updated. Remember to handle validation for new password insertion
+            if (Regex.IsMatch(userFirstNameTxtBx.Text, @"^['\x00-\x2F\x3A-\x40\x5B-\x60\x7B-\x7F]+$"))
             {
-                query = "update userData set firstname = '" +
-                userFirstNameTxtBx.Text.Trim() + "', lastname = '" +
-                userLastNameTxtBx.Text.Trim() + "', username = '" +
-                userUsernameTxtBx.Text.Trim() + "', emailaddress = '" +
-                userEmailTxtBx.Text.Trim() + "', gender = '" +
-                userGenderDropDown.SelectedValue.Trim() + "', profileimg = '" +
-                userPPImg.ImageUrl.Trim() + "', location = '" +
-                userLocationTxtBx.Text.Trim() + "', aboutme = '" +
-                userAboutMeTxtBx.Text.Trim() + "', likes = '" +
-                userLikesTxtBx.Text.Trim() + "', dislikes = '" +
-                userDislikesTxtBx.Text.Trim() + "', phonenumber = '" +
-                userPhoneNumberTxtBx.Text.Trim() + "', weight = '" +
-                userWeightTxtBx.Text.Trim() + "', height = '" +
-                userHeightTxtBx.Text.Trim() + "', dateofbirth = '" +
-                userDoBTxtBx.Text.Trim() + "', password = '" +
-                userPasswordTxtBx.Text.Trim() + "', updatedAt = '" +
-                DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where username = '" +
-                Session["username"] + "'";
+                generalErrorMsg.Text = "Special Characters are not allowed";
             }
+            else
+            {
+                // If no new password was provided, retain old password
+                if (userPasswordTxtBx.Text == "")
+                {
+                    query = "update userData set firstname = '" +
+                    userFirstNameTxtBx.Text.Trim() + "', lastname = '" +
+                    userLastNameTxtBx.Text.Trim() + "', username = '" +
+                    userUsernameTxtBx.Text.Trim() + "', emailaddress = '" +
+                    userEmailTxtBx.Text.Trim() + "', gender = '" +
+                    userGenderDropDown.SelectedValue.Trim() + "', profileimg = '" +
+                    userPPImg.ImageUrl.Trim() + "', location = '" +
+                    userLocationTxtBx.Text.Trim() + "', aboutme = '" +
+                    userAboutMeTxtBx.Text.Trim() + "', likes = '" +
+                    userLikesTxtBx.Text.Trim() + "', dislikes = '" +
+                    userDislikesTxtBx.Text.Trim() + "', phonenumber = '" +
+                    userPhoneNumberTxtBx.Text.Trim() + "', weight = '" +
+                    userWeightTxtBx.Text.Trim() + "', height = '" +
+                    userHeightTxtBx.Text.Trim() + "', dateofbirth = '" +
+                    userDoBTxtBx.Text.Trim() + "', updatedAt = '" +
+                    DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where username = '" +
+                    Session["username"] + "'";
+                }
+                else // Otherwise, a new password is provided and should be updated. Remember to handle validation for new password insertion
+                {
+                    query = "update userData set firstname = '" +
+                    userFirstNameTxtBx.Text.Trim() + "', lastname = '" +
+                    userLastNameTxtBx.Text.Trim() + "', username = '" +
+                    userUsernameTxtBx.Text.Trim() + "', emailaddress = '" +
+                    userEmailTxtBx.Text.Trim() + "', gender = '" +
+                    userGenderDropDown.SelectedValue.Trim() + "', profileimg = '" +
+                    userPPImg.ImageUrl.Trim() + "', location = '" +
+                    userLocationTxtBx.Text.Trim() + "', aboutme = '" +
+                    userAboutMeTxtBx.Text.Trim() + "', likes = '" +
+                    userLikesTxtBx.Text.Trim() + "', dislikes = '" +
+                    userDislikesTxtBx.Text.Trim() + "', phonenumber = '" +
+                    userPhoneNumberTxtBx.Text.Trim() + "', weight = '" +
+                    userWeightTxtBx.Text.Trim() + "', height = '" +
+                    userHeightTxtBx.Text.Trim() + "', dateofbirth = '" +
+                    userDoBTxtBx.Text.Trim() + "', password = '" +
+                    userPasswordTxtBx.Text.Trim() + "', updatedAt = '" +
+                    DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where username = '" +
+                    Session["username"] + "'";
+                }
 
-            SqlCommand updateCmd = new SqlCommand(query, conn);
-            updateCmd.ExecuteNonQuery();
+                SqlCommand updateCmd = new SqlCommand(query, conn);
+                updateCmd.ExecuteNonQuery();
 
-            conn.Close();
-            Response.Redirect("userProfile.aspx");
+                conn.Close();
+                Response.Redirect("userProfile.aspx");
+                //generalErrorMsg.Text = "Special Characters are not allowed";
+
+
+            }
+            //// If no new password was provided, retain old password
+            //if (userPasswordTxtBx.Text == "") {
+            //    query = "update userData set firstname = '" +
+            //    userFirstNameTxtBx.Text.Trim() + "', lastname = '" +
+            //    userLastNameTxtBx.Text.Trim() + "', username = '" +
+            //    userUsernameTxtBx.Text.Trim() + "', emailaddress = '" +
+            //    userEmailTxtBx.Text.Trim() + "', gender = '" +
+            //    userGenderDropDown.SelectedValue.Trim() + "', profileimg = '" +
+            //    userPPImg.ImageUrl.Trim() + "', location = '" +
+            //    userLocationTxtBx.Text.Trim() + "', aboutme = '" +
+            //    userAboutMeTxtBx.Text.Trim() + "', likes = '" +
+            //    userLikesTxtBx.Text.Trim() + "', dislikes = '" +
+            //    userDislikesTxtBx.Text.Trim() + "', phonenumber = '" +
+            //    userPhoneNumberTxtBx.Text.Trim() + "', weight = '" +
+            //    userWeightTxtBx.Text.Trim() + "', height = '" +
+            //    userHeightTxtBx.Text.Trim() + "', dateofbirth = '" +
+            //    userDoBTxtBx.Text.Trim() + "', updatedAt = '" +
+            //    DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where username = '" +
+            //    Session["username"] + "'";
+            //} else // Otherwise, a new password is provided and should be updated. Remember to handle validation for new password insertion
+            //{
+            //    query = "update userData set firstname = '" +
+            //    userFirstNameTxtBx.Text.Trim() + "', lastname = '" +
+            //    userLastNameTxtBx.Text.Trim() + "', username = '" +
+            //    userUsernameTxtBx.Text.Trim() + "', emailaddress = '" +
+            //    userEmailTxtBx.Text.Trim() + "', gender = '" +
+            //    userGenderDropDown.SelectedValue.Trim() + "', profileimg = '" +
+            //    userPPImg.ImageUrl.Trim() + "', location = '" +
+            //    userLocationTxtBx.Text.Trim() + "', aboutme = '" +
+            //    userAboutMeTxtBx.Text.Trim() + "', likes = '" +
+            //    userLikesTxtBx.Text.Trim() + "', dislikes = '" +
+            //    userDislikesTxtBx.Text.Trim() + "', phonenumber = '" +
+            //    userPhoneNumberTxtBx.Text.Trim() + "', weight = '" +
+            //    userWeightTxtBx.Text.Trim() + "', height = '" +
+            //    userHeightTxtBx.Text.Trim() + "', dateofbirth = '" +
+            //    userDoBTxtBx.Text.Trim() + "', password = '" +
+            //    userPasswordTxtBx.Text.Trim() + "', updatedAt = '" +
+            //    DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where username = '" +
+            //    Session["username"] + "'";
+            //}
+
+            //SqlCommand updateCmd = new SqlCommand(query, conn);
+            //updateCmd.ExecuteNonQuery();
+
+            //conn.Close();
+            //Response.Redirect("userProfile.aspx");
 
         }
 
