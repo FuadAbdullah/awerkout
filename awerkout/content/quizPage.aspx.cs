@@ -98,7 +98,7 @@ namespace awerkout.content
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + "You have not answered any questions, give a shot at it first!" + "');", true);
             } else if (int.Parse(HttpContext.Current.Session["quizCountIndex"].ToString()) < 10)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + "Some answers were left unanswered, you can do this! I'll restart it for you for some challenge..." + "');", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + "Some answers were left unanswered, you can do this! I will restart it for you for some challenge..." + "');", true);
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "Refresh", "refreshPage();", true);
             }
             else
