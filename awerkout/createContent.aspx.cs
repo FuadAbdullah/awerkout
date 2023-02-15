@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace awerkout
 {
@@ -77,36 +78,44 @@ namespace awerkout
                 contentdata = "bannerPath=" + bannerFileName + ";";
             }
 
-
-            try
-            {
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
-                conn.Open();
-
-                // Creating the record in the table called postData
-                string createQuery = "insert into postData (userID, " +
-                    "postTitle, " +
-                    "postDescription, " +
-                    "contentdata ) values (@userID," +
-                    "@postTitle, " +
-                    "@postDescription, " +
-                    "@contentdata)";
-                SqlCommand createCMD = new SqlCommand(createQuery, conn);
-
-                createCMD.Parameters.AddWithValue("@userID", Session["userID"]);
-                createCMD.Parameters.AddWithValue("@postTitle", Server.HtmlEncode(contentTitleTxtBx.Text.Trim()));
-                createCMD.Parameters.AddWithValue("@postDescription", Server.HtmlEncode(contentTextTxtBx.Text.Trim()));
-                createCMD.Parameters.AddWithValue("@contentdata", Server.HtmlEncode(contentdata));
-                createCMD.ExecuteNonQuery();
-                Response.Redirect("createContent.aspx");
-
-                conn.Close();
-            }
-            catch (Exception ex)
+            if (Regex.IsMatch(contentTitleTxtBx.Text.Trim(), "['\";]+") ||
+                Regex.IsMatch(contentTextTxtBx.Text.Trim(), "['\";]+"))
             {
                 generalErrorMsg.Visible = true;
-                generalErrorMsg.ForeColor = System.Drawing.Color.Red;
-                generalErrorMsg.Text = "Post creation failed!" + ex.ToString();
+                generalErrorMsg.Text = "Special Characters are not allowed";
+            }
+            else
+            {
+                try
+                {
+                    SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
+                    conn.Open();
+
+                    // Creating the record in the table called postData
+                    string createQuery = "insert into postData (userID, " +
+                        "postTitle, " +
+                        "postDescription, " +
+                        "contentdata ) values (@userID," +
+                        "@postTitle, " +
+                        "@postDescription, " +
+                        "@contentdata)";
+                    SqlCommand createCMD = new SqlCommand(createQuery, conn);
+
+                    createCMD.Parameters.AddWithValue("@userID", Session["userID"]);
+                    createCMD.Parameters.AddWithValue("@postTitle", Server.HtmlEncode(contentTitleTxtBx.Text.Trim()));
+                    createCMD.Parameters.AddWithValue("@postDescription", Server.HtmlEncode(contentTextTxtBx.Text.Trim()));
+                    createCMD.Parameters.AddWithValue("@contentdata", Server.HtmlEncode(contentdata));
+                    createCMD.ExecuteNonQuery();
+                    Response.Redirect("createContent.aspx");
+
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    generalErrorMsg.Visible = true;
+                    generalErrorMsg.ForeColor = System.Drawing.Color.Red;
+                    generalErrorMsg.Text = "Post creation failed!" + ex.ToString();
+                }
             }
         }
 

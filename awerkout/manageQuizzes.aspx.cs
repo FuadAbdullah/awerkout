@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace awerkout
 {
@@ -164,30 +165,41 @@ namespace awerkout
 
         protected void Update_Click(object sender, EventArgs e)
         {
+            if (Regex.IsMatch(QuestionTxtBx.Text.Trim(), "['\";]+") ||
+                Regex.IsMatch(option1TxtBx.Text.Trim(), "['\";]+") ||
+                Regex.IsMatch(option2TxtBx.Text.Trim(), "['\";]+") ||
+                Regex.IsMatch(option3TxtBx.Text.Trim(), "['\";]+") ||
+                Regex.IsMatch(option4TxtBx.Text.Trim(), "['\";]+"))
+            {
+                generalErrorMsg.Visible = true;
+                generalErrorMsg.Text = "Special Characters are not allowed";
+            }
+            else
+            {
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
+                conn.Open();
 
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
-            conn.Open();
+                // Delimiter as input is forbidden, therefore sanitized
+                string choices = option1TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
+                    option2TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
+                    option3TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
+                    option4TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";";
 
-            // Delimiter as input is forbidden, therefore sanitized
-            string choices = option1TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
-                option2TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
-                option3TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
-                option4TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";";
+                string encodedChoices = Server.HtmlEncode(choices);
 
-            string encodedChoices = Server.HtmlEncode(choices);
-
-            string query = "update quizData set question = '" +
+                string query = "update quizData set question = '" +
                 Server.HtmlEncode(QuestionTxtBx.Text.Trim()) + "', correctans = '" +
                 AnswerDropDown.SelectedValue.ToString().Trim() + "', choices = '" +
                 encodedChoices + "', updatedAt = '" +
                 DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where quizID = '" +
                 QuestionDropDown.SelectedValue.ToString() + "'";
 
-            SqlCommand updateCmd = new SqlCommand(query, conn);
-            updateCmd.ExecuteNonQuery();
+                SqlCommand updateCmd = new SqlCommand(query, conn);
+                updateCmd.ExecuteNonQuery();
 
-            conn.Close();
-            Response.Redirect(string.Format("~/manageQuizzes.aspx"));
+                conn.Close();
+                Response.Redirect(string.Format("~/manageQuizzes.aspx"));
+            }
 
         }
     }

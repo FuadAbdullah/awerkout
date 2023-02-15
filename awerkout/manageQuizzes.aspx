@@ -91,15 +91,15 @@
             </tr>
             <tr>
                 <td class="auto-style11">
-                    <asp:Label ID="QuizQuestionID" runat="server" Text="Question ID: "></asp:Label>
                     <asp:RequiredFieldValidator
-                        ID="QuestionErrMsg"
+                        ID="QuestionIDErrMsg"
                         runat="server"
                         ErrorMessage="Question is required"
                         ForeColor="Red"
                         ControlToValidate="questionDropDown">
                         *
                     </asp:RequiredFieldValidator>
+                    <asp:Label ID="QuizQuestionID" runat="server" Text="Question ID: "></asp:Label>
                 </td>
                 <td class="auto-style9">
                     <asp:DropDownList ID="QuestionDropDown" class="TxtBx" runat="server" OnSelectedIndexChanged="QuestionDropDown_SelectedIndexChanged" AutoPostBack="True">
@@ -112,6 +112,14 @@
             </tr>
             <tr>
                 <td class="auto-style11">
+                    <asp:RequiredFieldValidator
+                        ID="QuestionErrMsg"
+                        runat="server"
+                        ErrorMessage="Question is required."
+                        ControlToValidate="QuestionTxtBx"
+                        ForeColor="Red">
+                        *
+                    </asp:RequiredFieldValidator>
                     <asp:Label ID="QuizQuestionTitle" runat="server" Text="Question:"></asp:Label>
                 </td>
                 <td class="auto-style18">
@@ -124,7 +132,6 @@
             </tr>
             <tr>
                 <td class="auto-style11">
-                    <asp:Label ID="Option1" runat="server" Text="Option 1: "></asp:Label>
                     <asp:RequiredFieldValidator
                         ID="Option1ErrMsg"
                         runat="server"
@@ -133,6 +140,7 @@
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
+                    <asp:Label ID="Option1" runat="server" Text="Option 1: "></asp:Label>
                 </td>
                 <td class="auto-style18">
                     <asp:TextBox ID="option1TxtBx" class="TxtBx" runat="server"></asp:TextBox>
@@ -144,7 +152,6 @@
             </tr>
             <tr>
                 <td class="auto-style11">
-                    <asp:Label ID="Option2" runat="server" Text="Option 2: "></asp:Label>
                     <asp:RequiredFieldValidator
                         ID="Option2ErrMsg"
                         runat="server"
@@ -153,6 +160,7 @@
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
+                    <asp:Label ID="Option2" runat="server" Text="Option 2: "></asp:Label>
                 </td>
                 <td class="auto-style9">
                     <asp:TextBox ID="option2TxtBx" class="TxtBx" runat="server"></asp:TextBox>
@@ -164,7 +172,6 @@
             </tr>
             <tr>
                 <td class="auto-style11">
-                    <asp:Label ID="Option3" runat="server" Text="Option 3: "></asp:Label>
                     <asp:RequiredFieldValidator
                         ID="Option3ErrMsg"
                         runat="server"
@@ -173,6 +180,7 @@
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
+                    <asp:Label ID="Option3" runat="server" Text="Option 3: "></asp:Label>
                 </td>
                 <td class="auto-style9">
                     <asp:TextBox ID="option3TxtBx" class="TxtBx" runat="server"></asp:TextBox>
@@ -184,7 +192,6 @@
             </tr>
             <tr>
                 <td class="auto-style11">
-                    <asp:Label ID="Option4" runat="server" Text="Option 4: "></asp:Label>
                     <asp:RequiredFieldValidator
                         ID="Option4ErrMsg"
                         runat="server"
@@ -193,6 +200,7 @@
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
+                    <asp:Label ID="Option4" runat="server" Text="Option 4: "></asp:Label>
                 </td>
                 <td class="auto-style9">
                     <asp:TextBox ID="option4TxtBx" class="TxtBx" runat="server"></asp:TextBox>
@@ -204,7 +212,6 @@
             </tr>
             <tr>
                 <td class="auto-style11">
-                    <asp:Label ID="Answer" runat="server" Text="Answer: "></asp:Label>
                     <asp:RequiredFieldValidator
                         ID="AnswerErrMsg"
                         runat="server"
@@ -213,6 +220,7 @@
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
+                    <asp:Label ID="Answer" runat="server" Text="Answer: "></asp:Label>
                 </td>
                 <td class="auto-style9">
                     <asp:DropDownList ID="AnswerDropDown" class="TxtBx" runat="server" AutoPostBack="True">
@@ -232,7 +240,9 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style6">
+                    <asp:Label ID="generalErrorMsg" runat="server" Text="General Error" ForeColor="Red"></asp:Label>
+                </td>
                 <td class="auto-style10">&nbsp;</td>
                 <td class="auto-style4"></td>
             </tr>

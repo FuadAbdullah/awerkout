@@ -42,6 +42,15 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Label greetLbl;
 
         /// <summary>
+        /// QuestionIDErrMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator QuestionIDErrMsg;
+
+        /// <summary>
         /// QuizQuestionID control.
         /// </summary>
         /// <remarks>
@@ -51,15 +60,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Label QuizQuestionID;
 
         /// <summary>
-        /// QuestionErrMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator QuestionErrMsg;
-
-        /// <summary>
         /// QuestionDropDown control.
         /// </summary>
         /// <remarks>
@@ -67,6 +67,15 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList QuestionDropDown;
+
+        /// <summary>
+        /// QuestionErrMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator QuestionErrMsg;
 
         /// <summary>
         /// QuizQuestionTitle control.
@@ -87,15 +96,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox QuestionTxtBx;
 
         /// <summary>
-        /// Option1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Option1;
-
-        /// <summary>
         /// Option1ErrMsg control.
         /// </summary>
         /// <remarks>
@@ -103,6 +103,15 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator Option1ErrMsg;
+
+        /// <summary>
+        /// Option1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Option1;
 
         /// <summary>
         /// option1TxtBx control.
@@ -114,15 +123,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox option1TxtBx;
 
         /// <summary>
-        /// Option2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Option2;
-
-        /// <summary>
         /// Option2ErrMsg control.
         /// </summary>
         /// <remarks>
@@ -130,6 +130,15 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator Option2ErrMsg;
+
+        /// <summary>
+        /// Option2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Option2;
 
         /// <summary>
         /// option2TxtBx control.
@@ -141,15 +150,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox option2TxtBx;
 
         /// <summary>
-        /// Option3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Option3;
-
-        /// <summary>
         /// Option3ErrMsg control.
         /// </summary>
         /// <remarks>
@@ -157,6 +157,15 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator Option3ErrMsg;
+
+        /// <summary>
+        /// Option3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Option3;
 
         /// <summary>
         /// option3TxtBx control.
@@ -168,15 +177,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox option3TxtBx;
 
         /// <summary>
-        /// Option4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Option4;
-
-        /// <summary>
         /// Option4ErrMsg control.
         /// </summary>
         /// <remarks>
@@ -184,6 +184,15 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator Option4ErrMsg;
+
+        /// <summary>
+        /// Option4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Option4;
 
         /// <summary>
         /// option4TxtBx control.
@@ -195,15 +204,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox option4TxtBx;
 
         /// <summary>
-        /// Answer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Answer;
-
-        /// <summary>
         /// AnswerErrMsg control.
         /// </summary>
         /// <remarks>
@@ -211,6 +211,15 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator AnswerErrMsg;
+
+        /// <summary>
+        /// Answer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Answer;
 
         /// <summary>
         /// AnswerDropDown control.
@@ -238,6 +247,15 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Delete;
+
+        /// <summary>
+        /// generalErrorMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label generalErrorMsg;
 
         /// <summary>
         /// quizAuthorLbl control.

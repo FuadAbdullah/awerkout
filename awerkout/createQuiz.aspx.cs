@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace awerkout
 {
@@ -34,42 +35,54 @@ namespace awerkout
 
         protected void CreateBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
-                conn.Open();
-
-                // Delimiter as input is forbidden, therefore sanitized
-                string choices = option1TxtBx.Text.Trim().Replace("'", "\"").Replace(";","") + ";" +
-                    option2TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
-                    option3TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
-                    option4TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";";
-
-                string encodedChoices = Server.HtmlEncode(choices);
-
-                string createQuery = "insert into quizData (question, " +
-                        "userID, " +
-                        "correctans, " +
-                        "choices ) values (@question," +
-                        "@userID, " +
-                        "@correctans, " +
-                        "@choices )";
-                SqlCommand createCMD = new SqlCommand(createQuery, conn);
-
-                createCMD.Parameters.AddWithValue("@question", questionTxtBx.Text.Trim());
-                createCMD.Parameters.AddWithValue("@userID", Session["userID"]);
-                createCMD.Parameters.AddWithValue("@correctans", AnswerDropDown.SelectedValue);
-                createCMD.Parameters.AddWithValue("@choices", encodedChoices);
-                createCMD.ExecuteNonQuery();
-
-                conn.Close();
-                Response.Redirect("createQuiz.aspx");
-            }
-            catch (Exception ex)
+            if (Regex.IsMatch(questionTxtBx.Text.Trim(), "['\";]+") ||
+                Regex.IsMatch(option1TxtBx.Text.Trim(), "['\";]+") ||
+                Regex.IsMatch(option2TxtBx.Text.Trim(), "['\";]+") ||
+                Regex.IsMatch(option3TxtBx.Text.Trim(), "['\";]+") ||
+                Regex.IsMatch(option4TxtBx.Text.Trim(), "['\";]+"))
             {
                 generalErrorMsg.Visible = true;
-                generalErrorMsg.ForeColor = System.Drawing.Color.Red;
-                generalErrorMsg.Text = "Quiz was not created successful!" + ex.ToString();
+                generalErrorMsg.Text = "Special Characters are not allowed";
+            }
+            else
+            {
+                try
+                {
+                    SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
+                    conn.Open();
+
+                    // Delimiter as input is forbidden, therefore sanitized
+                    string choices = option1TxtBx.Text.Trim().Replace("'", "\"").Replace(";","") + ";" +
+                        option2TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
+                        option3TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
+                        option4TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";";
+
+                    string encodedChoices = Server.HtmlEncode(choices);
+
+                    string createQuery = "insert into quizData (question, " +
+                            "userID, " +
+                            "correctans, " +
+                            "choices ) values (@question," +
+                            "@userID, " +
+                            "@correctans, " +
+                            "@choices )";
+                    SqlCommand createCMD = new SqlCommand(createQuery, conn);
+
+                    createCMD.Parameters.AddWithValue("@question", questionTxtBx.Text.Trim());
+                    createCMD.Parameters.AddWithValue("@userID", Session["userID"]);
+                    createCMD.Parameters.AddWithValue("@correctans", AnswerDropDown.SelectedValue);
+                    createCMD.Parameters.AddWithValue("@choices", encodedChoices);
+                    createCMD.ExecuteNonQuery();
+
+                    conn.Close();
+                    Response.Redirect("createQuiz.aspx");
+                }
+                catch (Exception ex)
+                {
+                    generalErrorMsg.Visible = true;
+                    generalErrorMsg.ForeColor = System.Drawing.Color.Red;
+                    generalErrorMsg.Text = "Quiz was not created successful!" + ex.ToString();
+                }
             }
         }
 
