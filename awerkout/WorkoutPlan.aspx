@@ -24,25 +24,24 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
     <asp:Label ID="greetLbl" runat="server" Text="Hello there!" Font-Bold="True"></asp:Label>
-    <div class="main txt" style="text-align: left; font-size: 50px;">
+    <div class="main txt" style="text-align: left; font-size: 45px; color: #FFFFFF; font-style: italic;">
         Split by goals:<br />
         Aesthetics<br />
         Shredded<br />
         Powerlifting<br />
-        Exercising
-        <asp:Button ID="WorkoutBtn" class="wrkoutbtn" runat="server" Text="Learn more" OnClick="WorkoutPlan_Click"/>
+        Exercising  
     </div>
 
-    <div class="container">
-        <div id="plan1" class="txt">
+    <div class="container" >
+        <div id="plan1" class="txt" style="font-style: italic; color: #3cd716" >
             Beginner
             <asp:Button ID="BeginnerBtn" class="btn" runat="server" Text="Learn more" OnClick="BeginnerBtn_Click"/>
         </div>
-        <div id="plan2" class="txt"> 
+        <div id="plan2" class="txt" style="font-style: italic; color: #ffa500;"> 
             Intermediate
             <asp:Button ID="IntermediateBtn" class="btn" runat="server" Text="Learn more" OnClick="IntermediateBtn_Click"/>
         </div>
-         <div id="plan3" class="txt"> 
+         <div id="plan3" class="txt" style="font-style: italic; color: #e25822"> 
             Advanced
              <asp:Button ID="AdvancedBtn" class="btn" runat="server" Text="Learn more" OnClick="AdvancedBtn_Click"/>
         </div>

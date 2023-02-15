@@ -29,21 +29,24 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
     <asp:Label ID="greetLbl" runat="server" Text="Hello there!" Font-Bold="True"></asp:Label>
-    <div class="container">
-        <div class="header" style="margin-top: 100px">
+    <div class="container" style="font-size: 40px;">
+        <div class="header" style="margin-top: 100px; color: #ff9f00 ">
             Calorie Needs and Macronutrients
         </div>
-        <div class="content">
+        <div class="content" style="font-size: 25px; font-style: italic;">
             <br />
             The goal for competitive bodybuilders is to 
             increase muscle mass in the bulking phase and reduce 
             body fat in the cutting phase. Hence, you consume more 
             calories in the bulking phase than in the cutting phase.
         </div>
-        <div class="header">
+
+        <br/>
+
+        <div class="header" style="color: #fe5a1d ">
             How Many Calories Do You Need?
         </div>
-        <div class="content">
+        <div class="content" style="font-size: 25px; font-style: italic;">
             <br />
             The easiest way to determine how many calories you 
             need is to weigh yourself at least three times a week and record 
@@ -80,10 +83,13 @@
             muscle during the cutting phase or gain too much body fat during the 
             bulking phase (7Trusted Source).
         </div>
-        <div class="header">
+
+        <br/>
+
+        <div class="header" style="color: #f77f00 ">
             Macronutrient Ratio
         </div>
-        <div class="content">
+        <div class="content" style="font-size: 25px; font-style: italic;">
             <br />
             Once you establish the calories you need, you can determine your 
             macronutrient ratio, which is the ratio between your protein, 
@@ -102,6 +108,7 @@
             <li>30–35% of your calories from protein</li><br />
             <li>55–60% of your calories from carbs</li><br />
             <li>15–20% of your calories from fat</li><br /><br />
+            <br />
             Here’s an example of the ratio for both a bulking and cutting phase:
             <br />
             <br />
@@ -137,10 +144,13 @@
             a registered dietitian to determine your individual needs based on 
             your goals to ensure your diet is nutritionally adequate.
         </div>
-        <div class="header">
+
+        <br />
+
+        <div class="header" style="color: #fe2712 ">
             Bodybuilding Nutrition: Foods to Eat and Avoid
         </div>
-        <div class="content">
+        <div class="content" style="font-size: 25px; font-style: italic;">
             <br />
             Like training, diet is a vital part of bodybuilding.
             <br />
@@ -155,10 +165,13 @@
             <br />
             <br />
         </div>
-        <div class="header">
+
+        <br />
+
+        <div class="header" style="color: #39ff14 ">
             Foods to Focus On
         </div>
-        <div class="content">
+        <div class="content" style="font-size: 25px; font-style: italic;">
             <br />
             The foods you eat don’t need to differ between the bulking and cutting phase — usually, it’s the amounts that do.
             <br />
@@ -176,10 +189,13 @@
             <li>Beans and legumes: Chickpeas, lentils, kidney beans, black beans, and pinto beans.</li><br />
             <li>Oils: Olive oil, flaxseed oil, and avocado oil.</li><br /><br />
         </div>
-        <div class="header">
+
+        <br />
+
+        <div class="header" style="color: #FF0000">
             Foods to Limit
         </div>
-        <div class="content">
+        <div class="content" style="font-size: 25px; font-style: italic;">
             <br />
             While you should include a variety of foods in your diet, there are some you should limit.            <br />
             <br />
@@ -198,10 +214,13 @@
             <li>High-fiber foods: Beans and cruciferous vegetables like broccoli or cauliflower.</li><br />
             <li>Carbonated beverages: Sparkling water or diet soda.</li><br /><br />
         </div>
-        <div class="header">
+
+        <br />
+
+        <div class="header" style="color: #bf00ff ">
             Bodybuilding Supplements
         </div>
-        <div class="content">
+        <div class="content" style="font-size: 25px; font-style: italic;">
             <br />
             Many bodybuilders take dietary supplements, some of which are useful while others are not (10Trusted Source, 11Trusted Source).            <br />
             <br />
@@ -213,10 +232,13 @@
             <li>Caffeine: Caffeine decreases fatigue and allows you to work harder. Pre-workout supplements, coffee, and tea are often high in caffeine. (13Trusted Source).</li><br /><br />
             A multi vitamin and mineral supplement may be helpful if you’re limiting your calorie intake to reduce body fat during your cutting phase.<br />
         </div>
-         <div class="header">
+
+        <br />
+
+         <div class="header" style="color: #ff1493 ">
             One-Week Sample Menu
         </div>
-        <div class="content">
+        <div class="content" style="font-size: 25px; font-style: italic;">
             <br />
             Many people believe bodybuilding diets are restrictive, repetitive, and boring.<br />
             <br />
@@ -228,9 +250,10 @@
             <br />
             You can enjoy the same foods in the cutting phase that you would when bulking — just in smaller portions. <br />
             <br />
+            <br />
             Here is a sample one-week bodybuilding menu:
             <br />
-        <div class="header">
+        <div class="header" style="color: #e32636 ">
             Monday
         </div>
         <div class="content">
@@ -242,7 +265,7 @@
             <li>Dinner: Salmon, quinoa, and asparagus.</li><br />
             <br />
         </div>
-        <div class="header">
+        <div class="header" style="color: #ff6700 ">
             Tuesday
         </div>
         <div class="content">
@@ -254,7 +277,7 @@
             <li>Dinner: Ground turkey and marinara sauce over pasta, with a side of cauliflower.</li><br />
             <br />
         </div>
-        <div class="header">
+        <div class="header" style="color: #ffe135 ">
             Wednesday
         </div>
         <div class="content">
@@ -266,7 +289,7 @@
             <li>Dinner: Mackerel, brown rice, asparagus, and salad leaves with vinaigrette.</li><br />
             <br />
         </div>
-        <div class="header">
+        <div class="header" style="color: #00ff7f">
             Thursday
         </div>
         <div class="content">
@@ -278,7 +301,7 @@
             <li>Dinner: Stir-fry with shrimp, egg, brown rice, bell peppers, peas, and carrots.</li><br />
             <br />
         </div>
-        <div class="header">
+        <div class="header" style="color: #4f86f7 ">
             Friday
         </div>
         <div class="content">
@@ -290,7 +313,7 @@
             <li>Dinner: Ground beef with corn, brown rice, green peas, and beans.</li><br />
             <br />
         </div>
-        <div class="header">
+        <div class="header" style="color: #c8a2c8 ">
             Saturday
         </div>
         <div class="content">
@@ -302,7 +325,7 @@
             <li>Dinner: Diced beef with rice, black beans, bell peppers, onions, cheese, and pico de gallo.</li><br />
             <br />
         </div>
-        <div class="header">
+        <div class="header" style="color: #df73ff ">
             Sunday
         </div>
         <div class="content">

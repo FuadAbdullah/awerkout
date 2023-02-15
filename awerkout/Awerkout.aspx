@@ -24,24 +24,24 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
     <asp:Label ID="greetLbl" runat="server" Text="Hello there!" Font-Bold="True"></asp:Label>
-    <div class="workout txt" style="color: #D33737;">
+    <div class="workout txt" style="color: #ff8c00; font-size: 60px; font-style: italic">
         Browse Curated Posts<br />
         <asp:Button ID="WorkoutPlanBtn" class="btn" style="float: right" runat ="server" Text="Go!" OnClick="contentPageBtn_Click" />
     </div>
     <div class="container" style="float: left">
-        <div id="guides" class="txt">
+        <div id="guides" class="txt" style="color: #ff6700; font-style: italic; font-size: 55px;">
             Guides
             <asp:Button ID="GuidesBtn" class="gbtn" runat="server" Text="Learn more" OnClick="GuidesBtn_Click"/>
         </div>
-        <div id="nutrition" class="txt">
+        <div id="nutrition" class="txt" style="color: #2e8b57; font-style: italic; font-size: 55px;">
             Nutrition
             <asp:Button ID="NutritionBtn" class="gbtn" runat="server" Text="Learn more" OnClick="NutritionBtn_Click" />
         </div>
 
     </div>
     <div class="container2" style="float: right">
-        <div id="signup" class="txt">
-            Become a member today
+        <div id="signup" class="txt" style="color: #9400d3; font-style: italic; font-size: 65px">
+            Become a Member Today !
             <asp:Button ID="SignupBtn" class="sbtn" runat="server" Text="Learn more" OnClick="SignupBtn_Click" />
         </div>
 

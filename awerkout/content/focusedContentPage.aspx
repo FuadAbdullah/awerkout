@@ -33,7 +33,7 @@
     </table>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
-    <table class="auto-style3">
+    <table class="auto-style3" style="text-align:center; font-size: 40px">
         <tr>
             <td>
                 <!-- Empty row -->
@@ -98,9 +98,9 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="focusedContentAuthorLbl" runat="server" Text="Author And ID"></asp:Label>
+                <asp:Label ID="focusedContentAuthorLbl" runat="server" Text="Author And ID" Font-Size="25px" Font-Italic="true"></asp:Label>
                 <br />
-                <asp:Label ID="focusedContentUpdateLbl" runat="server" Text="Updated Date Time"></asp:Label>
+                <asp:Label ID="focusedContentUpdateLbl" runat="server" Text="Updated Date Time" Font-Size="25px" Font-Italic="true"></asp:Label>
 
             </td>
         </tr>
@@ -142,7 +142,7 @@
                     <ItemTemplate>
                         <%--<asp:Label ID="focusedContentComment" runat="server" Text='<%# Eval("commentdata") %>'></asp:Label>
                         <br />--%>
-                        <asp:Label ID="focusedContentCommentID" runat="server" Text='<%# "Comment #" + Eval("commentID") %>'></asp:Label>
+                        <asp:Label ID="focusedContentCommentID" runat="server" Text='<%# "Comment #" + Eval("commentID") %>' Font-Size="30px"></asp:Label>
                         <br />
                         <asp:TextBox ID="focusedEditCommentTxtBx" runat="server" Height="72px" TextMode="MultiLine" Width="590px" Visible='<%# Session["userID"] != null 
                                 && (Session["usertype"].ToString().Trim() == "ADMIN" 
@@ -161,13 +161,13 @@
                                 && (Session["usertype"].ToString().Trim() == "ADMIN" 
                                 || Session["userID"].ToString().Trim() == Eval("userID").ToString())
                                 ? false : true %>'
-                            Text='<%# Server.HtmlDecode(Eval("commentdata").ToString()) %>'></asp:Label>
+                            Text='<%# Server.HtmlDecode(Eval("commentdata").ToString()) %>' Font-Size="25px" Font-Italic="true"></asp:Label>
                         <br />
                         <asp:Label ID="focusedContentCommentAuthorAndCreation" runat="server"
-                            Text='<%# "Posted by " + Eval("username") + " on " + Eval("createdAt")%>'></asp:Label>
+                            Text='<%# "Posted by " + Eval("username") + " on " + Eval("createdAt")%>' Font-Size="20px" Font-Italic="true"></asp:Label>
                         <br />
                         <asp:Label ID="focusedContentCommentDateTimeUpdated" runat="server"
-                            Text='<%# "Last updated on " + Eval("updatedAt")%>'></asp:Label>
+                            Text='<%# "Last updated on " + Eval("updatedAt")%>' Font-Size="20px" Font-Italic="true"></asp:Label>
                         <br />
                         <br />
                     </ItemTemplate>
