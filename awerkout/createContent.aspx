@@ -55,7 +55,7 @@
             </tr>
             <tr>
                 <td class="auto-style6">
-                    <asp:RequiredFieldValidator ID="contentTitleErrMsg" runat="server" ForeColor="Red" ControlToValidate="contentTitleTxtBx" ErrorMessage="First name is required." >*</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="contentTitleErrMsg" runat="server" ForeColor="Red" ControlToValidate="contentTitleTxtBx" ErrorMessage="Title is required." >*</asp:RequiredFieldValidator>
                     <asp:Label ID="contentTitleLbl" runat="server" Text="Title:"></asp:Label>
                 </td>
                 <td class="auto-style7">
@@ -65,7 +65,7 @@
             </tr>
             <tr>
                 <td class="auto-style15">
-                    <asp:RequiredFieldValidator ID="contentTextErrMsg" runat="server" ForeColor="Red" ControlToValidate="contentTextTxtBx" ErrorMessage="Last name is required." >*</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="contentTextErrMsg" runat="server" ForeColor="Red" ControlToValidate="contentTextTxtBx" ErrorMessage="Text is required." >*</asp:RequiredFieldValidator>
                     <asp:Label ID="contentTextLbl" runat="server" Text="Text:"></asp:Label>
                 </td>
                 <td>
