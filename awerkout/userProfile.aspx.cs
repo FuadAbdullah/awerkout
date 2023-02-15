@@ -153,7 +153,7 @@ namespace awerkout
 
             string query = "";
 
-            if (Regex.IsMatch(userFirstNameTxtBx.Text, @"^['\x00-\x2F\x3A-\x40\x5B-\x60\x7B-\x7F]+$"))
+            if (Regex.IsMatch(userFirstNameTxtBx.Text.Trim(), "['\\x00-\\x2F\\x3A-\\x40\\x5B-\\x60\\x7B-\\x7F]+"))
             {
                 generalErrorMsg.Text = "Special Characters are not allowed";
             }
