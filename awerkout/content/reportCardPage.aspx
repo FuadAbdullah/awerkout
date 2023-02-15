@@ -99,7 +99,7 @@
             </script>
             <table id="card" class="auto-style1 txt">
                 <tr>
-                    <td class="auto-style4">
+                    <td class="auto-style4 cardattribute">
                         <asp:Label ID="quizTitleLbl" class="questiontxt" runat="server" Text='<%# Eval("question") %>'></asp:Label>
                         <br />
                         <br />
@@ -145,11 +145,10 @@
                 </tr>
         </ItemTemplate>
         <FooterTemplate>
-            <br />
             <tr>
-                <td>
+                <td class="cardattribute">
                     <br />
-                    <asp:Label ID="quizSummaryLbl" runat="server" Text="Summary of your last quiz session:"></asp:Label>
+                    <asp:Label ID="quizSummaryLbl" class="questiontxt" runat="server" Text="Summary of your last quiz session:"></asp:Label>
                     <br />
                     <asp:Label ID="quizTotalAnsweredLbl" runat="server" Text='<%# "Total answered: " + Session["totalQuizAnswered"] %>'></asp:Label>
                     <br />
