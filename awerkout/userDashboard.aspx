@@ -89,31 +89,31 @@
     <div id="content2">
 
         <div id="contentpage" class="txt workoutplan">
-            <p style="position: absolute; text-shadow: 0px 2px 7px black;">Browse Curated Posts</p>
+            <p style="position: absolute; text-shadow: 0px 2px 7px black; color: #ff8c00;">Browse Curated Posts</p>
             <asp:Button ID="ContentPageBtn" class="wrkbtn" runat="server" Text="Go!" OnClick="ContentPageBtn_Click" CausesValidation="False" />
         </div>
         <div id="contentpage2" class="txt workoutplan">
-            <p style="position: absolute; text-shadow: 0px 2px 7px black;">Answer Quizzes</p>
+            <p style="position: absolute; text-shadow: 0px 2px 7px black; color: #e6e200;">Answer Quizzes</p>
             <asp:Button ID="QuizPageBtn" class="wrkbtn" runat="server" Text="Bring it on!" OnClick="QuizPageBtn_Click" CausesValidation="False" />
         </div>
         <div id="contentpage3" class="txt workoutplan">
-            <p style="position: absolute; text-shadow: 0px 2px 7px black;">View Quiz Report Card</p>
+            <p style="position: absolute; text-shadow: 0px 2px 7px black; color: #ff1493;">View Quiz Report Card</p>
             <asp:Button ID="ReportCardBtn" class="wrkbtn" runat="server" Text="Go Ahead!" OnClick="ReportCardBtn_Click" CausesValidation="False" />
         </div>
     </div>
     <div id="content">
 
         <div id="workoutplan1" class="txt workoutplan">
-            <p style="position: absolute; text-shadow: 0px 2px 7px black;">Beginner Workout Plan</p>
+            <p style="position: absolute; text-shadow: 0px 2px 7px black; color: #3cd716;">Beginner Workout Plan</p>
             <asp:Button ID="BeginnerBtn" class="wrkbtn" runat="server" Text="Learn more" OnClick="BeginnerBtn_Click" CausesValidation="False" />
         </div>
 
         <div id="workoutplan2" class="txt workoutplan">
-            <p style="position: absolute; text-shadow: 0px 2px 7px black;">Intermediate Workout Plan</p>
+            <p style="position: absolute; text-shadow: 0px 2px 7px black; color: #ffa500;">Intermediate Workout Plan</p>
             <asp:Button ID="IntermediateBtn" class="wrkbtn" runat="server" Text="Learn more" OnClick="IntermediateBtn_Click" CausesValidation="False" />
         </div>
         <div id="workoutplan3" class="txt workoutplan">
-            <p style="position: absolute; text-shadow: 0px 2px 7px black;">Advanced Workout Plan</p>
+            <p style="position: absolute; text-shadow: 0px 2px 7px black; color: #e25822;">Advanced Workout Plan</p>
             <asp:Button ID="AdvancedBtn" class="wrkbtn" runat="server" Text="Learn more" OnClick="AdvancedBtn_Click" CausesValidation="False" />
         </div>
 
