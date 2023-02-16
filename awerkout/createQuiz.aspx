@@ -9,6 +9,7 @@
         }
         .auto-style2 {
             width: 174px;
+            text-align:right;
         }
         .auto-style3 {
             width: 174px;
@@ -51,7 +52,7 @@
                     </asp:RequiredFieldValidator>
                 </td>
                 <td>
-                    <asp:TextBox ID="questionTxtBx" class="TxtBx" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="questionTxtBx" class="TxtBx" runat="server" Font-Size="Small"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -64,14 +65,14 @@
                     <asp:RequiredFieldValidator 
                         ID="Option1ErrMsg" 
                         runat="server" 
-                        ErrorMessage="Option1 is required." 
+                        ErrorMessage="Option 1 is required." 
                         ControlToValidate="option1TxtBx"
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
                 </td>
                 <td>
-                    <asp:TextBox ID="option1TxtBx" class="TxtBx" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="option1TxtBx" class="TxtBx" runat="server" Font-Size="Small"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -84,14 +85,14 @@
                     <asp:RequiredFieldValidator 
                         ID="Option2ErrMsg" 
                         runat="server" 
-                        ErrorMessage="Option2 is required." 
+                        ErrorMessage="Option 2 is required." 
                         ControlToValidate="option2TxtBx"
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
                 </td>
                 <td>
-                    <asp:TextBox ID="option2TxtBx" class="TxtBx" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="option2TxtBx" class="TxtBx" runat="server" Font-Size="Small"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -104,14 +105,14 @@
                     <asp:RequiredFieldValidator 
                         ID="Option3ErrMsg" 
                         runat="server" 
-                        ErrorMessage="Option3 is required." 
+                        ErrorMessage="Option 3 is required." 
                         ControlToValidate="option3TxtBx"
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
                 </td>
                 <td>
-                    <asp:TextBox ID="option3TxtBx" class="TxtBx" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="option3TxtBx" class="TxtBx" runat="server" Font-Size="Small"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -124,14 +125,14 @@
                     <asp:RequiredFieldValidator 
                         ID="Option4ErrMsg" 
                         runat="server" 
-                        ErrorMessage="Option4 is required." 
+                        ErrorMessage="Option 4 is required." 
                         ControlToValidate="option4TxtBx"
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
                 </td>
                 <td>
-                    <asp:TextBox ID="option4TxtBx" class="TxtBx" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="option4TxtBx" class="TxtBx" runat="server" Font-Size="Small"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -141,17 +142,9 @@
             <tr>
                 <td class="auto-style2">
                     <asp:Label ID="Answer" runat="server" Text="Answer: "></asp:Label>
-                    <asp:RequiredFieldValidator 
-                        ID="AnswerErrMsg" 
-                        runat="server" 
-                        ErrorMessage="Answer is required." 
-                        ControlToValidate="AnswerDropDown"
-                        ForeColor="Red">
-                        *
-                    </asp:RequiredFieldValidator>
                 </td>
                 <td>
-                    <asp:DropDownList ID="AnswerDropDown" class="TxtBx" runat="server">
+                    <asp:DropDownList ID="AnswerDropDown" class="TxtBx" runat="server" Font-Size="Small">
                         <asp:ListItem Value="1">Option 1</asp:ListItem>
                         <asp:ListItem Value="2">Option 2</asp:ListItem>
                         <asp:ListItem Value="3">Option 3</asp:ListItem>

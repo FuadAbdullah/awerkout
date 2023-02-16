@@ -50,7 +50,7 @@
                 <td>
                     <% if (Session["userID"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
                         { %>
-                    <asp:TextBox ID="focusedEditTitleTxtBx" runat="server" Height="25px" Width="100%" Text="Post Title" Font-Size="Medium"></asp:TextBox>
+                    <asp:TextBox ID="focusedEditTitleTxtBx" runat="server" class="TxtBx" Height="25px" Width="100%" Text="Post Title" Font-Size="Medium"></asp:TextBox>
 
                     <% }
                         else
@@ -88,12 +88,12 @@
                 <td>
                     <% if (Session["userID"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
                         { %>
-                    <asp:TextBox ID="focusedEditDescTxtBx" runat="server" Height="75px" Width="100%" Text="Post Description" Font-Size="Medium" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="focusedEditDescTxtBx" class="TxtBx" runat="server" Height="75px" Width="100%" Text="Post Description" Font-Size="Medium" TextMode="MultiLine"></asp:TextBox>
 
                     <% }
                         else
                         { %>
-                    <asp:Label ID="focusedContentDescLbl" class= "multi-line" runat="server" Text="Post Description" Font-Size="Medium"></asp:Label>
+                    <asp:Label ID="focusedContentDescLbl" class="multi-line" runat="server" Text="Post Description" Font-Size="Medium"></asp:Label>
                     <% } %>
 
                 </td>
@@ -123,8 +123,8 @@
             <tr>
                 <td>
 
-                    <asp:Button ID="focusedEditPostSubmitBtn" runat="server" OnClick="focusedEditPostSubmitBtn_Click" Text="Finalize Changes" />
-                    <asp:Button ID="focusedDeletePostBtn" runat="server" OnClick="focusedDeletePostBtn_Click" Text="Delete Post" />
+                    <asp:Button ID="focusedEditPostSubmitBtn" class="applybtn" runat="server" OnClick="focusedEditPostSubmitBtn_Click" Text="Finalize Changes" />
+                    <asp:Button ID="focusedDeletePostBtn" class="deletebtn" runat="server" OnClick="focusedDeletePostBtn_Click" Text="Delete Post" />
 
 
 
@@ -139,8 +139,8 @@
             <%  } %>
             <tr>
                 <td>
-                    <asp:TextBox ID="focusedCommentTxtBx" runat="server" Height="75px" TextMode="MultiLine" Width="100%" onfocus="ClearTextUponFocus()" Font-Size="Small">Write something in your mind...</asp:TextBox>
-                    <asp:Button ID="focusedCommentSubmitBtn" runat="server" OnClick="focusedCommentSubmitBtn_Click" Text="Post Comment" Font-Size="Small" />
+                    <asp:TextBox ID="focusedCommentTxtBx" runat="server" class="TxtBx" Height="75px" TextMode="MultiLine" Width="100%" onfocus="ClearTextUponFocus()" Font-Size="Medium">Write something in your mind...</asp:TextBox>
+                    <asp:Button ID="focusedCommentSubmitBtn" class="applybtn" runat="server" OnClick="focusedCommentSubmitBtn_Click" Text="Post Comment" Font-Size="Small" />
                 </td>
 
             </tr>
@@ -152,21 +152,29 @@
                         <br />--%>
                             <asp:Label ID="focusedContentCommentID" runat="server" Text='<%# "Comment #" + Eval("commentID") %>' Font-Size="Smaller"></asp:Label>
                             <br />
-                            <asp:TextBox ID="focusedEditCommentTxtBx" runat="server" Height="10%" TextMode="MultiLine" Width="100%" Visible='<%# Session["userID"] != null 
+                            <div>
+                                <asp:TextBox ID="focusedEditCommentTxtBx" runat="server" class="TxtBx" Height="10%" TextMode="MultiLine" Width="100%" Visible='<%# Session["userID"] != null 
                                 && (Session["usertype"].ToString().Trim() == "ADMIN" 
                                 || Session["userID"].ToString().Trim() == Eval("userID").ToString()) 
                                 ? true : false%>'
-                                Text='<%# Server.HtmlDecode(Eval("commentdata").ToString()) %>'></asp:TextBox>
-                            <asp:Button ID="focusedEditCommentBtn" runat="server" CommandName="PerformEditComment" CommandArgument='<%# Eval("commentID")%>' Text="Edit Comment" Visible='<%# Session["userID"] != null 
+                                    Text='<%# Server.HtmlDecode(Eval("commentdata").ToString()) %>' Font-Size="Larger"></asp:TextBox>
+                                <asp:Button ID="focusedEditCommentBtn" runat="server" CommandName="PerformEditComment" CommandArgument='<%# Eval("commentID")%>' Text="Edit Comment" Visible='<%# Session["userID"] != null 
                                 && (Session["usertype"].ToString().Trim() == "ADMIN" 
                                 || Session["userID"].ToString().Trim() == Eval("userID").ToString()) 
                                 ? true : false%>'
-                                Font-Size="Small" />
-                            <asp:Button ID="focusedDeleteCommentBtn" runat="server" CommandName="PerformDeleteComment" CommandArgument='<%# Eval("commentID")%>' Text="Delete Comment" Visible='<%# Session["userID"] != null 
+                                    Font-Size="Small"
+                                    class="applybtn" />
+                                <asp:Button ID="focusedDeleteCommentBtn" runat="server" CommandName="PerformDeleteComment" CommandArgument='<%# Eval("commentID")%>' Text="Delete Comment" Visible='<%# Session["userID"] != null 
                                 && (Session["usertype"].ToString().Trim() == "ADMIN" 
                                 || Session["userID"].ToString().Trim() == Eval("userID").ToString()) 
                                 ? true : false%>'
-                                Font-Size="Small" />
+                                    Font-Size="Small"
+                                    class="deletebtn" />
+                                <asp:CheckBox ID="permaDeleteCommentChkBx" runat="server" Text="Delete Permanently" Visible='<%# Session["userID"] != null 
+                                && (Session["usertype"].ToString().Trim() == "ADMIN" 
+                                || Session["userID"].ToString().Trim() == Eval("userID").ToString()) 
+                                ? true : false%>' />
+                            </div>
                             <asp:Label ID="focusedContentCommentLbl" runat="server" Visible='<%# Session["userID"] != null 
                                 && (Session["usertype"].ToString().Trim() == "ADMIN" 
                                 || Session["userID"].ToString().Trim() == Eval("userID").ToString())

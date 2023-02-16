@@ -230,17 +230,9 @@
             <tr>
                 <td class="auto-style8">
                     <asp:Label ID="adminRPasswordLbl" runat="server" Text="Repeat Password"></asp:Label>
-                    <asp:RequiredFieldValidator 
-                        ID="RPaswordValidate" 
-                        runat="server" 
-                        ControlToValidate="adminRPasswordTxtBx" 
-                        ErrorMessage="Password re-type is required." 
-                        ForeColor="Red">
-                        *
-                    </asp:RequiredFieldValidator>
                     <asp:CustomValidator ID="PasswordInsertedValidate" 
                         runat="server"
-                        ControlToValidate="adminRPasswordTxtBx"
+                        ControlToValidate="adminPasswordTxtBx"
                         ErrorMessage="Re-typed password is not the same as password."
                         OnServerValidate="PasswordInserted"
                         ForeColor="Red">

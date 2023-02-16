@@ -107,9 +107,9 @@ namespace awerkout.content
                         focusedEditDescTxtBx.Text = Server.HtmlDecode(postDataTable.Rows[0][3].ToString().Trim());
 
                         focusedContentAuthorLbl.Text = "Posted by " + (
-                            postDataTable.Rows[0][10].ToString().Trim().Equals("A") 
-                            ? postDataTable.Rows[0][9].ToString().Trim() 
-                            : "[DELETED USER]" ) +
+                            postDataTable.Rows[0][10].ToString().Trim().Equals("A")
+                            ? postDataTable.Rows[0][9].ToString().Trim()
+                            : "[DELETED USER]") +
                             "#" + postDataTable.Rows[0][1].ToString().Trim() +
                             " on " + postDataTable.Rows[0][5].ToString().Trim();
 
@@ -240,15 +240,26 @@ namespace awerkout.content
             if (e.CommandName == "PerformDeleteComment")
             {
                 Button btn = (Button)e.Item.FindControl("focusedDeleteCommentBtn");
+                CheckBox chkbx = (CheckBox)e.Item.FindControl("permaDeleteCommentChkBx");
 
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
                 conn.Open();
+                string query;
 
                 string commentID = btn.CommandArgument.ToString().Trim();
 
-                string query = "update commentData set isDeleted = 'true', updatedAt = '" +
-                    DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where commentID = '" +
-                    commentID + "'";
+                if (chkbx.Checked)
+                {
+                    query = "delete from commentData where commentID = '" +
+                        commentID + "'";
+                }
+                else
+                {
+                    query = "update commentData set isDeleted = 'true', updatedAt = '" +
+                        DateTime.UtcNow.ToString("yyyy-MM-dd hh:mm:ss") + "' where commentID = '" +
+                        commentID + "'";
+                }
+
 
                 SqlCommand updateCmd = new SqlCommand(query, conn);
                 updateCmd.ExecuteNonQuery();

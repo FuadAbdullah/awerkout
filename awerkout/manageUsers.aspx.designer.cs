@@ -60,6 +60,15 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox userSearchTxtBx;
 
         /// <summary>
+        /// userIDDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList userIDDropDown;
+
+        /// <summary>
         /// userSearchBtn control.
         /// </summary>
         /// <remarks>

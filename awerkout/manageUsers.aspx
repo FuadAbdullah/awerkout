@@ -80,6 +80,11 @@
             height: 45px;
         }
     </style>
+    <script>
+        function toggleIDList() {
+
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="AdditionalNavOption1" runat="server">
     <table style="width: 100%">
@@ -98,14 +103,20 @@
         <table style="width: 100%">
             <tr>
                 <td class="align-center">
-                    <asp:Label ID="userSearchLbl" runat="server" Text="Search:"></asp:Label>
-                    <asp:DropDownList ID="userSearchCategoryDropDown" runat="server">
+                    <asp:Label ID="userSearchLbl" runat="server" Text="Search:" Font-Size="Larger"></asp:Label>
+                    <asp:DropDownList ID="userSearchCategoryDropDown" class="SearchTxtBx" runat="server"
+                        AutoPostBack="true" OnSelectedIndexChanged="userSearchCategoryDropDown_SelectedIndexChanged">
                         <asp:ListItem Value="ID">User ID</asp:ListItem>
-                        <asp:ListItem>Username</asp:ListItem>
+                        <asp:ListItem Value="Username">Username</asp:ListItem>
                         <asp:ListItem Value="Email">Email Address</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:TextBox ID="userSearchTxtBx" runat="server"></asp:TextBox>
-                    <asp:Button ID="userSearchBtn" runat="server" OnClick="userSearchBtn_Click" Text="Go" CausesValidation="False" />
+                    <asp:TextBox ID="userSearchTxtBx" class="SearchTxtBx" runat="server"></asp:TextBox>
+                    <asp:DropDownList ID="userIDDropDown" class="SearchTxtBx" runat="server">
+                    </asp:DropDownList>
+                    <div>
+                        <asp:Button ID="userSearchBtn" runat="server" class="gobtn" OnClick="userSearchBtn_Click" Text="Go" CausesValidation="False" />
+
+                    </div>
                 </td>
             </tr>
         </table>
@@ -172,11 +183,11 @@
             </tr>
             <tr>
                 <td class="auto-style8">
-                    <asp:RequiredFieldValidator 
-                        ID="userEmailErrMsg" 
-                        runat="server" 
-                        ForeColor="Red" 
-                        ErrorMessage="Email address is required." 
+                    <asp:RequiredFieldValidator
+                        ID="userEmailErrMsg"
+                        runat="server"
+                        ForeColor="Red"
+                        ErrorMessage="Email address is required."
                         ControlToValidate="userEmailTxtBx"
                         ValidateEmptyText="true">
                         *
@@ -199,12 +210,12 @@
             </tr>
             <tr>
                 <td class="auto-style13">
-                    <asp:CustomValidator 
-                        ID="UsernameFormatValidate" 
-                        runat="server" 
-                        ControlToValidate="userUsernameTxtBx" 
-                        ErrorMessage="Username should have eight or more characters!" 
-                        ForeColor="Red" 
+                    <asp:CustomValidator
+                        ID="UsernameFormatValidate"
+                        runat="server"
+                        ControlToValidate="userUsernameTxtBx"
+                        ErrorMessage="Username should have eight or more characters!"
+                        ForeColor="Red"
                         OnServerValidate="UsernameFormat">
                         *
                     </asp:CustomValidator>
@@ -229,8 +240,7 @@
                         ControlToValidate="userPasswordTxtBx"
                         ErrorMessage="Password should have eight or more alphanumerical characters!"
                         OnServerValidate="PasswordFormat"
-                        ForeColor="Red"
-                        ValidateEmptyText="true">
+                        ForeColor="Red">
                         *
                     </asp:CustomValidator>
                     <asp:Label ID="userPasswordLbl" runat="server" Text="Password:"></asp:Label>
@@ -241,7 +251,7 @@
             </tr>
             <tr>
                 <td class="auto-style6">
-                    <asp:CustomValidator ID="PasswordInsertedValidate" 
+                    <asp:CustomValidator ID="PasswordInsertedValidate"
                         runat="server"
                         ControlToValidate="userPasswordTxtBx"
                         ErrorMessage="Re-typed password is not the same as password."
@@ -302,10 +312,10 @@
             </tr>
             <tr>
                 <td class="auto-style6">
-                    <asp:CustomValidator ID="PhoneNumberValidator" 
+                    <asp:CustomValidator ID="PhoneNumberValidator"
                         runat="server"
                         ControlToValidate="userPhoneNumberTxtBx"
-                        ErrorMessage="Phone number format is invalid." 
+                        ErrorMessage="Phone number format is invalid."
                         OnServerValidate="PhoneNumberRegex"
                         ForeColor="Red"
                         ValidateEmptyText="true">
@@ -319,13 +329,13 @@
             </tr>
             <tr>
                 <td class="auto-style6">
-                    <asp:CompareValidator 
-                        ID="userWeightErrMsg" 
-                        runat="server" 
-                        ErrorMessage="Weight invalid. Enter an integer." 
-                        Operator="DataTypeCheck" 
-                        Type="Integer" 
-                        ForeColor="Red" 
+                    <asp:CompareValidator
+                        ID="userWeightErrMsg"
+                        runat="server"
+                        ErrorMessage="Weight invalid. Enter an integer."
+                        Operator="DataTypeCheck"
+                        Type="Integer"
+                        ForeColor="Red"
                         ControlToValidate="userWeightTxtBx"
                         ValidateEmptyText="true">
                         *

@@ -16,7 +16,6 @@ namespace awerkout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            userIDLbl.Visible = false;
             //userUsernameErrMsg.Visible = false;
             //userFirstNameErrMsg.Visible = false;
             //userLastNameErrMsg.Visible = false;
@@ -49,6 +48,8 @@ namespace awerkout
 
             if (!Page.IsPostBack)
             {
+                userSearchTxtBx.Visible = false;
+
                 // Gender initializer
                 ListItem[] genderList = new ListItem[3];
                 ListItem undefinedGender = new ListItem();
@@ -92,16 +93,39 @@ namespace awerkout
                 userAccountStatusDropDown.Items.AddRange(accstatusList);
                 userAccountStatusDropDown.SelectedIndex = 0;
 
+
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
                 conn.Open();
 
-                string query = "select * from userData";
+                // User ID search initializer
+                string userIDQuery = "select userID from userData where userID != '"
+                + Session["userID"].ToString().Trim() + "'";
+                SqlDataAdapter userIDDataAdapter = new SqlDataAdapter(userIDQuery, conn);
+                DataTable userIDDataTable = new DataTable();
+                userIDDataAdapter.Fill(userIDDataTable);
+
+                userIDDropDown.DataSource = userIDDataTable;
+                userIDDropDown.DataTextField = "userID";
+                userIDDropDown.DataValueField = "userID";
+                userIDDropDown.DataBind();
+
+                if (Request.QueryString["currentProfileID"] != null && !Request.QueryString["currentProfileID"].ToString().Trim().Equals(Session["userID"].ToString().Trim()))
+                    userIDDropDown.Items.FindByValue(Request.QueryString["currentProfileID"].ToString().Trim()).Selected = true;
+                else
+                    userIDDropDown.SelectedIndex = 0;
+
+                string query = "select * from userData where userID != '"
+                + Session["userID"].ToString().Trim() + "'";
+
+                if (Request.QueryString["currentProfileID"] != null && !Request.QueryString["currentProfileID"].ToString().Trim().Equals(Session["userID"].ToString().Trim()))
+                    query = "select * from userData where userID = '" + Request.QueryString["currentProfileID"].ToString().Trim() + "'";
+
                 SqlDataAdapter profileDataAdapter = new SqlDataAdapter(query, conn);
                 DataTable profileDataTable = new DataTable();
                 profileDataAdapter.Fill(profileDataTable);
 
                 userIDLbl.Text = profileDataTable.Rows[0][3].ToString().Trim() == "ADMIN" ? "ADMIN " + profileDataTable.Rows[0][0].ToString() : "USER " + profileDataTable.Rows[0][0].ToString();
-                userSearchTxtBx.Text = profileDataTable.Rows[0][0].ToString();
+                // userSearchTxtBx.Text = profileDataTable.Rows[0][0].ToString();
 
                 userUsernameTxtBx.Text = profileDataTable.Rows[0][1].ToString();
                 userFirstNameTxtBx.Text = profileDataTable.Rows[0][4].ToString();
@@ -147,7 +171,10 @@ namespace awerkout
 
         protected void userSearchBtn_Click(object sender, EventArgs e)
         {
-            string searchKeyword = userSearchTxtBx.Text.Trim();
+            string searchKeyword = userSearchTxtBx.Visible
+                ? userSearchTxtBx.Text.Trim()
+                : userIDDropDown.SelectedValue.ToString().Trim();
+            searchKeyword = searchKeyword.Replace("'", "");
             string methodOfSearch = userSearchCategoryDropDown.SelectedValue.ToString().Trim();
             string sqlColumn = "";
 
@@ -181,7 +208,7 @@ namespace awerkout
                 {
                     hideErrorMessage(userSearchErrMsg);
                     userIDLbl.Text = profileDataTable.Rows[0][3].ToString().Trim() == "ADMIN" ? "ADMIN " + profileDataTable.Rows[0][0].ToString() : "USER " + profileDataTable.Rows[0][0].ToString();
-                    userSearchTxtBx.Text = profileDataTable.Rows[0][0].ToString();
+                    // userSearchTxtBx.Text = profileDataTable.Rows[0][0].ToString();
 
                     userUsernameTxtBx.Text = profileDataTable.Rows[0][1].ToString();
                     userFirstNameTxtBx.Text = profileDataTable.Rows[0][4].ToString();
@@ -302,7 +329,8 @@ namespace awerkout
                 }
                 else
                 {
-                    if (userAboutMeTxtBx.Text.Trim().Equals("")) {
+                    if (userAboutMeTxtBx.Text.Trim().Equals(""))
+                    {
                         userAboutMeTxtBx.Text = "Unspecified";
                     }
                     if (userLocationTxtBx.Text.Trim().Equals(""))
@@ -369,7 +397,7 @@ namespace awerkout
                     updateCmd.ExecuteNonQuery();
 
                     conn.Close();
-                    Response.Redirect("manageUsers.aspx");
+                    Response.Redirect(String.Format("manageUsers.aspx?currentProfileID={0}", bufferUserID));
                 }
 
             }
@@ -446,5 +474,39 @@ namespace awerkout
             }
         }
 
+        protected void userSearchCategoryDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (userSearchCategoryDropDown.SelectedValue.ToString().Equals("ID"))
+            {
+                userSearchTxtBx.Visible = false;
+                userIDDropDown.DataSource = null;
+                userIDDropDown.DataBind();
+
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
+                conn.Open();
+
+                string query = "select userID from userData where userID != '"
+                + Session["userID"].ToString().Trim() + "'";
+                SqlDataAdapter userIDDataAdapter = new SqlDataAdapter(query, conn);
+                DataTable userIDDataTable = new DataTable();
+                userIDDataAdapter.Fill(userIDDataTable);
+
+                // Question ID initializer
+                userIDDropDown.DataSource = userIDDataTable;
+                userIDDropDown.DataTextField = "userID";
+                userIDDropDown.DataValueField = "userID";
+                userIDDropDown.DataBind();
+                userIDDropDown.SelectedIndex = 0;
+
+                conn.Close();
+                userIDDropDown.Visible = true;
+
+            }
+            else
+            {
+                userIDDropDown.Visible = false;
+                userSearchTxtBx.Visible = true;
+            }
+        }
     }
 }

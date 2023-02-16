@@ -51,11 +51,10 @@ namespace awerkout
                     SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConn"].ConnectionString);
                     conn.Open();
 
-                    // Delimiter as input is forbidden, therefore sanitized
-                    string choices = option1TxtBx.Text.Trim().Replace("'", "\"").Replace(";","") + ";" +
-                        option2TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
-                        option3TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";" +
-                        option4TxtBx.Text.Trim().Replace("'", "\"").Replace(";", "") + ";";
+                    string choices = option1TxtBx.Text.Trim() + ";" +
+                        option2TxtBx.Text.Trim() + ";" +
+                        option3TxtBx.Text.Trim() + ";" +
+                        option4TxtBx.Text.Trim() + ";";
 
                     string encodedChoices = Server.HtmlEncode(choices);
 
