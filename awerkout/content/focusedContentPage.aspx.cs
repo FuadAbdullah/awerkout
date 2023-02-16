@@ -172,7 +172,16 @@ namespace awerkout.content
 
         protected void myProfilelnk_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../userDashboard.aspx");
+            // Redirect admin to adminDashboard.aspx
+            if (Session["usertype"].ToString().Trim() == "ADMIN")
+            {
+                Response.Redirect("../adminDashboard.aspx");
+            }
+            // Redirect member to memberDashboard.aspx
+            else if (Session["usertype"].ToString().Trim() == "USER")
+            {
+                Response.Redirect("../userDashboard.aspx");
+            }
         }
 
         protected void signInlnk_Click(object sender, EventArgs e)
