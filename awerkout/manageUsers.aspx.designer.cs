@@ -276,15 +276,6 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox userUsernameTxtBx;
 
         /// <summary>
-        /// userPasswordErrMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator userPasswordErrMsg;
-
-        /// <summary>
         /// PasswordFormatValidate control.
         /// </summary>
         /// <remarks>
@@ -312,13 +303,13 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox userPasswordTxtBx;
 
         /// <summary>
-        /// ComparePasswordValidate control.
+        /// PasswordInsertedValidate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator ComparePasswordValidate;
+        protected global::System.Web.UI.WebControls.CustomValidator PasswordInsertedValidate;
 
         /// <summary>
         /// userRPasswordLbl control.
@@ -438,13 +429,13 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox userDislikesTxtBx;
 
         /// <summary>
-        /// userPhoneNumberErrMsg control.
+        /// PhoneNumberValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator userPhoneNumberErrMsg;
+        protected global::System.Web.UI.WebControls.CustomValidator PhoneNumberValidator;
 
         /// <summary>
         /// userPhoneNumberLbl control.

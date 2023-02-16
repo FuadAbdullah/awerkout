@@ -103,7 +103,7 @@ namespace awerkout
 
                     createCMD.Parameters.AddWithValue("@userID", Session["userID"]);
                     createCMD.Parameters.AddWithValue("@postTitle", Server.HtmlEncode(contentTitleTxtBx.Text.Trim()));
-                    createCMD.Parameters.AddWithValue("@postDescription", Server.HtmlEncode(contentTextTxtBx.Text.Trim()));
+                    createCMD.Parameters.AddWithValue("@postDescription", Server.HtmlEncode(contentTextTxtBx.Text)); // Don't trim this to allow entering 
                     createCMD.Parameters.AddWithValue("@contentdata", Server.HtmlEncode(contentdata));
                     createCMD.ExecuteNonQuery();
                     Response.Redirect("createContent.aspx");

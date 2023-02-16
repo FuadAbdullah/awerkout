@@ -83,40 +83,45 @@
         <table class="auto-style3">
             <tr>
                 <td class="auto-style7">
-                    <asp:CheckBox ID="FeedbackShowReviewedChkBx" runat="server" 
+                    <asp:CheckBox ID="FeedbackShowReviewedChkBx" runat="server"
                         AutoPostBack="True"
                         Text="Show Reviewed Feedbacks"
-                        OnCheckedChanged="FeedbackShowReviewedChkBx_CheckedChanged"/>
+                        OnCheckedChanged="FeedbackShowReviewedChkBx_CheckedChanged" />
                     <br />
                     <asp:Label ID="noContentLbl" runat="server" Visible="false" Text="Hooray, no feedbacks to be reviewed! <(^.^)>"></asp:Label>
-                    
+
                     <br />
                     <br />
                     <asp:Repeater ID="FeedbackRepeater" runat="server" OnItemCommand="FeedbackRepeater_ItemCommand">
                         <ItemTemplate>
-                            <table style="width: 75%">
+                            <table class="centerTable">
                                 <tr>
                                     <td>
-                                        <asp:Label ID="FeedbackIDLbl" runat="server" Text='<%# "FID: " + Eval("feedbackID") %>'></asp:Label>
+                                        <asp:Label ID="FeedbackIDLbl" runat="server" Text='<%# "FID: " + Eval("feedbackID") %>' Font-Size="Small"></asp:Label>
                                         <br />
-                                        <asp:Label ID="FeedbackSubjectLbl" runat="server" Text='<%# "Subject: " + Eval("feedbacktitle") %>'></asp:Label>
+                                        <asp:Label ID="FeedbackSubjectLbl" runat="server" Text='<%# "Subject: " + Eval("feedbacktitle") %>' Font-Size="Medium"></asp:Label>
                                         <br />
-                                        <asp:Label ID="FeedbackDescriptionLbl" runat="server" Text='<%# "Description: " + Eval("feedbackdesc") %>'></asp:Label>
                                         <br />
-                                        <asp:Label ID="FeedbackRatingLbl" runat="server" Text='<%# "Rating given: " + Eval("feedbackrating").ToString() + "/5.0 points" %>'></asp:Label>
+                                        <asp:Label ID="FeedbackDescriptionLbl" runat="server" Text='<%# "Description: " + Eval("feedbackdesc") %>' Font-Size="Medium" Font-Bold="True"></asp:Label>
                                         <br />
-                                        <asp:Label ID="FeedbackAuthorLbl" runat="server" Text='<%# "Username: " + Eval("username") %>'></asp:Label>
+                                        <asp:Label ID="FeedbackRatingLbl" runat="server" Text='<%# "Rating given: " + Eval("feedbackrating").ToString() + "/5.0 points" %>' Font-Size="Medium" Font-Bold="False" Font-Italic="True"></asp:Label>
                                         <br />
-                                        <asp:Label ID="FeedbackCreationLbl" runat="server" Text='<%# "Date : " + Eval("updatedAt") %>'></asp:Label>
                                         <br />
-                                        <asp:Label ID="FeedbackIsReviewedLbl" runat="server" 
+                                        <asp:Label ID="FeedbackAuthorLbl" runat="server" Text='<%# "Username: " + Eval("username") %>' Font-Size="Smaller"></asp:Label>
+                                        <br />
+                                        <asp:Label ID="FeedbackCreationLbl" runat="server" Text='<%# "Date : " + Eval("updatedAt") %>' Font-Size="Smaller"></asp:Label>
+                                        <br />
+                                        <asp:Label ID="FeedbackIsReviewedLbl" runat="server"
                                             Text="Reviewed"
-                                            Visible='<%# bool.Parse(Eval("isReviewed").ToString().Trim()) %>'></asp:Label>
+                                            Visible='<%# bool.Parse(Eval("isReviewed").ToString().Trim()) %>' Font-Bold="True"></asp:Label>
                                         <br />
-                                        <asp:Button ID="FeedbackSetReviewedBtn" class="btn" runat="server" Text="Set Reviewed" 
-                                            CommandName="PerformReviewed" 
-                                            CommandArgument='<%# Eval("feedbackID") %>'
-                                            Visible='<%# !bool.Parse(Eval("isReviewed").ToString().Trim()) %>'/>
+                                        <hr />
+                                        <div style="width: 50%; float: right;">
+                                            <asp:Button ID="FeedbackSetReviewedBtn" class="btn" runat="server" Text="Set Reviewed"
+                                                CommandName="PerformReviewed"
+                                                CommandArgument='<%# Eval("feedbackID") %>'
+                                                Visible='<%# !bool.Parse(Eval("isReviewed").ToString().Trim()) %>' Font-Bold="True" />
+                                        </div>
                                     </td>
                                 </tr>
                             </table>

@@ -52,12 +52,21 @@ namespace awerkout.content
                         postDataAdapter.Fill(postDataTable);
 
                         postDataTable.Columns.Add("bannerPath", typeof(string));
+                        postDataTable.Columns.Add("username", typeof(string));
+                        postDataTable.Columns.Add("accstatus", typeof(string));
 
                         foreach (DataRow row in postDataTable.Rows)
                         {
-                            // System.Diagnostics.Debug.WriteLine(row["contentdata"].ToString().Split(';')[0].Replace("bannerPath=~", ".."));
-
                             row["bannerPath"] = row["contentdata"].ToString().Split(';')[0].Replace("bannerPath=~", "..");
+                            // System.Diagnostics.Debug.WriteLine(row["contentdata"].ToString().Split(';')[0].Replace("bannerPath=~", ".."));
+                            string fetchUsername = "select username, accstatus from userData where userID = " + row[1] + "";
+
+                            SqlDataAdapter usernameDataAdapter = new SqlDataAdapter(fetchUsername, conn);
+                            DataTable usernameDataTable = new DataTable();
+                            usernameDataAdapter.Fill(usernameDataTable);
+
+                            row["username"] = usernameDataTable.Rows[0][0];
+                            row["accstatus"] = usernameDataTable.Rows[0][1];
                         }
 
                         contentRepeater.DataSource = postDataTable;

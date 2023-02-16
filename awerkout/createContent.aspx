@@ -3,6 +3,7 @@
     
     <link rel="stylesheet" href="mainstyle.css" />
     <link rel="stylesheet" href="userprofilestyle.css" />
+    <link rel="stylesheet" href="createContentstyle.css" />
     <style type="text/css">
         .align-right {
             text-align: right;
@@ -16,7 +17,7 @@
             height: 26px;
         }
         .auto-style6 {
-            width: 177px;
+            width: 93px;
             height: 29px;
             text-align: right;
         }
@@ -28,8 +29,17 @@
             height: 26px;
         }
         .auto-style15 {
-            width: 177px;
+            width: 93px;
+            vertical-align:top;
             text-align: right;
+            height: 359px;
+        }
+        .auto-style16 {
+            height: 359px;
+        }
+        .auto-style17 {
+            height: 29px;
+            width: 93px;
         }
         </style>
 </asp:Content>
@@ -49,7 +59,7 @@
     <div id="profilebox">
         <table style="width: 100%">
             <tr>
-                <td class="auto-style7">
+                <td class="auto-style17">
                     <asp:Label ID="userIDLbl" runat="server" Font-Bold="True" Text="USERID"></asp:Label>
                 </td>
             </tr>
@@ -59,7 +69,7 @@
                     <asp:Label ID="contentTitleLbl" runat="server" Text="Title:"></asp:Label>
                 </td>
                 <td class="auto-style7">
-                    <asp:TextBox ID="contentTitleTxtBx" class="TxtBx" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="contentTitleTxtBx" class="contentTxtBx" runat="server" Font-Size="Small"></asp:TextBox>
                     <%--<asp:Label ID="userFirstNameErrMsg" runat="server" Text="Error Message" ForeColor="Red"></asp:Label>--%>
                 </td>
             </tr>
@@ -68,8 +78,8 @@
                     <asp:RequiredFieldValidator ID="contentTextErrMsg" runat="server" ForeColor="Red" ControlToValidate="contentTextTxtBx" ErrorMessage="Text is required." >*</asp:RequiredFieldValidator>
                     <asp:Label ID="contentTextLbl" runat="server" Text="Text:"></asp:Label>
                 </td>
-                <td>
-                    <asp:TextBox ID="contentTextTxtBx"  class="TxtBx"  runat="server"></asp:TextBox>
+                <td class="auto-style16">
+                    <asp:TextBox ID="contentTextTxtBx"  class="contentTxtBx"  runat="server" Height="100%" TextMode="MultiLine" Font-Size="Small"></asp:TextBox>
                     <%--<asp:Label ID="userLastNameErrMsg" runat="server" Text="Error Message" ForeColor="Red"></asp:Label>--%><%--<asp:RequiredFieldValidator ID="userLastNameErrMsg" runat="server" ForeColor="Red">Last Name required.</asp:RequiredFieldValidator>--%>
                 </td>
             </tr>

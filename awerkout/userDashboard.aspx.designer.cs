@@ -96,6 +96,15 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Button AdvancedBtn;
 
         /// <summary>
+        /// height_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator height_required;
+
+        /// <summary>
         /// heightlbl control.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox heightTxtBx;
+
+        /// <summary>
+        /// weight_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator weight_required;
 
         /// <summary>
         /// weightlbl control.
@@ -157,6 +175,24 @@ namespace awerkout
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label calculation;
+
+        /// <summary>
+        /// category control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label category;
+
+        /// <summary>
+        /// bmivalidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary bmivalidator;
 
         /// <summary>
         /// Subject_required control.
@@ -213,58 +249,31 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.TextBox FeedbackDescTxtBx;
 
         /// <summary>
-        /// Label1 control.
+        /// Rating_required control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Rating_required;
 
         /// <summary>
-        /// r1 control.
+        /// FeedbackTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton r1;
+        protected global::System.Web.UI.WebControls.Label FeedbackTitle;
 
         /// <summary>
-        /// r2 control.
+        /// RatingRadioButtons control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton r2;
-
-        /// <summary>
-        /// r3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton r3;
-
-        /// <summary>
-        /// r4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton r4;
-
-        /// <summary>
-        /// r5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton r5;
+        protected global::System.Web.UI.WebControls.RadioButtonList RatingRadioButtons;
 
         /// <summary>
         /// FeedbackSubmitButton control.

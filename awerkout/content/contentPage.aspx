@@ -2,8 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../mainstyle.css" />
-    <link rel="stylesheet" href="../userDashboardstyle.css" />
-     <link rel="stylesheet" href="contentPagestyle.css" />
+    <link rel="stylesheet" href="contentPagestyle.css" />
     <style type="text/css">
         .auto-style2 {
             text-align: right;
@@ -74,15 +73,31 @@
     <br />
     <br />
     <br />
-    <asp:Label ID="noContentLbl" runat="server" Visible="false" Text="Uh-oh, it seems like no post had been made just yet, :'("></asp:Label>
+    <div class="centerdiv">
+        <asp:Label ID="noContentLbl" runat="server" Visible="false" Text="Uh-oh, it seems like no post had been made just yet, :'("></asp:Label>
+    </div>
     <asp:Repeater ID="contentRepeater" runat="server">
         <ItemTemplate>
             <table id="contentRepeat">
                 <tr>
                     <td>
-                        <asp:Label ID="contentTitleLbl" runat="server" Text='<%# Eval("postTitle") %>'></asp:Label>
+                        <asp:Label ID="contentTitleLbl" runat="server" Text='<%# Eval("postTitle") %>' Font-Size="Large" Font-Bold="True" Font-Underline="True"></asp:Label>
                         <br />
-                        <asp:ImageButton ID="contentFocusBtn" runat="server" Height="200px" Width="500px" CommandArgument='<%# Eval("postID") %>' OnClick="contentFocusBtn_Click" ImageUrl='<%# Eval("bannerPath") %>' />
+                        <br />
+                        <div class="centerdiv">
+                            <asp:ImageButton ID="contentFocusBtn" runat="server" Height="300px" Width="500px" CommandArgument='<%# Eval("postID") %>' OnClick="contentFocusBtn_Click" ImageUrl='<%# Eval("bannerPath") %>' />
+                        </div>
+                        <br />
+                        <asp:Label ID="contentAuthorLbl" runat="server" Text='<%# "Posted by " + (
+                            Eval("accstatus").ToString().Trim().Equals("A") 
+                            ? Eval("username").ToString().Trim() 
+                            : "[DELETED USER]" ) +
+                            "#" + Eval("userID").ToString().Trim() +
+                            " on " + Eval("createdAt").ToString().Trim() %>'
+                            Font-Size="Small" Font-Bold="False"></asp:Label>
+                        <br />
+                        <asp:Label ID="contentDateLbl" runat="server" Text='<%# "Last updated on " + Eval("updatedAt").ToString().Trim() %>' Font-Bold="False" Font-Size="Small"></asp:Label>
+                        <br />
                     </td>
                 </tr>
             </table>

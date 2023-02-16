@@ -73,6 +73,7 @@
     <Content Include="Awerkout.aspx" />
     <Content Include="awerkoutstyle.css" />
     <Content Include="Beginner.aspx" />
+    <Content Include="content\focusedContentPage.css" />
     <Content Include="content\contentPagestyle.css" />
     <Content Include="content\quizstyle.css" />
     <Content Include="content\reportCardPage.aspx" />
@@ -90,6 +91,7 @@
     <Content Include="Intermediate.aspx" />
     <Content Include="Nutrition.aspx" />
     <Content Include="nutritionstyle.css" />
+    <Content Include="createContentstyle.css" />
     <Content Include="WorkoutContent\1.gif" />
     <Content Include="WorkoutContent\10.gif" />
     <Content Include="WorkoutContent\11.gif" />

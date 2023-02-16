@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../mainstyle.css" />
-    <link rel="stylesheet" href="../userDashboardstyle.css" />
+    <link rel="stylesheet" href="focusedContentPage.css" />
     <style type="text/css">
         .auto-style2 {
             text-align: right;
@@ -14,6 +14,11 @@
 
         .auto-style4 {
             height: 27px;
+        }
+
+
+        .multi-line {
+            white-space: pre-line;
         }
     </style>
 </asp:Content>
@@ -33,149 +38,154 @@
     </table>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
-    <table class="auto-style3" style="text-align:center; font-size: 40px">
-        <tr>
-            <td>
-                <!-- Empty row -->
-                &nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% if (Session["userID"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
-                    { %>
-                <asp:TextBox ID="focusedEditTitleTxtBx" runat="server" Height="16px" Width="426px" Text="Post Title"></asp:TextBox>
+    <div style="margin: auto; width: 80%;">
+        <table class="auto-style3">
+            <tr>
+                <td>
+                    <!-- Empty row -->
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <% if (Session["userID"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
+                        { %>
+                    <asp:TextBox ID="focusedEditTitleTxtBx" runat="server" Height="25px" Width="100%" Text="Post Title" Font-Size="Medium"></asp:TextBox>
 
-                <% }
-                    else
-                    { %>
-                <asp:Label ID="focusedContentTitleLbl" runat="server" Text="Post Title"></asp:Label>
-                <% } %>
+                    <% }
+                        else
+                        { %>
+                    <asp:Label ID="focusedContentTitleLbl" runat="server" Text="Post Title" Font-Bold="True" Font-Size="Larger" Font-Underline="True"></asp:Label>
+                    <% } %>
 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <!-- Empty row -->
-                &nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style4">
-                <asp:Image ID="focusedContentImg" runat="server" Width="500px" Height="200px" />
-                <% if (Session["userID"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
-                    { %>
-                <br />
-                <asp:FileUpload ID="focusedEditPicReupload" runat="server" />
-                <% }%>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <!-- Empty row -->
-                &nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <% if (Session["userID"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
-                    { %>
-                <asp:TextBox ID="focusedEditDescTxtBx" runat="server" Height="16px" Width="426px" Text="Post Description"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- Empty row -->
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <div class="postImg">
+                        <asp:Image ID="focusedContentImg" runat="server" Width="100%" Height="100%" />
+                        <% if (Session["userID"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
+                            { %>
+                    </div>
+                    <br />
+                    <asp:FileUpload ID="focusedEditPicReupload" runat="server" />
+                    <% }%>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- Empty row -->
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <% if (Session["userID"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
+                        { %>
+                    <asp:TextBox ID="focusedEditDescTxtBx" runat="server" Height="75px" Width="100%" Text="Post Description" Font-Size="Medium" TextMode="MultiLine"></asp:TextBox>
 
-                <% }
-                    else
-                    { %>
-                <asp:Label ID="focusedContentDescLbl" runat="server" Text="Post Description"></asp:Label>
-                <% } %>
+                    <% }
+                        else
+                        { %>
+                    <asp:Label ID="focusedContentDescLbl" class= "multi-line" runat="server" Text="Post Description" Font-Size="Medium"></asp:Label>
+                    <% } %>
 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <!-- Empty row -->
-                &nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Label ID="focusedContentAuthorLbl" runat="server" Text="Author And ID" Font-Size="25px" Font-Italic="true"></asp:Label>
-                <br />
-                <asp:Label ID="focusedContentUpdateLbl" runat="server" Text="Updated Date Time" Font-Size="25px" Font-Italic="true"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- Empty row -->
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="focusedContentAuthorLbl" runat="server" Text="Author And ID" Font-Size="Small" Font-Italic="True"></asp:Label>
+                    <br />
+                    <asp:Label ID="focusedContentUpdateLbl" runat="server" Text="Updated Date Time" Font-Size="Small" Font-Italic="True"></asp:Label>
 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <!-- Empty row -->
-                &nbsp;
-            </td>
-        </tr>
-        <% if (Session["userID"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
-            { %>
-        <tr>
-            <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- Empty row -->
+                    &nbsp;
+                </td>
+            </tr>
+            <% if (Session["userID"] != null && Session["usertype"].ToString().Trim() == "ADMIN")
+                { %>
+            <tr>
+                <td>
 
-                <asp:Button ID="focusedEditPostSubmitBtn" runat="server" OnClick="focusedEditPostSubmitBtn_Click" Text="Finalize Changes" />
-                <asp:Button ID="focusedDeletePostBtn" runat="server" OnClick="focusedDeletePostBtn_Click" Text="Delete Post" />
+                    <asp:Button ID="focusedEditPostSubmitBtn" runat="server" OnClick="focusedEditPostSubmitBtn_Click" Text="Finalize Changes" />
+                    <asp:Button ID="focusedDeletePostBtn" runat="server" OnClick="focusedDeletePostBtn_Click" Text="Delete Post" />
 
 
 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <!-- Empty row -->
-                &nbsp;
-            </td>
-        </tr>
-        <%  } %>
-        <tr>
-            <td>
-                <asp:TextBox ID="focusedCommentTxtBx" runat="server" Height="72px" TextMode="MultiLine" Width="590px" onfocus="ClearTextUponFocus()">Write something in your mind...</asp:TextBox>
-                <asp:Button ID="focusedCommentSubmitBtn" runat="server" OnClick="focusedCommentSubmitBtn_Click" Text="Post Comment" />
-            </td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- Empty row -->
+                    &nbsp;
+                </td>
+            </tr>
+            <%  } %>
+            <tr>
+                <td>
+                    <asp:TextBox ID="focusedCommentTxtBx" runat="server" Height="75px" TextMode="MultiLine" Width="100%" onfocus="ClearTextUponFocus()" Font-Size="Small">Write something in your mind...</asp:TextBox>
+                    <asp:Button ID="focusedCommentSubmitBtn" runat="server" OnClick="focusedCommentSubmitBtn_Click" Text="Post Comment" Font-Size="Small" />
+                </td>
 
-        </tr>
-        <tr>
-            <td class="auto-style4">
-                <asp:Repeater ID="focusedContentCommentRepeater" runat="server" OnItemCommand="focusedContentCommentRepeater_ItemCommand">
-                    <ItemTemplate>
-                        <%--<asp:Label ID="focusedContentComment" runat="server" Text='<%# Eval("commentdata") %>'></asp:Label>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:Repeater ID="focusedContentCommentRepeater" runat="server" OnItemCommand="focusedContentCommentRepeater_ItemCommand">
+                        <ItemTemplate>
+                            <%--<asp:Label ID="focusedContentComment" runat="server" Text='<%# Eval("commentdata") %>'></asp:Label>
                         <br />--%>
-                        <asp:Label ID="focusedContentCommentID" runat="server" Text='<%# "Comment #" + Eval("commentID") %>' Font-Size="30px"></asp:Label>
-                        <br />
-                        <asp:TextBox ID="focusedEditCommentTxtBx" runat="server" Height="72px" TextMode="MultiLine" Width="590px" Visible='<%# Session["userID"] != null 
+                            <asp:Label ID="focusedContentCommentID" runat="server" Text='<%# "Comment #" + Eval("commentID") %>' Font-Size="Smaller"></asp:Label>
+                            <br />
+                            <asp:TextBox ID="focusedEditCommentTxtBx" runat="server" Height="10%" TextMode="MultiLine" Width="100%" Visible='<%# Session["userID"] != null 
                                 && (Session["usertype"].ToString().Trim() == "ADMIN" 
                                 || Session["userID"].ToString().Trim() == Eval("userID").ToString()) 
                                 ? true : false%>'
-                            Text='<%# Server.HtmlDecode(Eval("commentdata").ToString()) %>'></asp:TextBox>
-                        <asp:Button ID="focusedEditCommentBtn" runat="server" CommandName="PerformEditComment" CommandArgument='<%# Eval("commentID")%>' Text="Edit Comment" Visible='<%# Session["userID"] != null 
+                                Text='<%# Server.HtmlDecode(Eval("commentdata").ToString()) %>'></asp:TextBox>
+                            <asp:Button ID="focusedEditCommentBtn" runat="server" CommandName="PerformEditComment" CommandArgument='<%# Eval("commentID")%>' Text="Edit Comment" Visible='<%# Session["userID"] != null 
                                 && (Session["usertype"].ToString().Trim() == "ADMIN" 
                                 || Session["userID"].ToString().Trim() == Eval("userID").ToString()) 
-                                ? true : false%>' />
-                        <asp:Button ID="focusedDeleteCommentBtn" runat="server" CommandName="PerformDeleteComment" CommandArgument='<%# Eval("commentID")%>' Text="Delete Comment" Visible='<%# Session["userID"] != null 
+                                ? true : false%>'
+                                Font-Size="Small" />
+                            <asp:Button ID="focusedDeleteCommentBtn" runat="server" CommandName="PerformDeleteComment" CommandArgument='<%# Eval("commentID")%>' Text="Delete Comment" Visible='<%# Session["userID"] != null 
                                 && (Session["usertype"].ToString().Trim() == "ADMIN" 
                                 || Session["userID"].ToString().Trim() == Eval("userID").ToString()) 
-                                ? true : false%>' />
-                        <asp:Label ID="focusedContentCommentLbl" runat="server" Visible='<%# Session["userID"] != null 
+                                ? true : false%>'
+                                Font-Size="Small" />
+                            <asp:Label ID="focusedContentCommentLbl" runat="server" Visible='<%# Session["userID"] != null 
                                 && (Session["usertype"].ToString().Trim() == "ADMIN" 
                                 || Session["userID"].ToString().Trim() == Eval("userID").ToString())
                                 ? false : true %>'
-                            Text='<%# Server.HtmlDecode(Eval("commentdata").ToString()) %>' Font-Size="25px" Font-Italic="true"></asp:Label>
-                        <br />
-                        <asp:Label ID="focusedContentCommentAuthorAndCreation" runat="server"
-                            Text='<%# "Posted by " + Eval("username") + " on " + Eval("createdAt")%>' Font-Size="20px" Font-Italic="true"></asp:Label>
-                        <br />
-                        <asp:Label ID="focusedContentCommentDateTimeUpdated" runat="server"
-                            Text='<%# "Last updated on " + Eval("updatedAt")%>' Font-Size="20px" Font-Italic="true"></asp:Label>
-                        <br />
-                        <br />
-                    </ItemTemplate>
-                </asp:Repeater>
-            </td>
-        </tr>
-    </table>
-
+                                Text='<%# Server.HtmlDecode(Eval("commentdata").ToString()) %>' Font-Size="Large"></asp:Label>
+                            <br />
+                            <asp:Label ID="focusedContentCommentAuthorAndCreation" runat="server"
+                                Text='<%# "Posted by " + Eval("username") + " on " + Eval("createdAt")%>' Font-Size="Smaller" Font-Italic="False" Font-Bold="True"></asp:Label>
+                            <br />
+                            <asp:Label ID="focusedContentCommentDateTimeUpdated" runat="server"
+                                Text='<%# "Last updated on " + Eval("updatedAt")%>' Font-Size="Smaller" Font-Italic="False" Font-Bold="True"></asp:Label>
+                            <br />
+                            <br />
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </td>
+            </tr>
+        </table>
+    </div>
     <script>
         function ClearTextUponFocus() {
             document.getElementById('<%=focusedCommentTxtBx.ClientID%>').value = "";

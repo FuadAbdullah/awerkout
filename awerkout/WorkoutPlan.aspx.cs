@@ -14,21 +14,30 @@ namespace awerkout
             if (Session["username"] != null)
             {
                 greetLbl.Text = "Hello there, " + Session["username"] + "!";
-                myProfilelnk.Visible = true;
+                myDashboardlnk.Visible = true;
                 signOutlnk.Visible = true;
                 signinlnk.Visible = false;
             }
             else
             {
-                myProfilelnk.Visible = false;
+                myDashboardlnk.Visible = false;
                 signOutlnk.Visible = false;
                 greetLbl.Visible = false;
                 signinlnk.Visible = true;
             }
         }
-        protected void myProfilelnk_Click(object sender, EventArgs e)
+        protected void myDashboardlnk_Click(object sender, EventArgs e)
         {
-            Response.Redirect("userProfile.aspx");
+            // Redirect admin to adminDashboard.aspx
+            if (Session["usertype"].ToString().Trim() == "ADMIN")
+            {
+                Response.Redirect("adminDashboard.aspx");
+            }
+            // Redirect member to memberDashboard.aspx
+            else if (Session["usertype"].ToString().Trim() == "USER")
+            {
+                Response.Redirect("userDashboard.aspx");
+            }
         }
 
         protected void signOutlnk_Click(object sender, EventArgs e)

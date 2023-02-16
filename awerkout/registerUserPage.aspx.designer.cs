@@ -195,22 +195,13 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.Label userRPasswordLbl;
 
         /// <summary>
-        /// RPaswordValidate control.
+        /// PasswordInsertedValidate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RPaswordValidate;
-
-        /// <summary>
-        /// ComparePasswordValidate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator ComparePasswordValidate;
+        protected global::System.Web.UI.WebControls.CustomValidator PasswordInsertedValidate;
 
         /// <summary>
         /// userRPasswordTxtBx control.

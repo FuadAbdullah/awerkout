@@ -166,14 +166,6 @@
             </tr>
             <tr>
                 <td class="auto-style5">
-                    <asp:RequiredFieldValidator 
-                        ID="userPasswordErrMsg" 
-                        runat="server" 
-                        ControlToValidate="userPasswordTxtBx" 
-                        ErrorMessage="Password is required." 
-                        ForeColor="Red">
-                        *
-                    </asp:RequiredFieldValidator>
                     <asp:CustomValidator ID="PasswordFormatValidate" runat="server"
                         ControlToValidate="userPasswordTxtBx"
                         ErrorMessage="Password should have eight or more alphanumerical characters!"
@@ -190,15 +182,14 @@
             </tr>
             <tr>
                 <td class="auto-style6">
-                     <asp:CompareValidator ID="ComparePasswordValidate"
+                    <asp:CustomValidator ID="PasswordInsertedValidate" 
                         runat="server"
-                        ControlToCompare="userPasswordTxtBx"
-                        ControlToValidate="userRPasswordTxtBx"
-                        EnableClientScript="False"
+                        ControlToValidate="userPasswordTxtBx"
                         ErrorMessage="Re-typed password is not the same as password."
+                        OnServerValidate="PasswordInserted"
                         ForeColor="Red">
                         *
-                    </asp:CompareValidator>
+                    </asp:CustomValidator>
                     <asp:Label ID="userRPasswordLbl" runat="server" Text="Repeat Password:"></asp:Label>
                 </td>
                 <td class="auto-style7" colspan="2">
@@ -241,9 +232,25 @@
             </tr>
             <tr>
                 <td class="auto-style6">
-                    <asp:RegularExpressionValidator ID="userPhoneNumberErrMsg" runat="server" ControlToValidate="userPhoneNumberTxtBx" ErrorMessage="Phone number format is invalid." ForeColor="Red" ValidationExpression="^(\+?6?01)[0-46-9]-*[0-9]{7,8}$">
+<%--                    <asp:RegularExpressionValidator 
+                        ID="userPhoneNumberErrMsg" 
+                        runat="server" 
+                        ControlToValidate="userPhoneNumberTxtBx" 
+                        ErrorMessage="Phone number format is invalid." 
+                        ForeColor="Red" 
+                        ValidationExpression="^(\+?6?01)[0-46-9]-*[0-9]{7,8}$">
                         *
-                    </asp:RegularExpressionValidator>
+                    </asp:RegularExpressionValidator>--%>
+                    <asp:CustomValidator ID="PhoneNumberValidator" 
+                        runat="server"
+                        ControlToValidate="userPhoneNumberTxtBx"
+                        ErrorMessage="Phone number format is invalid." 
+                        OnServerValidate="PhoneNumberRegex"
+                        ForeColor="Red"
+                        ValidateEmptyText="true">
+                        *
+                    </asp:CustomValidator>
+
                     <asp:Label ID="userPhoneNumberLbl" runat="server" Text="Phone Number:"></asp:Label>
                 </td>
                 <td class="auto-style7" colspan="2">

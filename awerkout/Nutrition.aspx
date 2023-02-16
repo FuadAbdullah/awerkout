@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteFrame.Master" AutoEventWireup="true" CodeBehind="Nutrition.aspx.cs" Inherits="awerkout.Nutrition" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<link rel="stylesheet" href="mainstyle.css" />
+    <link rel="stylesheet" href="mainstyle.css" />
     <link rel="stylesheet" href="nutritionstyle.css" />
     <style type="text/css">
         .auto-style1 {
@@ -12,7 +12,7 @@
      <table style="width: 100%;" class="table">
         <tr>
             <td>
-                <asp:LinkButton ID="myProfilelnk" class="nav" runat="server" OnClick="myProfilelnk_Click">My Profile</asp:LinkButton>
+                <asp:LinkButton ID="myDashboardlnk" class="nav" runat="server" OnClick="myDashboardlnk_Click">My Dashboard</asp:LinkButton>
             </td>
             <td>
                 <asp:LinkButton ID="signOutlnk" class="nav" runat="server" OnClick="signOutlnk_Click">Sign Out</asp:LinkButton>
