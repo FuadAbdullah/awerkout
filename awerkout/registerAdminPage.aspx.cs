@@ -142,6 +142,27 @@ namespace awerkout
             else
                 args.IsValid = true;
         }
+
+        protected void UsernameFormat(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value.Length < 8)
+                args.IsValid = false;
+            else
+                args.IsValid = true;
+
+        }
+
+        protected void PasswordInserted(object source, ServerValidateEventArgs args)
+        {
+            if (!string.IsNullOrEmpty(adminPasswordTxtBx.Text))
+            {
+                args.IsValid = args.Value == adminRPasswordTxtBx.Text;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
     }
 
 

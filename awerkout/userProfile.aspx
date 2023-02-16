@@ -149,6 +149,15 @@
             </tr>
             <tr>
                 <td class="auto-style15">
+                    <asp:CustomValidator 
+                        ID="UsernameFormatValidate" 
+                        runat="server" 
+                        ControlToValidate="userUsernameTxtBx" 
+                        ErrorMessage="Username should have eight or more characters!" 
+                        ForeColor="Red" 
+                        OnServerValidate="UsernameFormat">
+                        *
+                    </asp:CustomValidator>
                     <asp:RequiredFieldValidator 
                         ID="userUsernameErrMsg" 
                         runat="server" 

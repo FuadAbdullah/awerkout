@@ -96,6 +96,15 @@
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
+                    <asp:CustomValidator 
+                        ID="UsernameFormatValidate" 
+                        runat="server" 
+                        ControlToValidate="userUsernameTxtBx" 
+                        ErrorMessage="Username should have eight or more characters!" 
+                        ForeColor="Red"
+                        OnServerValidate="UsernameFormat">
+                        *
+                    </asp:CustomValidator>
                 </td>
                 <td class="align-right">
                     <asp:Label ID="userUsernameErrMsgLbl" runat="server" Text="[Username Err]" ForeColor="Red"></asp:Label>
@@ -240,6 +249,14 @@
             <tr>
                 <td class="auto-style2" colspan="3">
                     <asp:Label ID="userRPasswordLbl" runat="server" Text="Confirm password"></asp:Label>
+                    <asp:RequiredFieldValidator 
+                        ID="RPaswordValidate" 
+                        runat="server" 
+                        ControlToValidate="userRPasswordTxtBx" 
+                        ErrorMessage="Password re-type is required." 
+                        ForeColor="Red">
+                        *
+                    </asp:RequiredFieldValidator>
                     <asp:CustomValidator ID="PasswordInsertedValidate" 
                         runat="server"
                         ControlToValidate="userPasswordTxtBx"

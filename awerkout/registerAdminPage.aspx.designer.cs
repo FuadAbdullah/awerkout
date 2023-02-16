@@ -42,6 +42,15 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.RequiredFieldValidator UsernameValidate;
 
         /// <summary>
+        /// UsernameFormatValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator UsernameFormatValidate;
+
+        /// <summary>
         /// adminUsernameErrMsgLbl control.
         /// </summary>
         /// <remarks>
@@ -213,13 +222,13 @@ namespace awerkout
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RPaswordValidate;
 
         /// <summary>
-        /// ComparePasswordValidate control.
+        /// PasswordInsertedValidate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator ComparePasswordValidate;
+        protected global::System.Web.UI.WebControls.CustomValidator PasswordInsertedValidate;
 
         /// <summary>
         /// adminRPasswordTxtBx control.

@@ -63,6 +63,15 @@
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
+                    <asp:CustomValidator 
+                        ID="UsernameFormatValidate" 
+                        runat="server" 
+                        ControlToValidate="adminUsernameTxtBx" 
+                        ErrorMessage="Username should have eight or more characters!" 
+                        ForeColor="Red" 
+                        OnServerValidate="UsernameFormat">
+                        *
+                    </asp:CustomValidator>
                 </td>
                 <td class="auto-style10">
                     &nbsp;</td>
@@ -229,15 +238,14 @@
                         ForeColor="Red">
                         *
                     </asp:RequiredFieldValidator>
-                     <asp:CompareValidator ID="ComparePasswordValidate"
+                    <asp:CustomValidator ID="PasswordInsertedValidate" 
                         runat="server"
-                        ControlToCompare="adminPasswordTxtBx"
                         ControlToValidate="adminRPasswordTxtBx"
-                        EnableClientScript="False"
                         ErrorMessage="Re-typed password is not the same as password."
+                        OnServerValidate="PasswordInserted"
                         ForeColor="Red">
                         *
-                    </asp:CompareValidator>
+                    </asp:CustomValidator>
                 </td>
                 <td class="auto-style11">
                     &nbsp;</td>
