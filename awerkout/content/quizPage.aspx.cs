@@ -44,7 +44,6 @@ namespace awerkout.content
                 lnk.Visible = false;
             }
 
-            timerLbl.Text = "Time left: 01:30";
             generalErrorMsg.Visible = false;
 
             if (!IsPostBack)

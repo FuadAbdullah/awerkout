@@ -82,10 +82,11 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
     <br />
     <br />
-    <asp:Label ID="quizGreeterLbl" runat="server" Text="Below is the most recent result of your quiz session:"></asp:Label>
-    <br />
-    <br />
-    <asp:Label ID="noContentLbl" runat="server" Visible="false" Text="Uh-oh, it seems like you had never sat for a quiz yet, :'("></asp:Label>
+    <div style="margin: auto auto 5% auto; width: 50%; text-align: center;">
+        <asp:Label ID="quizGreeterLbl" runat="server" Text="Below is the most recent result of your quiz session:"></asp:Label>
+        <hr />
+        <asp:Label ID="noContentLbl" runat="server" Visible="false" Text="Uh-oh, it seems like you had never sat for a quiz yet, :'("></asp:Label>
+    </div>
     <asp:Repeater ID="quizRepeater" runat="server">
         <ItemTemplate>
             <script type="text/javascript">

@@ -69,6 +69,7 @@
     </style>
     <script type="text/javascript">
         let answeredObj = {};
+        let buttonClicked = false;
 
         function initAnsweredObj() {
             $.ajax({
@@ -107,11 +108,11 @@
             }
             sendAnsweredQuestions();
             initAnsweredObj();
-            // SetQuizAnswerObj(count);
-            // console.log("Count:" + count);
         }
 
         function submitAnswer() {
+            buttonClicked = true;
+            console.log(buttonClicked);
             sendAnsweredQuestions();
             __doPostBack('<%= quizSubmitBtn.ID %>', '');
         }
@@ -133,59 +134,20 @@
         }
 
         function destroyQuizSession() {
-            $.ajax({
-                type: 'POST',
-                url: 'quizPage.aspx/DestroyHttpContextSession',
-                success: function () {
-                    console.log('Session ended');
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.log('Error: ' + jqXHR.responseText);
-                }
-            });
-        }
-
-        function testJSONSerializer() {
-
-            let testData = {
-                name: "Fuad",
-                age: "22",
-                gender: "Male"
+            if (!buttonClicked) {
+                $.ajax({
+                    type: 'POST',
+                    url: 'quizPage.aspx/DestroyHttpContextSession',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+                        console.log('Session ended');
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log('Error: ' + jqXHR.responseText);
+                    }
+                });
             }
-
-            let stringified = JSON.stringify(testData)
-            console.log(stringified);
-
-            $.ajax({
-                type: 'POST',
-                url: 'quizPage.aspx/TestJSONDeserializer',
-                data: JSON.stringify({ person: testData }),
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function () {
-                    console.log('Data sent to server successfully.');
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.log('Error: ' + jqXHR.responseText);
-                }
-            });
-        }
-
-        function SetQuizAnswerObj(value) {
-
-            $.ajax({
-                type: 'POST',
-                url: 'quizPage.aspx/SetSessionData',
-                data: JSON.stringify({ value: value }),
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function () {
-                    console.log('Data sent to server successfully.');
-                },
-                error: function () {
-                    console.log('Error sending data to server.');
-                }
-            });
         }
 
         function refreshPage() {
@@ -193,64 +155,23 @@
         }
 
         window.onload = function () {
+            console.log(buttonClicked);
 
             initAnsweredObj();
-
-            // Set the countdown start time (in seconds)
-            var countdownSeconds = 90;
-
-            // Get the countdownLabel element
-            var countdownLabel = document.getElementById('<%= timerLbl.ClientID %>');
-
-            // Set an interval to update the countdown every second
-            var countdownInterval = setInterval(function () {
-                // Calculate the minutes and seconds remaining
-                var minutes = Math.floor(countdownSeconds / 60);
-                var seconds = countdownSeconds % 60;
-
-                // Pad the minutes and seconds with leading zeros if necessary
-                var minutesString = ("0" + minutes).slice(-2);
-                var secondsString = ("0" + seconds).slice(-2);
-
-                // Update the countdownLabel text
-                countdownLabel.innerHTML = "Time left: " + minutesString + ":" + secondsString;
-
-                // console.log("Time left: " + minutesString + ":" + secondsString);
-
-                // Decrement the countdownSeconds variable
-                countdownSeconds--;
-
-                // If the countdown is finished, clear the interval and update the countdownLabel text
-                if (countdownSeconds < 0) {
-                    clearInterval(countdownInterval);
-                    countdownLabel.innerHTML = "Time's up!";
-                }
-            }, 1000);
-
         }
         window.onbeforeunload = function () {
             destroyQuizSession();
         }
 
-
-
-                //function RadioButton_CheckedChanged(sender, args) {
-                //    var group = document.getElementsByName(sender.name);
-                //    for (var i = 0; i < group.length; i++) {
-                //        group[i].checked = false;
-                //    }
-                //    sender.checked = true;
-                //}
-
+        window.onre
     </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentBlock" runat="server">
     <br />
     <br />
     <div style="margin: auto auto 5% auto; width: 50%; text-align: center;">
-        <asp:Label ID="instructionLbl" runat="server" Text="You are given 1 minute 30 seconds to perform this quiz. You must answer all of the 10 questions below" Font-Bold="True"></asp:Label>
+        <asp:Label ID="instructionLbl" runat="server" Text="You must answer all of the 10 questions below" Font-Bold="True"></asp:Label>
         <hr />
-        <asp:Label ID="timerLbl" runat="server" Text="Time left: 01:30" Font-Bold="True" ClientIDMode="Static"></asp:Label>
     </div>
     <asp:Repeater ID="quizRepeater" runat="server">
         <ItemTemplate>
