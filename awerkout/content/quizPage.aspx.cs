@@ -6,9 +6,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Script.Serialization;
+using System.Web.Script.Services;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
 
 namespace awerkout.content
 {
@@ -24,6 +26,26 @@ namespace awerkout.content
             {
                 Response.Redirect("~/signInPage.aspx");
             }
+
+            LinkButton[] links = new LinkButton[4];
+
+            LinkButton homelnk = (LinkButton)Master.FindControl("homelnk");
+            LinkButton planslnk = (LinkButton)Master.FindControl("planslnk");
+            LinkButton guideslnk = (LinkButton)Master.FindControl("guideslnk");
+            LinkButton nutritionslnk = (LinkButton)Master.FindControl("nutritionslnk");
+
+            links[0] = homelnk;
+            links[1] = planslnk;
+            links[2] = guideslnk;
+            links[3] = nutritionslnk;
+
+            foreach (LinkButton lnk in links)
+            {
+                lnk.Visible = false;
+            }
+
+            timerLbl.Text = "Time left: 01:30";
+            generalErrorMsg.Visible = false;
 
             if (!IsPostBack)
             {
@@ -93,12 +115,29 @@ namespace awerkout.content
 
         protected void quizSubmitBtn_Click(object sender, EventArgs e)
         {
-            if (HttpContext.Current.Session["quizCountIndex"] == null || int.Parse(HttpContext.Current.Session["quizCountIndex"].ToString()) < 10)
+            bool makeshiftValidFlag = false;
+            List<bool> answered = new List<bool>();
+
+            // Only need to check Question1 to see if the rest of the question are set
+            if (HttpContext.Current.Session["Question1"] != null)
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + "Some answers were left unanswered, you can do this!" + "');", true);
+                for (int i = 1; i < 11; i++)
+                {
+                    answered.Add(bool.Parse(HttpContext.Current.Session["Question" + i].ToString()));
+                }
             }
             else
             {
+                answered.Add(false);
+            }
+
+            if (answered.All(b => b == true))
+                makeshiftValidFlag = true;
+
+
+            if (makeshiftValidFlag)
+            {
+
                 int index = 0;
                 List<string> rbID = new List<string>();
                 List<string> rbGroupName = new List<string>();
@@ -147,12 +186,21 @@ namespace awerkout.content
                     createCMD.ExecuteNonQuery();
 
                     conn.Close();
-                    HttpContext.Current.Session["quizCountIndex"] = null;
-                    Response.Redirect("~/content/reportCardPage.aspx");
                 }
-            }
 
+                for (int i = 1; i < 11; i++)
+                {
+                    HttpContext.Current.Session["Question" + i] = null;
+                }
+                Response.Redirect("~/content/reportCardPage.aspx");
+            }
+            else
+            {
+                generalErrorMsg.Text = "One or more questions were left empty! Answer all questions before submitting.";
+                generalErrorMsg.Visible = true;
+            }
         }
+
 
         [WebMethod]
         public static void SetSessionData(string value)
@@ -162,8 +210,99 @@ namespace awerkout.content
             commonFunction.debugMessage(HttpContext.Current.Session["quizCountIndex"].ToString());
         }
 
+        [WebMethod]
+        public static void SetCurrentAnswerObj(answeredObj answeredObj)
+        {
+            HttpContext.Current.Session["Question1"] = answeredObj.Question1.ToString();
+            HttpContext.Current.Session["Question2"] = answeredObj.Question2.ToString();
+            HttpContext.Current.Session["Question3"] = answeredObj.Question3.ToString();
+            HttpContext.Current.Session["Question4"] = answeredObj.Question4.ToString();
+            HttpContext.Current.Session["Question5"] = answeredObj.Question5.ToString();
+            HttpContext.Current.Session["Question6"] = answeredObj.Question6.ToString();
+            HttpContext.Current.Session["Question7"] = answeredObj.Question7.ToString();
+            HttpContext.Current.Session["Question8"] = answeredObj.Question8.ToString();
+            HttpContext.Current.Session["Question9"] = answeredObj.Question9.ToString();
+            HttpContext.Current.Session["Question10"] = answeredObj.Question10.ToString();
+
+            for (int i = 1; i < 11; i++)
+            {
+                commonFunction.debugMessage(HttpContext.Current.Session["Question" + i].ToString());
+            }
+
+        }
+
+        [WebMethod]
+        [ScriptMethod(UseHttpGet = true)]
+        public static answeredObj GetCurrentAnswerObj()
+        {
+            answeredObj answeredObj = new answeredObj();
+            if (HttpContext.Current.Session["Question1"] != null)
+            {
+                answeredObj.Question1 = bool.Parse(HttpContext.Current.Session["Question1"].ToString());
+                answeredObj.Question2 = bool.Parse(HttpContext.Current.Session["Question2"].ToString());
+                answeredObj.Question3 = bool.Parse(HttpContext.Current.Session["Question3"].ToString());
+                answeredObj.Question4 = bool.Parse(HttpContext.Current.Session["Question4"].ToString());
+                answeredObj.Question5 = bool.Parse(HttpContext.Current.Session["Question5"].ToString());
+                answeredObj.Question6 = bool.Parse(HttpContext.Current.Session["Question6"].ToString());
+                answeredObj.Question7 = bool.Parse(HttpContext.Current.Session["Question7"].ToString());
+                answeredObj.Question8 = bool.Parse(HttpContext.Current.Session["Question8"].ToString());
+                answeredObj.Question9 = bool.Parse(HttpContext.Current.Session["Question9"].ToString());
+                answeredObj.Question10 = bool.Parse(HttpContext.Current.Session["Question10"].ToString());
+
+
+                for (int i = 1; i < 11; i++)
+                {
+                    commonFunction.debugMessage(HttpContext.Current.Session["Question" + i].ToString());
+                }
+
+            }
+            else
+            {
+                answeredObj.Question1 = false;
+                answeredObj.Question2 = false;
+                answeredObj.Question3 = false;
+                answeredObj.Question4 = false;
+                answeredObj.Question5 = false;
+                answeredObj.Question6 = false;
+                answeredObj.Question7 = false;
+                answeredObj.Question8 = false;
+                answeredObj.Question9 = false;
+                answeredObj.Question10 = false;
+
+            }
+
+            return answeredObj;
+
+        }
+
+        [WebMethod]
+        public static void DestroyHttpContextSession()
+        {
+            for (int i = 1; i < 11; i++)
+            {
+                HttpContext.Current.Session["Question" + i] = null;
+            }
+        }
+
+        [WebMethod]
+        public static void TestJSONDeserializer(Person person)
+        {
+            // Person person = JsonConvert.DeserializeObject<Person>(value);
+            // HttpContext.Current.Session["quizCountIndex"] = value;
+
+            commonFunction.debugMessage("Name: " + person.name);
+            commonFunction.debugMessage("Age: " + person.age);
+            commonFunction.debugMessage("Gender: " + person.gender);
+        }
+
+        public class Person
+        {
+            public string name { get; set; }
+            public int age { get; set; }
+            public string gender { get; set; }
+
+        }
+
     }
-
-
 }
 

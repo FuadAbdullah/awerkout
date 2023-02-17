@@ -15,22 +15,22 @@ namespace awerkout.content
     {
 
         /// <summary>
-        /// myDashboardlnk control.
+        /// instructionLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton myDashboardlnk;
+        protected global::System.Web.UI.WebControls.Label instructionLbl;
 
         /// <summary>
-        /// signOutlnk control.
+        /// timerLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton signOutlnk;
+        protected global::System.Web.UI.WebControls.Label timerLbl;
 
         /// <summary>
         /// quizRepeater control.
@@ -40,5 +40,23 @@ namespace awerkout.content
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater quizRepeater;
+
+        /// <summary>
+        /// generalErrorMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label generalErrorMsg;
+
+        /// <summary>
+        /// quizSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button quizSubmitBtn;
     }
 }

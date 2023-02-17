@@ -234,3 +234,5 @@ M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awe
 M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awerkout\obj\Debug\awerkout.dll
 M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awerkout\obj\Debug\awerkout.pdb
 M:\APU\APU degree year 2\Sem 2\Web Applications\Assignment\awerkout\awerkout\awerkout\obj\Debug\awerkout.csproj.AssemblyReference.cache
+C:\Users\fab07\DegY2S2\WAPP\awerkout\awerkout\bin\Newtonsoft.Json.dll
+C:\Users\fab07\DegY2S2\WAPP\awerkout\awerkout\bin\Newtonsoft.Json.xml
